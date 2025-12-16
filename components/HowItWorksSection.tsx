@@ -25,7 +25,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="relative bg-black overflow-hidden" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+    <section className="relative bg-black overflow-hidden py-24">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
