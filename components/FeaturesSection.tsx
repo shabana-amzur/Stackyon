@@ -1,9 +1,11 @@
 'use client';
 
+import type { ReactNode } from 'react';
+
 type FeatureDefinition = {
   title: string;
   description: string;
-  icon: (gradientId: string) => JSX.Element;
+  icon: (gradientId: string) => ReactNode;
 };
 
 const features: FeatureDefinition[] = [
