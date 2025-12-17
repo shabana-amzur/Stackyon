@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Fragment, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -167,10 +168,13 @@ export default function Header() {
       <div className="max-w-[80rem] mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2.5">
-          <img 
-            src="/stackyon-logo-white.png" 
-            alt="Stackyon Logo" 
+          <Image
+            src="/stackyon-logo-white.png"
+            alt="Stackyon Logo"
+            width={128}
+            height={64}
             className="h-16 w-auto"
+            priority
           />
         </div>
 

@@ -3,9 +3,31 @@
 import { LinkIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useEffect, useRef, useState } from 'react';
 
+type ParticleConfig = {
+  opacity: number;
+  size: number;
+  duration: number;
+  x: number;
+  y: number;
+  delay: number;
+};
+
+const PARTICLE_COUNT = 120;
+
+const createParticles = (): ParticleConfig[] =>
+  Array.from({ length: PARTICLE_COUNT }, () => ({
+    opacity: Math.random() * 0.6 + 0.2,
+    size: Math.random() * 2.5 + 1,
+    duration: (Math.random() * 20 + 15) * 0.9,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 5,
+  }));
+
 export default function HeroSection() {
   const particlesRef = useRef<HTMLDivElement>(null);
   const [showVideo, setShowVideo] = useState(false);
+  const [particles] = useState<ParticleConfig[]>(createParticles);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -45,44 +67,57 @@ export default function HeroSection() {
     <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center -mt-[132px]">
       {/* Particles - Full Width */}
       <div ref={particlesRef} className="stars-container absolute inset-0">
-            {[...Array(120)].map((_, i) => {
-              const randomOpacity = Math.random() * 0.6 + 0.2;
-              const randomSize = Math.random() * 2.5 + 1;
-              const randomDuration = (Math.random() * 20 + 15) * 0.9; // 10% faster
-              
-              // Particles distributed across entire section
-              const x = Math.random() * 100;
-              const y = Math.random() * 100;
-              
-              return (
-                <div
-                  key={i}
-                  className="particle absolute bg-white rounded-full transition-transform duration-300 ease-out"
-                  style={{
-                    width: `${randomSize}px`,
-                    height: `${randomSize}px`,
-                    left: `${x}%`,
-                    top: `${y}%`,
-                    opacity: randomOpacity,
-                    animation: `float ${randomDuration}s ease-in-out infinite`,
-                    animationDelay: `${Math.random() * 5}s`,
-                  }}
-                />
-              );
-            })}
+            {particles.map((particle, index) => (
+              <div
+                key={index}
+                className="particle absolute bg-white rounded-full transition-transform duration-300 ease-out"
+                style={{
+                  width: `${particle.size}px`,
+                  height: `${particle.size}px`,
+                  left: `${particle.x}%`,
+                  top: `${particle.y}%`,
+                  opacity: particle.opacity,
+                  animation: `float ${particle.duration}s ease-in-out infinite`,
+                  animationDelay: `${particle.delay}s`,
+                }}
+              />
+            ))}
+      </div>
+
+      {/* Floating callouts */}
+      <div className="pointer-events-none absolute inset-0 z-20 hidden md:block">
+        <div className="hero-float-card hero-float-1 absolute left-[6%] top-[20%] flex w-48 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-sky-500/35 via-blue-500/15 to-teal-400/10 px-6 py-5 shadow-[0_30px_80px_-40px_rgba(56,189,248,0.55)] backdrop-blur-xl">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.4rem] text-sky-300/80">
+            <span className="inline-block h-2 w-2 rounded-full bg-gradient-to-r from-sky-400 to-purple-500" />
+            Website
+          </span>
+          <p className="text-sm font-semibold text-white">AI-crafted layouts in seconds</p>
+          <p className="text-xs text-white/60">Generate responsive pages, preview instantly, and ship live in one click.</p>
+        </div>
+
+        <div className="hero-float-card hero-float-2 absolute right-[8%] bottom-[18%] flex w-52 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-violet-500/35 via-blue-500/15 to-purple-500/25 px-6 py-6 shadow-[0_40px_90px_-45px_rgba(129,140,248,0.55)] backdrop-blur-xl">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.4rem] text-violet-300/80">
+            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-sky-500 text-[0.7rem] font-bold text-black">
+              AI
+            </span>
+            SaaS
+          </span>
+          <p className="text-sm font-semibold text-white">Automated user provisioning</p>
+          <p className="text-xs text-white/60">Launch multi-tenant apps with billing, auth, and environments prebuilt.</p>
+        </div>
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 pt-20">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 pt-20 reveal-child" style={{ transitionDelay: '120ms' }}>
         {/* Inner box with gradient */}
-        <div className="relative rounded-3xl overflow-hidden">
+        <div className="relative rounded-3xl overflow-hidden reveal-child" style={{ transitionDelay: '180ms' }}>
           {/* Gradient orb effect - contained in box */}
           <div className="absolute inset-0">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-blue-500/30 via-purple-500/15 to-transparent blur-3xl" />
           </div>
           
           {/* Content */}
-          <div className="relative z-10 px-8 py-8 flex flex-col items-center text-center">
+          <div className="relative z-10 px-8 py-8 flex flex-col items-center text-center reveal-child" style={{ transitionDelay: '240ms' }}>
             {/* Badge */}
             <div className="mb-8">
               <span className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-blue-300 text-sm font-semibold backdrop-blur-sm">
@@ -92,7 +127,9 @@ export default function HeroSection() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 max-w-4xl leading-tight">
               Agentic AI powered
               <br />
-              Enterprise-Grade Apps
+              <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-purple-500 text-transparent bg-clip-text">
+                Enterprise-Grade Apps
+              </span>
             </h1>
 
             {/* Subheading */}
@@ -101,7 +138,7 @@ export default function HeroSection() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-6 reveal-child" style={{ transitionDelay: '320ms' }}>
               <div className="flex flex-col sm:flex-row gap-4 items-center">
                 {/* Create Account Button with Glow */}
                 <button className="relative group">

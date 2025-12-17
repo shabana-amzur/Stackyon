@@ -6,18 +6,35 @@ import DifferentiatorsSection from "@/components/DifferentiatorsSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
+import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black">
-      <HeroSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <WhatSetsUsApartSection />
-      <DifferentiatorsSection />
-      <IndustriesSection />
-      <TestimonialsSection />
-      <CTASection />
+      <Reveal animation="fade-up" duration={1100}>
+        <HeroSection />
+      </Reveal>
+      <Reveal animation="fade-up" duration={950} delay={80}>
+        <FeaturesSection />
+      </Reveal>
+      <Reveal animation="fade-right" duration={950} delay={120}>
+        <HowItWorksSection />
+      </Reveal>
+      <Reveal animation="fade-left" duration={950} delay={120}>
+        <WhatSetsUsApartSection />
+      </Reveal>
+      <Reveal animation="fade-up" duration={900} delay={100}>
+        <DifferentiatorsSection />
+      </Reveal>
+      <Reveal animation="fade-up" duration={900} delay={100}>
+        <IndustriesSection />
+      </Reveal>
+      <Reveal animation="fade-up" duration={900} delay={100}>
+        <TestimonialsSection />
+      </Reveal>
+      <Reveal animation="zoom-in" duration={850} delay={80}>
+        <CTASection />
+      </Reveal>
     </div>
   );
 }

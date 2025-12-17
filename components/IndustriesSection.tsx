@@ -1,5 +1,7 @@
 'use client';
 
+import Reveal from '@/components/Reveal';
+
 const industries = [
   {
     title: 'Healthcare',
@@ -109,56 +111,66 @@ export default function IndustriesSection() {
       <div className="mx-auto flex max-w-7xl flex-col gap-16 px-4">
         <header className="flex flex-col items-center gap-6 text-center">
           <span
-            className="inline-block rounded-full border border-white/20 bg-white/5 px-4 py-2 font-medium text-white/80"
-            style={{ fontSize: '0.975rem' }}
+            className="inline-block rounded-full border border-white/20 bg-white/5 px-4 py-2 font-medium text-white/80 reveal-child"
+            style={{ fontSize: '0.975rem', transitionDelay: '80ms' }}
           >
             Industries
           </span>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">
+          <h2 className="text-4xl font-bold text-white md:text-5xl reveal-child" style={{ transitionDelay: '140ms' }}>
             Where <span className="bg-gradient-to-r from-sky-300 via-indigo-300 to-violet-300 bg-clip-text text-transparent">Stackyon</span> Creates Maximum Impact
           </h2>
-          <p className="max-w-2xl text-lg text-white/70">
+          <p className="max-w-2xl text-lg text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>
             Accelerate industry programs with end-to-end automation, AI orchestration, and deployment-ready experiences.
           </p>
         </header>
 
         <div className="flex flex-col gap-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {firstRow.map((item) => (
-              <article
+            {firstRow.map((item, index) => (
+              <Reveal
                 key={item.title}
-                className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#07080d] p-10 shadow-[0_40px_140px_-60px_rgba(11,30,65,0.85)]"
+                animation="fade-up"
+                duration={1050}
+                delay={220 + index * 130}
+                className="h-full"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.08)_0%,_transparent_55%)]" aria-hidden="true" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.12)_0%,_transparent_65%)]" aria-hidden="true" />
+                <article className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#07080d] p-10 shadow-[0_40px_140px_-60px_rgba(11,30,65,0.85)]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.08)_0%,_transparent_55%)]" aria-hidden="true" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.12)_0%,_transparent_65%)]" aria-hidden="true" />
 
-                <div className="relative z-10 flex flex-col gap-6">
-                  <div className="relative flex h-12 w-12 items-center justify-center">
-                    {item.icon}
+                  <div className="relative z-10 flex flex-col gap-6">
+                    <div className="relative flex h-12 w-12 items-center justify-center">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
+                    <p className="text-white/70 text-base leading-relaxed">{item.description}</p>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
-                  <p className="text-white/70 text-base leading-relaxed">{item.description}</p>
-                </div>
-              </article>
+                </article>
+              </Reveal>
             ))}
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
-            {secondRow.map((item) => (
-              <article
+            {secondRow.map((item, index) => (
+              <Reveal
                 key={item.title}
-                className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#07080d] p-10 shadow-[0_40px_140px_-60px_rgba(11,30,65,0.85)]"
+                animation="fade-up"
+                duration={1050}
+                delay={220 + (firstRow.length + index) * 130}
+                className="h-full"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.08)_0%,_transparent_55%)]" aria-hidden="true" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.12)_0%,_transparent_65%)]" aria-hidden="true" />
+                <article className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[#07080d] p-10 shadow-[0_40px_140px_-60px_rgba(11,30,65,0.85)]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.08)_0%,_transparent_55%)]" aria-hidden="true" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.12)_0%,_transparent_65%)]" aria-hidden="true" />
 
-                <div className="relative z-10 flex flex-col gap-6">
-                  <div className="relative flex h-12 w-12 items-center justify-center">
-                    {item.icon}
+                  <div className="relative z-10 flex flex-col gap-6">
+                    <div className="relative flex h-12 w-12 items-center justify-center">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
+                    <p className="text-white/70 text-base leading-relaxed">{item.description}</p>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
-                  <p className="text-white/70 text-base leading-relaxed">{item.description}</p>
-                </div>
-              </article>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>

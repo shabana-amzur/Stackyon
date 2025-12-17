@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -26,7 +27,9 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col bg-black">
           <Header />
           <main className="flex-1">{children}</main>
-          <Footer />
+          <Reveal animation="fade-up" duration={850} delay={140} className="w-full">
+            <Footer />
+          </Reveal>
         </div>
       </body>
     </html>

@@ -1,6 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
+import Reveal from '@/components/Reveal';
 
 const cards = [
   {
@@ -55,21 +57,22 @@ const cards = [
 
 export default function WhatSetsUsApartSection() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  let cardSerial = 0;
 
   return (
     <section className="relative bg-black py-24 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="mb-16 flex flex-col items-center gap-6 text-center">
           <span
-            className="inline-block rounded-full border border-white/20 bg-white/5 px-4 py-2 font-medium text-white/80"
-            style={{ fontSize: '0.975rem' }}
+            className="inline-block rounded-full border border-white/20 bg-white/5 px-4 py-2 font-medium text-white/80 reveal-child"
+            style={{ fontSize: '0.975rem', transitionDelay: '80ms' }}
           >
             Features
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-white reveal-child" style={{ transitionDelay: '140ms' }}>
             From Idea to <span className="bg-gradient-to-r from-sky-300 via-indigo-300 to-violet-300 bg-clip-text text-transparent">Action in Minutes</span>
           </h2>
-          <p className="max-w-3xl text-lg text-white/70">
+          <p className="max-w-3xl text-lg text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>
             We blend real-time transparency, bank-grade security, and predictive intelligence to power the next generation of finance experiences.
           </p>
         </div>
@@ -79,12 +82,18 @@ export default function WhatSetsUsApartSection() {
           { items: cards.slice(5, 8), columns: 'md:grid-cols-2 lg:grid-cols-3' },
         ].map((row, rowIndex) => (
           <div key={rowIndex} className={`grid gap-8 ${row.columns} ${rowIndex > 0 ? 'mt-10' : ''} items-stretch`}>
-            {row.items.map((card) => (
-              <div
-                key={card.title}
-                className="relative flex h-full flex-col rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/90 to-black/80 p-8 shadow-[0_40px_120px_-40px_rgba(2,20,34,0.6)] backdrop-blur-xl"
-              >
-                  <>
+            {row.items.map((card) => {
+              const delay = 220 + cardSerial * 80;
+              cardSerial += 1;
+              return (
+                <Reveal
+                  key={card.title}
+                  animation="fade-up"
+                  duration={1050}
+                  delay={delay}
+                  className="h-full"
+                >
+                  <div className="relative flex h-full flex-col rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/90 to-black/80 p-8 shadow-[0_40px_120px_-40px_rgba(2,20,34,0.6)] backdrop-blur-xl">
                     {card.image && (
                       <button
                         type="button"
@@ -92,11 +101,12 @@ export default function WhatSetsUsApartSection() {
                         className="group mb-6 block w-full flex-shrink-0 focus:outline-none"
                       >
                         <div className="relative h-56 w-full overflow-hidden rounded-lg bg-gradient-to-br from-white to-white/90 shadow-[0_25px_65px_-40px_rgba(15,23,42,0.8)]">
-                          <img
+                          <Image
                             src={card.image}
                             alt={card.imageAlt ?? card.title}
-                            loading="lazy"
-                            className="absolute inset-0 h-full w-full origin-top-left scale-[1.8] object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.9]"
+                            fill
+                            className="object-cover object-left-top transition-transform duration-700 origin-top-left scale-[1.8] group-hover:scale-[1.9]"
+                            sizes="(max-width: 1024px) 100vw, 33vw"
                           />
                         </div>
                         <span className="sr-only">Open {card.title} image in lightbox</span>
@@ -107,9 +117,10 @@ export default function WhatSetsUsApartSection() {
                       <h3 className="text-2xl font-semibold text-white mb-3">{card.title}</h3>
                       <p className="text-white/70 text-base leading-relaxed">{card.description}</p>
                     </div>
-                  </>
-              </div>
-            ))}
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         ))}
       </div>
@@ -123,11 +134,16 @@ export default function WhatSetsUsApartSection() {
             className="relative max-w-5xl w-full rounded-3xl border border-white/20 bg-black/60 p-4"
             onClick={(event) => event.stopPropagation()}
           >
-            <img
-              src={lightbox.src}
-              alt={lightbox.alt}
-              className="h-full w-full max-h-[80vh] object-contain"
-            />
+            <div className="relative h-full w-full" style={{ minHeight: '300px' }}>
+              <Image
+                src={lightbox.src}
+                alt={lightbox.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                priority
+              />
+            </div>
             <button
               type="button"
               onClick={() => setLightbox(null)}

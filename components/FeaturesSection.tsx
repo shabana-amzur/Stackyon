@@ -1,5 +1,6 @@
 'use client';
 
+import Reveal from '@/components/Reveal';
 import type { ReactNode } from 'react';
 
 type FeatureDefinition = {
@@ -11,7 +12,8 @@ type FeatureDefinition = {
 const features: FeatureDefinition[] = [
   {
     title: 'Build Complex Apps, Simply',
-    description: 'Create enterprise workflows, decision logic, and UI screens, even for highly custom use cases without code.',
+    description:
+      'Create enterprise workflows, decision logic, and UI screens, even for highly custom use cases without code.',
     icon: (gradientId) => (
       <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
         <defs>
@@ -30,7 +32,8 @@ const features: FeatureDefinition[] = [
   },
   {
     title: 'AI Agents Built Into Every Flow',
-    description: 'Embed cognitive AI agents to interpret data, make decisions, and automate tasks end-to-end.',
+    description:
+      'Embed cognitive AI agents to interpret data, make decisions, and automate tasks end-to-end.',
     icon: (gradientId) => (
       <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
         <defs>
@@ -49,7 +52,8 @@ const features: FeatureDefinition[] = [
   },
   {
     title: 'End-to-End App Delivery',
-    description: 'Model data, configure rules, design UI, build workflows, and deploy, all from one unified platform.',
+    description:
+      'Model data, configure rules, design UI, build workflows, and deploy, all from one unified platform.',
     icon: (gradientId) => (
       <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
         <defs>
@@ -71,7 +75,8 @@ const features: FeatureDefinition[] = [
   },
   {
     title: 'Enterprise-Ready From Day One',
-    description: 'Security, governance, multi-environment deployment, and scalability for real-world enterprise workloads.',
+    description:
+      'Security, governance, multi-environment deployment, and scalability for real-world enterprise workloads.',
     icon: (gradientId) => (
       <svg viewBox="0 0 64 64" className="h-12 w-12" fill="none" aria-hidden="true">
         <defs>
@@ -93,44 +98,40 @@ const features: FeatureDefinition[] = [
 export default function FeaturesSection() {
   return (
     <section className="relative bg-black py-24 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[500px]" style={{ background: 'radial-gradient(circle, rgba(131, 103, 255, 0.45) 0%, rgba(131, 103, 255, 0.3) 40%, transparent 70%)', filter: 'blur(80px)' }} />
-      </div>
-
-      <div className="relative z-10 max-w-[80rem] mx-auto px-4">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16 leading-tight">
-          Value Proposition
-        </h2>
-
-        {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="relative z-10 mx-auto max-w-[80rem] px-4">
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300"
+            <Reveal
+              key={feature.title}
+              animation="fade-down"
+              duration={1200}
+              delay={240 + index * 220}
+              className="h-full"
             >
-              {/* Gradient glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 rounded-2xl transition-all duration-300" />
-              
-              <div className="relative z-10">
-                {/* Icon */}
-                <div className="relative mb-6 h-12 w-12">
-                  {feature.icon(`feature-gradient-${index}`)}
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-8 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-[0_40px_90px_-45px_rgba(56,189,248,0.45)]">
+                <div className="feature-card-grid" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/0 to-purple-500/0 transition-all duration-700 group-hover:from-blue-500/10 group-hover:via-sky-500/5 group-hover:to-purple-500/10" />
+                <span className="feature-card-line" />
+                <div className="feature-card-overlay">
+                  <div className="feature-card-beam" />
+                  <div className="feature-card-beam secondary" />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  {feature.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-white/60 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
+                <div className="relative z-10 flex flex-1 flex-col gap-5">
+                  <div className="h-12 w-12">{feature.icon(`feature-gradient-${index}`)}</div>
+                  <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
+                  <p className="text-sm leading-relaxed text-white/60">{feature.description}</p>
+                  <div className="mt-auto pt-4">
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-sky-300/90 transition-all duration-300 group-hover:text-white">
+                      Explore capability
+                      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-sky-400/40 text-xs transition-transform duration-300 group-hover:translate-x-1">
+                        {'>'}
+                      </span>
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
