@@ -4,13 +4,12 @@ import { CalendarDaysIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/o
 
 export default function CTASection() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#05070d] py-24">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" aria-hidden="true" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.25)_0%,_rgba(5,7,13,0)_55%)]" aria-hidden="true" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(56,189,248,0.2)_0%,_rgba(5,7,13,0)_60%)]" aria-hidden="true" />
+    <section className="relative isolate overflow-hidden bg-black py-24">
+      <div className="absolute inset-x-0 top-0 h-px bg-gray-800" aria-hidden="true" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gray-800" aria-hidden="true" />
 
-      <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-8 px-4 text-center text-white">
-        <h2 className="max-w-4xl text-4xl font-bold leading-tight text-white md:text-5xl md:leading-tight">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
+        <h2 className="text-4xl font-bold leading-tight text-white md:text-5xl md:leading-tight">
           See Stackyon in action.
           <br className="hidden md:block" />
           Build smarter, modernize faster,
