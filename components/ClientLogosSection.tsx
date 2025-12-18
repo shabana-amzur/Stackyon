@@ -3,15 +3,23 @@ import Image from 'next/image';
 type LogoMeta = {
   src: string;
   alt: string;
-  className?: string;
+  imageClassName?: string;
+  wrapperClassName?: string;
+  sizeHint?: string;
 };
 
 const logos: LogoMeta[] = [
-  { src: '/amzur-logo-2022.png', alt: 'Amzur Technologies', className: 'scale-95' },
-  { src: '/awareness-usa.png', alt: 'Awareness USA', className: 'scale-95' },
-  { src: '/georgia-state.png', alt: 'Georgia State University', className: 'scale-125' },
-  { src: '/ifb-logo.png', alt: 'IFB', className: 'scale-90' },
-  { src: '/logo_b001.png', alt: 'Stackyon Client Logo', className: 'scale-95' },
+  { src: '/amzur-logo-2022.png', alt: 'Amzur Technologies', imageClassName: 'scale-95' },
+  { src: '/awareness-usa.png', alt: 'Awareness USA', imageClassName: 'scale-95' },
+  {
+    src: '/georgia-state.png',
+    alt: 'Georgia State University',
+    imageClassName: 'scale-100',
+    wrapperClassName: 'h-[60px] w-[160px] md:h-[60px] md:w-[160px]',
+    sizeHint: '160px',
+  },
+  { src: '/ifb-logo.png', alt: 'IFB', imageClassName: 'scale-90' },
+  { src: '/logo_b001.png', alt: 'Stackyon Client Logo', imageClassName: 'scale-95' },
 ];
 
 export default function ClientLogosSection() {
@@ -26,14 +34,14 @@ export default function ClientLogosSection() {
           {logos.map((logo) => (
             <div
               key={logo.alt}
-              className="relative flex h-12 w-44 items-center justify-center rounded-md px-4 opacity-80 transition-opacity duration-300 hover:opacity-100 md:h-12 md:w-44"
+              className={`relative flex h-12 w-44 items-center justify-center rounded-md px-4 opacity-80 transition-opacity duration-300 hover:opacity-100 md:h-12 md:w-44 ${logo.wrapperClassName ?? ''}`.trim()}
             >
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 fill
-                sizes="176px"
-                className={`object-contain transition-transform duration-300 ${logo.className ?? ''}`}
+                sizes={logo.sizeHint ?? '176px'}
+                className={`object-contain transition-transform duration-300 ${logo.imageClassName ?? ''}`}
               />
             </div>
           ))}
