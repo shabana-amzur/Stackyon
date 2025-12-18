@@ -13,19 +13,6 @@ type MegaMenuItem = {
 };
 
 const navigation = {
-  solutions: {
-    name: 'Solutions',
-    description: 'Modernize complex operations with intelligent automation, integrations, and AI copilots.',
-    hasDropdown: true,
-    items: [
-      { name: 'Process Automation', href: '/solutions/process-automation' },
-      { name: 'Workflow Builders', href: '/solutions/workflow-builders' },
-      { name: 'Application Integration', href: '/solutions/application-integration' },
-      { name: 'Application Development', href: '/solutions/application-development' },
-      { name: 'Legacy Modernization', href: '/solutions/legacy-modernization' },
-      { name: 'Application Rationalization', href: '/solutions/application-rationalization' },
-    ],
-  },
   platform: {
     name: 'Platform',
     description: 'The unified Stackyon low-code platform that connects data, logic, and automation end-to-end.',
@@ -45,40 +32,37 @@ const navigation = {
       { title: 'User Experience', name: 'User Experience', description: 'Customer Experience Automation', href: '/platform/user-experience' },
     ],
   },
-  caseStudies: {
-    name: 'Case Studies',
-    href: '/case-studies',
-  },
-  blog: {
-    name: 'Blog',
-    href: '/blog',
+  solutions: {
+    name: 'Solutions',
+    description: 'Modernize complex operations with intelligent automation, integrations, and AI copilots.',
+    hasDropdown: true,
+    items: [
+      { name: 'Process Automation', href: '/solutions/process-automation' },
+      { name: 'Workflow Builders', href: '/solutions/workflow-builders' },
+      { name: 'Application Integration', href: '/solutions/application-integration' },
+      { name: 'Application Development', href: '/solutions/application-development' },
+      { name: 'Legacy Modernization', href: '/solutions/legacy-modernization' },
+      { name: 'Application Rationalization', href: '/solutions/application-rationalization' },
+    ],
   },
   resources: {
-    name: 'FAQ',
-    href: '/resources',
+    name: 'Resources',
+    description: 'Dive into case studies, FAQs, and training materials to accelerate success.',
+    hasDropdown: true,
+    items: [
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'FAQ', href: '/resources' },
+      { name: 'Training & Knowledge', href: '/ecosystem/training' },
+    ],
   },
   about: {
-    name: 'About',
+    name: 'About Us',
     description: 'Meet the Stackyon team and get in touch with our enterprise transformation experts.',
     hasDropdown: true,
     items: [
       { name: 'StackPort — Partner Program', href: '/ecosystem/stackport' },
       { name: 'Our Company', href: '/about/company' },
       { name: 'Contact Us', href: '/about/contact' },
-    ],
-  },
-  ecosystem: {
-    name: 'Success Ecosystem',
-    description: 'Tap into partner expertise, enablement programs, and dedicated success teams.',
-    hasDropdown: true,
-    items: [
-      { name: 'Consulting Services', href: '/ecosystem/consulting' },
-      { name: 'Development Services', href: '/ecosystem/development' },
-      { name: 'Integration Services', href: '/ecosystem/integration' },
-      { name: 'Optimization Services', href: '/ecosystem/optimization' },
-      { name: 'QA & Testing Support', href: '/ecosystem/qa-testing' },
-      { name: 'Training & Knowledge', href: '/ecosystem/training' },
-      { name: 'Technical Support', href: '/ecosystem/technical-support' },
     ],
   },
 };
@@ -180,25 +164,6 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-10 ml-16">
-          {/* Solutions Dropdown */}
-          <Menu as="div" className="relative">
-            <Menu.Button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors">
-              {navigation.solutions.name}
-              <ChevronDownIcon className="w-4 h-4" />
-            </Menu.Button>
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-100"
-              enterFrom="transform opacity-0 scale-95"
-              enterTo="transform opacity-100 scale-100"
-              leave="transition ease-in duration-75"
-              leaveFrom="transform opacity-100 scale-100"
-              leaveTo="transform opacity-0 scale-95"
-            >
-              {renderMegaMenu(navigation.solutions)}
-            </Transition>
-          </Menu>
-
           {/* Platform Dropdown */}
           <Menu as="div" className="relative">
             <Menu.Button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors">
@@ -218,20 +183,43 @@ export default function Header() {
             </Transition>
           </Menu>
 
-          {/* Case Studies */}
-          <a href={navigation.caseStudies.href} className="text-white/90 hover:text-white transition-colors">
-            {navigation.caseStudies.name}
-          </a>
+          {/* Solutions Dropdown */}
+          <Menu as="div" className="relative">
+            <Menu.Button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors">
+              {navigation.solutions.name}
+              <ChevronDownIcon className="w-4 h-4" />
+            </Menu.Button>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
+              {renderMegaMenu(navigation.solutions)}
+            </Transition>
+          </Menu>
 
-          {/* Blog */}
-          <a href={navigation.blog.href} className="text-white/90 hover:text-white transition-colors">
-            {navigation.blog.name}
-          </a>
-
-          {/* Resources */}
-          <a href={navigation.resources.href} className="text-white/90 hover:text-white transition-colors">
-            {navigation.resources.name}
-          </a>
+          {/* Resources Dropdown */}
+          <Menu as="div" className="relative">
+            <Menu.Button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors">
+              {navigation.resources.name}
+              <ChevronDownIcon className="w-4 h-4" />
+            </Menu.Button>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
+            >
+              {renderMegaMenu(navigation.resources)}
+            </Transition>
+          </Menu>
 
           {/* About Dropdown */}
           <Menu as="div" className="relative">
@@ -249,25 +237,6 @@ export default function Header() {
               leaveTo="transform opacity-0 scale-95"
             >
               {renderMegaMenu(navigation.about)}
-            </Transition>
-          </Menu>
-
-          {/* Success Ecosystem Dropdown */}
-          <Menu as="div" className="relative">
-            <Menu.Button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors">
-              {navigation.ecosystem.name}
-              <ChevronDownIcon className="w-4 h-4" />
-            </Menu.Button>
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-100"
-              enterFrom="transform opacity-0 scale-95"
-              enterTo="transform opacity-100 scale-100"
-              leave="transition ease-in duration-75"
-              leaveFrom="transform opacity-100 scale-100"
-              leaveTo="transform opacity-0 scale-95"
-            >
-              {renderMegaMenu(navigation.ecosystem, 'right')}
             </Transition>
           </Menu>
         </nav>
@@ -297,22 +266,6 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-black/95 backdrop-blur-xl border-b border-white/10">
           <div className="max-w-[80rem] mx-auto px-4 py-4 space-y-3">
-            {/* Solutions */}
-            <div>
-              <div className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-2">
-                {navigation.solutions.name}
-              </div>
-              {navigation.solutions.items.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block py-2 pl-4 text-sm text-white/80 hover:text-white transition-colors"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-
             {/* Platform */}
             <div>
               <div className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-2">
@@ -329,36 +282,12 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Case Studies */}
-            <a
-              href={navigation.caseStudies.href}
-              className="block py-2 text-white/80 hover:text-white transition-colors"
-            >
-              {navigation.caseStudies.name}
-            </a>
-
-            {/* Blog */}
-            <a
-              href={navigation.blog.href}
-              className="block py-2 text-white/80 hover:text-white transition-colors"
-            >
-              {navigation.blog.name}
-            </a>
-
-            {/* Resources */}
-            <a
-              href={navigation.resources.href}
-              className="block py-2 text-white/80 hover:text-white transition-colors"
-            >
-              {navigation.resources.name}
-            </a>
-
-            {/* About */}
+            {/* Solutions */}
             <div>
               <div className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-2">
-                {navigation.about.name}
+                {navigation.solutions.name}
               </div>
-              {navigation.about.items.map((item) => (
+              {navigation.solutions.items.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -369,12 +298,28 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Success Ecosystem */}
+            {/* Resources */}
             <div>
               <div className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-2">
-                {navigation.ecosystem.name}
+                {navigation.resources.name}
               </div>
-              {navigation.ecosystem.items.map((item) => (
+              {navigation.resources.items.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block py-2 pl-4 text-sm text-white/80 hover:text-white transition-colors"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+
+            {/* About */}
+            <div>
+              <div className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-2">
+                {navigation.about.name}
+              </div>
+              {navigation.about.items.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}

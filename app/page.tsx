@@ -7,12 +7,16 @@ import IndustriesSection from "@/components/IndustriesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
+import ClientLogosSection from "@/components/ClientLogosSection";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black">
       <Reveal animation="fade-up" duration={1100}>
         <HeroSection />
+      </Reveal>
+      <Reveal animation="fade-up" duration={900} delay={60}>
+        <ClientLogosSection />
       </Reveal>
       <Reveal animation="fade-up" duration={950} delay={80}>
         <FeaturesSection />

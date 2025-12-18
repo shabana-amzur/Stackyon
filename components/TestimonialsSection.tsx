@@ -19,15 +19,6 @@ const testimonials = [
     image: '/testimonials/srini-kalla.png',
   },
 ];
-
-const clientLogos = [
-  { src: '/logos/awareness-usa.png', alt: 'Awareness USA', width: 178 },
-  { src: '/logos/amzur-technologies.png', alt: 'Amzur Technologies', width: 178 },
-  { src: '/logos/wellgistics.png', alt: 'Wellgistics Health', width: 178 },
-  { src: '/logos/gsu_logo.png', alt: 'Georgia State University', width: 210 },
-  { src: '/logos/ifb_logo.png', alt: 'IFB', width: 150 },
-];
-
 export default function TestimonialsSection() {
   return (
     <section className="relative overflow-hidden bg-white py-24">
@@ -107,29 +98,6 @@ export default function TestimonialsSection() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal
-          animation="fade-up"
-          duration={1000}
-          delay={340}
-          className="mt-12 mx-auto flex w-full max-w-[1360px] flex-wrap items-center justify-center gap-8 md:flex-nowrap"
-        >
-          {clientLogos.map((logo) => (
-            <div
-              key={logo.alt}
-              className="relative h-16 flex-shrink-0 opacity-85 transition-opacity duration-300 hover:opacity-100"
-              style={{ width: `${logo.width}px` }}
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                fill
-                sizes={`${logo.width}px`}
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </Reveal>
       </div>
     </section>
   );
