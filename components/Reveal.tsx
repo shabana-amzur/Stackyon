@@ -1,8 +1,8 @@
 
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import type { CSSProperties, HTMLAttributes, ReactNode, Ref } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 
 type RevealAnimation = 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'zoom-in';
 
@@ -32,7 +32,7 @@ export default function Reveal({
   style,
   ...rest
 }: RevealProps) {
-  const ref = useRef<HTMLElement | null>(null);
+  const elementRef = useRef<HTMLElement | null>(null);
   const getPrefersReducedMotion = () =>
     typeof window !== 'undefined' && typeof window.matchMedia === 'function'
       ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -60,7 +60,7 @@ export default function Reveal({
   }, [once]);
 
   useEffect(() => {
-    const element = ref.current;
+    const element = elementRef.current;
     if (!element || prefersReducedMotion) return;
 
     const observer = new IntersectionObserver(
@@ -84,6 +84,10 @@ export default function Reveal({
     return () => observer.disconnect();
   }, [once, prefersReducedMotion, threshold]);
 
+  const setElementRef = useCallback((node: HTMLElement | null) => {
+    elementRef.current = node;
+  }, []);
+
   const Tag = as;
   const classes = [
     'reveal-section',
@@ -96,7 +100,7 @@ export default function Reveal({
 
   return (
     <Tag
-      ref={ref as unknown as Ref<HTMLElement>}
+      ref={setElementRef}
       className={classes}
       style={{
         transitionDuration: `${duration}ms`,
