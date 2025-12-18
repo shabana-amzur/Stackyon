@@ -23,17 +23,14 @@ export default function ClientLogosSection() {
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-12 px-4 text-center">
         <p className="text-sm font-medium uppercase tracking-[0.35em] text-white/40">
-          Trusted by 50,000+ Marketers
+          Trusted by 50,000+ Companies
         </p>
-        <h2 className="max-w-3xl text-2xl font-semibold text-white/80 md:text-3xl">
-          Build landing pages that work with a partner marketers trust worldwide
-        </h2>
 
-        <div className="flex w-full flex-wrap items-center justify-center gap-10 md:gap-16">
+        <div className="flex w-full max-w-6xl flex-wrap items-center justify-center gap-10 md:flex-nowrap md:gap-16">
           {logos.map((logo) => (
             <div
               key={logo.alt}
-              className="relative h-12 w-40 opacity-70 transition-opacity duration-300 hover:opacity-100 md:h-14 md:w-44"
+              className="relative h-12 w-44 opacity-70 transition-opacity duration-300 hover:opacity-100 md:h-14 md:w-48"
             >
               <Image
                 src={logo.src}
