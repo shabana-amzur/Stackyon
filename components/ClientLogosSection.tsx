@@ -1,11 +1,17 @@
 import Image from 'next/image';
 
-const logos = [
-  { src: '/amzur-logo-2022.png', alt: 'Amzur Technologies' },
-  { src: '/awareness-usa.png', alt: 'Awareness USA' },
-  { src: '/georgia-state.png', alt: 'Georgia State University' },
-  { src: '/ifb-logo.png', alt: 'IFB' },
-  { src: '/logo_b001.png', alt: 'Stackyon Client Logo' },
+type LogoMeta = {
+  src: string;
+  alt: string;
+  className?: string;
+};
+
+const logos: LogoMeta[] = [
+  { src: '/amzur-logo-2022.png', alt: 'Amzur Technologies', className: 'scale-95' },
+  { src: '/awareness-usa.png', alt: 'Awareness USA', className: 'scale-95' },
+  { src: '/georgia-state.png', alt: 'Georgia State University', className: 'scale-110' },
+  { src: '/ifb-logo.png', alt: 'IFB', className: 'scale-90' },
+  { src: '/logo_b001.png', alt: 'Stackyon Client Logo', className: 'scale-95' },
 ];
 
 export default function ClientLogosSection() {
@@ -20,14 +26,14 @@ export default function ClientLogosSection() {
           {logos.map((logo) => (
             <div
               key={logo.alt}
-              className="relative h-12 w-44 opacity-80 transition-opacity duration-300 hover:opacity-100 md:h-12 md:w-44"
+              className="relative flex h-12 w-44 items-center justify-center rounded-md px-4 opacity-80 transition-opacity duration-300 hover:opacity-100 md:h-12 md:w-44"
             >
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 fill
                 sizes="176px"
-                className="object-contain"
+                className={`object-contain transition-transform duration-300 ${logo.className ?? ''}`}
               />
             </div>
           ))}
