@@ -9,7 +9,7 @@ type LogoMeta = {
 const logos: LogoMeta[] = [
   { src: '/amzur-logo-2022.png', alt: 'Amzur Technologies', className: 'scale-95' },
   { src: '/awareness-usa.png', alt: 'Awareness USA', className: 'scale-95' },
-  { src: '/georgia-state.png', alt: 'Georgia State University', className: 'scale-110' },
+  { src: '/georgia-state.png', alt: 'Georgia State University', className: 'scale-125' },
   { src: '/ifb-logo.png', alt: 'IFB', className: 'scale-90' },
   { src: '/logo_b001.png', alt: 'Stackyon Client Logo', className: 'scale-95' },
 ];
