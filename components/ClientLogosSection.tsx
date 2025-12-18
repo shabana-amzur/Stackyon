@@ -15,7 +15,7 @@ const logos: LogoMeta[] = [
     src: '/georgia-state.png',
     alt: 'Georgia State University',
     imageClassName: 'scale-100',
-    wrapperClassName: 'h-[60px] w-[160px] md:h-[60px] md:w-[160px]',
+    wrapperClassName: 'h-[100px] w-[160px] md:h-[100px] md:w-[160px]',
     sizeHint: '160px',
   },
   { src: '/ifb-logo.png', alt: 'IFB', imageClassName: 'scale-90' },
