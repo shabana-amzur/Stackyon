@@ -10,18 +10,8 @@ const logos = [
 
 export default function ClientLogosSection() {
   return (
-    <section className="relative w-full bg-[#05060a] py-16 md:py-20">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#05060a] via-[#05060a] to-[#020305]" aria-hidden="true">
-        <div
-          className="absolute left-1/2 top-1/2 h-[480px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
-          style={{
-            background:
-              'radial-gradient(circle at center, rgba(255,255,255,0.12), rgba(10,11,18,0.0) 60%)',
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-12 px-4 text-center">
+    <section className="w-full bg-black py-16 md:py-20">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 px-4 text-center">
         <p className="text-sm font-medium uppercase tracking-[0.35em] text-white/40">
           Trusted by 50,000+ Companies
         </p>
@@ -30,7 +20,7 @@ export default function ClientLogosSection() {
           {logos.map((logo) => (
             <div
               key={logo.alt}
-              className="relative h-12 w-44 opacity-70 transition-opacity duration-300 hover:opacity-100 md:h-14 md:w-48"
+              className="relative h-12 w-44 opacity-80 transition-opacity duration-300 hover:opacity-100 md:h-12 md:w-44"
             >
               <Image
                 src={logo.src}
