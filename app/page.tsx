@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import ClientLogosSection from "@/components/ClientLogosSection";
+import ProductTabsSection from "@/components/home/ProductTabsSection";
 
 export default function Home() {
   return (
@@ -18,11 +19,14 @@ export default function Home() {
       <Reveal animation="fade-up" duration={900} delay={60}>
         <ClientLogosSection />
       </Reveal>
-      <Reveal animation="fade-up" duration={950} delay={80}>
+      <Reveal animation="fade-up" duration={900} delay={80}>
         <FeaturesSection />
       </Reveal>
       <Reveal animation="fade-right" duration={950} delay={120}>
         <HowItWorksSection />
+      </Reveal>
+      <Reveal animation="fade-up" duration={900} delay={80}>
+        <ProductTabsSection />
       </Reveal>
       <Reveal animation="fade-left" duration={950} delay={120}>
         <WhatSetsUsApartSection />

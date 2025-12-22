@@ -33,15 +33,6 @@ const platformLinks = [
   { label: 'User Experience', href: '/platform/user-experience' },
 ];
 
-const successEcosystemLinks = [
-  { label: 'Consulting Services', href: '/ecosystem/consulting' },
-  { label: 'Development Services', href: '/ecosystem/development' },
-  { label: 'Integration Services', href: '/ecosystem/integration' },
-  { label: 'Optimization Services', href: '/ecosystem/optimization' },
-  { label: 'QA & Testing Support', href: '/ecosystem/qa-testing' },
-  { label: 'Training & Knowledge', href: '/ecosystem/training' },
-  { label: 'Technical Support', href: '/ecosystem/technical-support' },
-];
 
 const contactDetails = [
   {
@@ -154,7 +145,7 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 pt-[50px] pb-[130px] lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.8fr)_repeat(3,minmax(0,1fr))]">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.8fr)_repeat(2,minmax(0,1fr))]">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <Image src="/stackyon-logo-white.png" alt="Stackyon" width={80} height={80} className="h-14 w-auto" />
@@ -233,18 +224,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2rem] text-white/50">Success Ecosystem</h3>
-            <ul className="space-y-3 text-base text-white/70">
-              {successEcosystemLinks.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="transition hover:text-white">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </div>
 
