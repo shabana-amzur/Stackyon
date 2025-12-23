@@ -294,7 +294,10 @@ export default function ProductTabsSection() {
             >
               Close
             </button>
-            <div className="relative mx-auto w-full" style={{ minHeight: "320px" }}>
+            <div
+              className="relative mx-auto w-full"
+              style={{ width: "min(92vw, 1200px)", height: "min(80vh, 720px)" }}
+            >
               <Image
                 src={lightboxImage.src}
                 alt={lightboxImage.alt}
