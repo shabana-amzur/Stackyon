@@ -281,7 +281,11 @@ export default function ProductTabsSection() {
           >
             <button
               type="button"
-              onClick={() => setLightboxImage(null)}
+              onClick={(event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                setLightboxImage(null);
+              }}
               className="absolute right-4 top-4 rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white/80 transition hover:bg-white/20 hover:text-white"
             >
               Close
