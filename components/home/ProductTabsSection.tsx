@@ -192,7 +192,14 @@ export default function ProductTabsSection() {
               <div className="relative w-full lg:basis-[70%] lg:max-w-[70%]">
                 {activeTab.screenImageSrc ? (
                   <div className="relative flex h-full w-full items-center justify-center">
-                    <div className="relative flex max-h-[520px] w-full max-w-[760px] items-center justify-center rounded-[32px] bg-[#04070f] p-3 shadow-[0_0_0_1px_rgba(148,163,184,0.35),0_0_22px_rgba(56,189,248,0.25)] before:absolute before:inset-0 before:rounded-[32px] before:border before:border-sky-400/60 before:opacity-90 before:[filter:blur(0.25px)] after:absolute after:-inset-[2px] after:rounded-[34px] after:border after:border-sky-500/40 after:opacity-75 after:[filter:blur(8px)] after:content-['']">
+                    <div
+                      className="relative flex max-h-[520px] w-full max-w-[760px] items-center justify-center rounded-[32px] border border-sky-400/50 bg-[#04070f] p-3"
+                      style={{
+                        boxShadow:
+                          '0 0 0 1px rgba(139,92,246,0.35), 0 0 22px rgba(139,92,246,0.35), 0 0 44px rgba(56,189,248,0.3), 0 0 65px rgba(6,182,212,0.25)',
+                      }}
+                    >
+                      <span className="pointer-events-none absolute inset-[6px] rounded-[26px] border border-sky-300/35" aria-hidden="true" />
                       <Image
                         src={activeTab.screenImageSrc}
                         alt={activeTab.screenTitle}
