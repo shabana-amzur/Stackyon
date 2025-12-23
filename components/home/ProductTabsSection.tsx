@@ -192,7 +192,7 @@ export default function ProductTabsSection() {
               <div className="relative w-full lg:basis-[70%] lg:max-w-[70%]">
                 {activeTab.screenImageSrc ? (
                   <div className="relative flex h-full w-full items-center justify-center">
-                    <div className="relative flex max-h-[520px] w-full max-w-[760px] items-center justify-center rounded-[32px] bg-[#04070f] p-3 shadow-[0_0_0_1px_rgba(148,163,184,0.25),0_0_45px_rgba(56,189,248,0.35),0_35px_120px_-60px_rgba(56,189,248,0.45)] before:absolute before:inset-0 before:rounded-[32px] before:border before:border-sky-500/30 before:opacity-70 before:[filter:blur(0.5px)] after:absolute after:-inset-6 after:rounded-[40px] after:bg-gradient-to-r after:from-sky-500/15 after:via-indigo-500/10 after:to-purple-500/15 after:blur-[36px] after:content-['']">
+                    <div className="relative flex max-h-[520px] w-full max-w-[760px] items-center justify-center rounded-[32px] bg-[#04070f] p-3 shadow-[0_0_0_1px_rgba(148,163,184,0.35),0_0_22px_rgba(56,189,248,0.25)] before:absolute before:inset-0 before:rounded-[32px] before:border before:border-sky-400/60 before:opacity-90 before:[filter:blur(0.25px)] after:absolute after:-inset-[2px] after:rounded-[34px] after:border after:border-sky-500/40 after:opacity-75 after:[filter:blur(8px)] after:content-['']">
                       <Image
                         src={activeTab.screenImageSrc}
                         alt={activeTab.screenTitle}
