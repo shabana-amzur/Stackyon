@@ -124,15 +124,7 @@ export default function ProductTabsSection() {
   );
 
   return (
-    <section
-      className="w-full bg-[#05070d] py-24"
-      style={{
-        backgroundImage: "url('/bg-step.webp')",
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'top center',
-      }}
-    >
+    <section className="w-full bg-[#05070d] py-24">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4">
         <div className="flex flex-col gap-6">
           <div role="tablist" aria-label="Product capability tabs" className="flex flex-col items-center gap-4">
