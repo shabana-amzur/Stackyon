@@ -102,6 +102,7 @@ const TABS: ProductTab[] = [
 
 export default function ProductTabsSection() {
   const [activeTabId, setActiveTabId] = useState<string>(TABS[0].id);
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
   const activeTab = TABS.find((tab) => tab.id === activeTabId) ?? TABS[0];
 
   const handleSelect = useCallback((nextId: string) => {
@@ -192,23 +193,28 @@ export default function ProductTabsSection() {
               <div className="relative w-full lg:basis-[70%] lg:max-w-[70%]">
                 {activeTab.screenImageSrc ? (
                   <div className="relative flex h-full w-full items-center justify-center">
-                    <div
-                      className="relative flex max-h-[520px] w-full max-w-[760px] items-center justify-center rounded-[32px] border border-sky-400/50 bg-[#04070f] p-3"
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setLightboxImage({ src: activeTab.screenImageSrc!, alt: activeTab.screenTitle })
+                      }
+                      className="group relative flex max-h-[520px] w-full max-w-[760px] items-center justify-center rounded-[32px] border border-sky-400/50 bg-[#04070f] p-3 transition-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
                       style={{
                         boxShadow:
                           '0 0 0 1px rgba(139,92,246,0.35), 0 0 22px rgba(139,92,246,0.35), 0 0 44px rgba(56,189,248,0.3), 0 0 65px rgba(6,182,212,0.25)',
                       }}
                     >
                       <span className="pointer-events-none absolute inset-[6px] rounded-[26px] border border-sky-300/35" aria-hidden="true" />
+                      <span className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-br from-sky-400/0 via-sky-400/0 to-indigo-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-10" aria-hidden="true" />
                       <Image
                         src={activeTab.screenImageSrc}
                         alt={activeTab.screenTitle}
                         width={960}
                         height={600}
-                        className="relative z-10 h-full w-auto rounded-[22px] object-contain"
+                        className="relative z-10 h-full w-auto rounded-[12px] object-contain"
                         priority={false}
                       />
-                    </div>
+                    </button>
                   </div>
                 ) : (
                   <div className="flex flex-col gap-4 bg-gradient-to-br from-slate-900 via-slate-900 to-black px-10 py-12">
@@ -271,6 +277,36 @@ export default function ProductTabsSection() {
           </motion.div>
         </AnimatePresence>
       </div>
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+          onClick={() => setLightboxImage(null)}
+          role="presentation"
+        >
+          <div
+            className="relative w-full max-w-5xl overflow-hidden rounded-3xl border border-white/15 bg-black/70 p-6 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setLightboxImage(null)}
+              className="absolute right-4 top-4 rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white/80 transition hover:bg-white/20 hover:text-white"
+            >
+              Close
+            </button>
+            <div className="relative mx-auto w-full" style={{ minHeight: "320px" }}>
+              <Image
+                src={lightboxImage.src}
+                alt={lightboxImage.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
