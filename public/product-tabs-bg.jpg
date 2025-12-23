@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="https://stackyon.com/xmlrpc.php" />
+	<meta name='robots' content='noindex, follow' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v26.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Page not found - Stackyon</title>
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Page not found - Stackyon" />
+	<meta property="og:site_name" content="Stackyon" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://stackyon.com/#website","url":"https://stackyon.com/","name":"Stackyon","description":"","publisher":{"@id":"https://stackyon.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://stackyon.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://stackyon.com/#organization","name":"Stackyon","url":"https://stackyon.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://stackyon.com/#/schema/logo/image/","url":"https://stackyon.com/wp-content/uploads/2022/12/stackyon-logo-main.png","contentUrl":"https://stackyon.com/wp-content/uploads/2022/12/stackyon-logo-main.png","width":300,"height":93,"caption":"Stackyon"},"image":{"@id":"https://stackyon.com/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//js.hs-scripts.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<style id='wp-img-auto-sizes-contain-inline-css'>img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}</style>
+
+<link data-optimized="1" rel='stylesheet' id='hfe-widgets-style-css' href='https://stackyon.com/wp-content/litespeed/css/5a7ef0c6de69a8bd7d703c35708b7ce3.css?ver=9f922' media='all' />
+<link data-optimized="1" rel='stylesheet' id='premium-addons-css' href='https://stackyon.com/wp-content/litespeed/css/1db94d03644ce226b2ea66427a1baf5a.css?ver=d87ab' media='all' />
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<link data-optimized="1" rel='stylesheet' id='bodhi-svgs-attachment-css' href='https://stackyon.com/wp-content/litespeed/css/6189ffa14e1df22244db7b6f9dd6b0a2.css?ver=6b0a2' media='all' />
+<link data-optimized="1" rel='stylesheet' id='rt-fontawsome-css' href='https://stackyon.com/wp-content/litespeed/css/a3b6086cdae2e6b3d6c1943342e1a4a3.css?ver=01d99' media='all' />
+<link data-optimized="1" rel='stylesheet' id='rt-tpg-css' href='https://stackyon.com/wp-content/litespeed/css/9b3edc16846f3b17aa3627b436faf65f.css?ver=cf878' media='all' />
+<link data-optimized="1" rel='stylesheet' id='eae-css-css' href='https://stackyon.com/wp-content/litespeed/css/29c73715ea84345e0d757c4e8d1b6b3b.css?ver=a0fd9' media='all' />
+<link data-optimized="1" rel='stylesheet' id='eae-peel-css-css' href='https://stackyon.com/wp-content/litespeed/css/b6713f6142904c6d35186208df15f4c3.css?ver=0199f' media='all' />
+<link data-optimized="1" rel='stylesheet' id='font-awesome-4-shim-css' href='https://stackyon.com/wp-content/litespeed/css/e26c6b8ce421079dc3aa18dbbb4c1305.css?ver=a490d' media='all' />
+<link data-optimized="1" rel='stylesheet' id='font-awesome-5-all-css' href='https://stackyon.com/wp-content/litespeed/css/eadb79c5218d0d9a165635eaaf1edba4.css?ver=8d794' media='all' />
+<link data-optimized="1" rel='stylesheet' id='vegas-css-css' href='https://stackyon.com/wp-content/litespeed/css/b8ec93fd85086ca3182fbb3f89c3d83f.css?ver=45b8d' media='all' />
+<link data-optimized="1" rel='stylesheet' id='hfe-style-css' href='https://stackyon.com/wp-content/litespeed/css/f4d242e37793ae6fa1bb30405cfcf609.css?ver=d9788' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-icons-css' href='https://stackyon.com/wp-content/litespeed/css/1f3e5359812dfcb406e090ce832c7d40.css?ver=6d7de' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-frontend-css' href='https://stackyon.com/wp-content/litespeed/css/1264cf1353e2cb27df2f5b9052200de7.css?ver=dd755' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-post-5-css' href='https://stackyon.com/wp-content/litespeed/css/b5a1170358db1480f84e5d4eb18c148c.css?ver=042a4' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-post-27-css' href='https://stackyon.com/wp-content/litespeed/css/32633b5baacecb9f51e18dbf60a5938a.css?ver=d0376' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-post-283-css' href='https://stackyon.com/wp-content/litespeed/css/866dbdb8a10d0f51a936d46676bea43b.css?ver=dc082' media='all' />
+<link data-optimized="1" rel='stylesheet' id='twenty-twenty-one-style-css' href='https://stackyon.com/wp-content/litespeed/css/5d969b6253388b59b90c3ae427b39e41.css?ver=5485b' media='all' />
+<link data-optimized="1" rel='stylesheet' id='twenty-twenty-one-print-style-css' href='https://stackyon.com/wp-content/litespeed/css/8734c543b707dd8f36da29cd72f9041b.css?ver=cdc97' media='all' />
+<link data-optimized="1" rel='stylesheet' id='twenty-twenty-one-custom-style-css' href='https://stackyon.com/wp-content/litespeed/css/f5983da1856e44c83847b9ba8d6b28f2.css?ver=4a9ad' media='all' />
+<link data-optimized="1" rel='stylesheet' id='hfe-elementor-icons-css' href='https://stackyon.com/wp-content/litespeed/css/1f3e5359812dfcb406e090ce832c7d40.css?ver=1821a' media='all' />
+<link data-optimized="1" rel='stylesheet' id='hfe-icons-list-css' href='https://stackyon.com/wp-content/litespeed/css/196f855123925aa22ab7b117404eee2a.css?ver=151d5' media='all' />
+<link data-optimized="1" rel='stylesheet' id='hfe-social-icons-css' href='https://stackyon.com/wp-content/litespeed/css/2af04077cf5fe71c9c1b0c305248c5b8.css?ver=922d0' media='all' />
+<link data-optimized="1" rel='stylesheet' id='hfe-social-share-icons-brands-css' href='https://stackyon.com/wp-content/litespeed/css/e64ca64f4ed64e9b08308cdd161b7b9d.css?ver=329bb' media='all' />
+<link data-optimized="1" rel='stylesheet' id='hfe-social-share-icons-fontawesome-css' href='https://stackyon.com/wp-content/litespeed/css/69b5f953b5b86c4b2e8906b89b441e93.css?ver=ce9b6' media='all' />
+<link data-optimized="1" rel='stylesheet' id='hfe-nav-menu-icons-css' href='https://stackyon.com/wp-content/litespeed/css/1ed95c7c6b6f13ffbddcd16c9c2af93b.css?ver=e196b' media='all' />
+<link data-optimized="1" rel='stylesheet' id='eael-general-css' href='https://stackyon.com/wp-content/litespeed/css/6ab9780853b0f4f468bdf96a8dcf07f0.css?ver=19c9a' media='all' />
+<link data-optimized="1" rel='stylesheet' id='bdt-uikit-css' href='https://stackyon.com/wp-content/litespeed/css/61081d353fcd5ce1c8007915fd683182.css?ver=b52d2' media='all' />
+<link data-optimized="1" rel='stylesheet' id='ep-helper-css' href='https://stackyon.com/wp-content/litespeed/css/c5ffdfb4ccdaf43b8356155d8502ee6a.css?ver=6c061' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-gf-local-roboto-css' href='https://stackyon.com/wp-content/litespeed/css/675922b1b7ffa91b25fbf620844d54ef.css?ver=2260a' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='https://stackyon.com/wp-content/litespeed/css/4e388381eafee0c1a1822bf83d5bb9cd.css?ver=46d56' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-gf-local-opensans-css' href='https://stackyon.com/wp-content/litespeed/css/1d22bd9f3b788595968387437849b4ac.css?ver=7689c' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-gf-local-exo2-css' href='https://stackyon.com/wp-content/litespeed/css/7490cb101c5fa95b70e939194a615743.css?ver=7f04f' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-icons-shared-0-css' href='https://stackyon.com/wp-content/litespeed/css/6afec94aedbde058c4c681ac968d1697.css?ver=f131b' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://stackyon.com/wp-content/litespeed/css/1eb4bc2a7ac7dcc999273c8bc34e0ec6.css?ver=9fe40' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-icons-fa-regular-css' href='https://stackyon.com/wp-content/litespeed/css/09a038ac07bff6c72c18c3ae7c598f45.css?ver=88ab6' media='all' />
+<link data-optimized="1" rel='stylesheet' id='elementor-icons-fa-brands-css' href='https://stackyon.com/wp-content/litespeed/css/87909bdb35b64be8c5c886617176e17c.css?ver=47c65' media='all' />
+<!--n2css--><!--n2js--><script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/4ef8bee1f5dbc0caec6021d98ef77d5b.js?ver=7e581" id="bodhi-dompurify-library-js"></script>
+<script src="https://stackyon.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/82466309d7bfdfbd4626f4135620d882.js?ver=b1d23" id="jquery-migrate-js"></script>
+<script data-optimized="1" id="jquery-js-after">!function($){"use strict";$(document).ready(function(){$(this).scrollTop()>100&&$(".hfe-scroll-to-top-wrap").removeClass("hfe-scroll-to-top-hide"),$(window).scroll(function(){$(this).scrollTop()<100?$(".hfe-scroll-to-top-wrap").fadeOut(300):$(".hfe-scroll-to-top-wrap").fadeIn(300)}),$(".hfe-scroll-to-top-wrap").on("click",function(){$("html, body").animate({scrollTop:0},300);return!1})})}(jQuery);!function($){'use strict';$(document).ready(function(){var bar=$('.hfe-reading-progress-bar');if(!bar.length)return;$(window).on('scroll',function(){var s=$(window).scrollTop(),d=$(document).height()-$(window).height(),p=d?s/d*100:0;bar.css('width',p+'%')})})}(jQuery)</script>
+<script data-optimized="1" id="bodhi_svg_inline-js-extra">var svgSettings={"skipNested":""}</script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/62a92dea3275a5804e1deb5fde60277e.js?ver=0277e" id="bodhi_svg_inline-js"></script>
+<script data-optimized="1" id="bodhi_svg_inline-js-after">cssTarget={"Bodhi":"img.style-svg","ForceInlineSVG":"style-svg"};ForceInlineSVGActive="false";frontSanitizationEnabled="on"</script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/53e1c2c1a6248c0f85f131417cac373a.js?ver=4f101" id="eae-iconHelper-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/a546e1d7c32f96f0307083f7f5894a66.js?ver=c3ddb" id="custom.js-js"></script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+<!-- Google Analytics snippet added by Site Kit -->
+<script src="https://www.googletagmanager.com/gtag/js?id=GT-WB5H63L" id="google_gtagjs-js" async></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["stackyon.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-WB5H63L");
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); }; 
+//# sourceURL=google_gtagjs-js-after
+</script>
+<link rel="https://api.w.org/" href="https://stackyon.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://stackyon.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9" />
+<!-- start Simple Custom CSS and JS -->
+<style>li#menu-item-15803:before{content:close-quote;background:url(https://stackyon.com/wp-content/uploads/2024/12/artificial-intellegence.png);position:absolute;width:20px;height:11px;z-index:99999;background-size:contain;background-repeat:no-repeat;background-position:center center;left:7px;top:17px}li#menu-item-15812:before{content:close-quote;background:url(https://stackyon.com/wp-content/uploads/2024/12/GEN-AI.png);position:absolute;width:20px;height:11px;z-index:99999;background-size:contain;background-repeat:no-repeat;background-position:center center;left:7px;top:17px}li#menu-item-15812 a{padding-left:30px}li#menu-item-15803 a{padding-left:30px}</style>
+<!-- end Simple Custom CSS and JS -->
+<meta name="generator" content="Site Kit by Google 1.165.0" />			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v11.3.21-->
+			<script data-optimized="1" class="hsq-set-content-id" data-content-id="standard-page">var _hsq=_hsq||[];_hsq.push(["setContentType","standard-page"])</script>
+			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
+			        <style>:root{--tpg-primary-color:#0d6efd;--tpg-secondary-color:#0654c4;--tpg-primary-light:#c4d0ff}body .rt-tpg-container .rt-loading,body #bottom-script-loader .rt-ball-clip-rotate{color:#0367bf!important}</style>
+		<meta name="generator" content="Elementor 3.32.5; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+			<style>.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) *{background-image:none!important}@media screen and (max-height:1024px){.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) *{background-image:none!important}}@media screen and (max-height:640px){.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) *{background-image:none!important}}</style>
+			
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script>
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-KCGJNHH' );
+			
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://stackyon.com/wp-content/uploads/2023/02/stackyon-fav.png" sizes="32x32" />
+<link rel="icon" href="https://stackyon.com/wp-content/uploads/2023/02/stackyon-fav.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://stackyon.com/wp-content/uploads/2023/02/stackyon-fav.png" />
+<meta name="msapplication-TileImage" content="https://stackyon.com/wp-content/uploads/2023/02/stackyon-fav.png" />
+		<style id="wp-custom-css">.caf-post-layout1 .caf-content{display:block;padding:20px;background:#fff;word-break:break-word;font-size:14px;text-align:left}.caf-post-layout1 .caf-post-title{display:block;width:100%;padding:28px 20px;box-sizing:border-box}.caf-post-layout1 .caf-meta-content{display:flex;background:#fff;width:100%;padding-left:25px;padding-bottom:10px;border-bottom:1px solid #f7f7f7;box-sizing:border-box}</style>
+		<style id='global-styles-inline-css'>:root{--wp--preset--aspect-ratio--square:1;--wp--preset--aspect-ratio--4-3:4/3;--wp--preset--aspect-ratio--3-4:3/4;--wp--preset--aspect-ratio--3-2:3/2;--wp--preset--aspect-ratio--2-3:2/3;--wp--preset--aspect-ratio--16-9:16/9;--wp--preset--aspect-ratio--9-16:9/16;--wp--preset--color--black:#000000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#FFFFFF;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--color--dark-gray:#28303D;--wp--preset--color--gray:#39414D;--wp--preset--color--green:#D1E4DD;--wp--preset--color--blue:#D1DFE4;--wp--preset--color--purple:#D1D1E4;--wp--preset--color--red:#E4D1D1;--wp--preset--color--orange:#E4DAD1;--wp--preset--color--yellow:#EEEADD;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--purple-to-yellow:linear-gradient(160deg, #D1D1E4 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-purple:linear-gradient(160deg, #EEEADD 0%, #D1D1E4 100%);--wp--preset--gradient--green-to-yellow:linear-gradient(160deg, #D1E4DD 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-green:linear-gradient(160deg, #EEEADD 0%, #D1E4DD 100%);--wp--preset--gradient--red-to-yellow:linear-gradient(160deg, #E4D1D1 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-red:linear-gradient(160deg, #EEEADD 0%, #E4D1D1 100%);--wp--preset--gradient--purple-to-red:linear-gradient(160deg, #D1D1E4 0%, #E4D1D1 100%);--wp--preset--gradient--red-to-purple:linear-gradient(160deg, #E4D1D1 0%, #D1D1E4 100%);--wp--preset--font-size--small:18px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:24px;--wp--preset--font-size--x-large:42px;--wp--preset--font-size--extra-small:16px;--wp--preset--font-size--normal:20px;--wp--preset--font-size--extra-large:40px;--wp--preset--font-size--huge:96px;--wp--preset--font-size--gigantic:144px;--wp--preset--spacing--20:0.44rem;--wp--preset--spacing--30:0.67rem;--wp--preset--spacing--40:1rem;--wp--preset--spacing--50:1.5rem;--wp--preset--spacing--60:2.25rem;--wp--preset--spacing--70:3.38rem;--wp--preset--spacing--80:5.06rem;--wp--preset--shadow--natural:6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep:12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp:6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined:6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp:6px 6px 0px rgb(0, 0, 0)}:where(.is-layout-flex){gap:.5em}:where(.is-layout-grid){gap:.5em}body .is-layout-flex{display:flex}.is-layout-flex{flex-wrap:wrap;align-items:center}.is-layout-flex>:is(*,div){margin:0}body .is-layout-grid{display:grid}.is-layout-grid>:is(*,div){margin:0}:where(.wp-block-columns.is-layout-flex){gap:2em}:where(.wp-block-columns.is-layout-grid){gap:2em}:where(.wp-block-post-template.is-layout-flex){gap:1.25em}:where(.wp-block-post-template.is-layout-grid){gap:1.25em}.has-black-color{color:var(--wp--preset--color--black)!important}.has-cyan-bluish-gray-color{color:var(--wp--preset--color--cyan-bluish-gray)!important}.has-white-color{color:var(--wp--preset--color--white)!important}.has-pale-pink-color{color:var(--wp--preset--color--pale-pink)!important}.has-vivid-red-color{color:var(--wp--preset--color--vivid-red)!important}.has-luminous-vivid-orange-color{color:var(--wp--preset--color--luminous-vivid-orange)!important}.has-luminous-vivid-amber-color{color:var(--wp--preset--color--luminous-vivid-amber)!important}.has-light-green-cyan-color{color:var(--wp--preset--color--light-green-cyan)!important}.has-vivid-green-cyan-color{color:var(--wp--preset--color--vivid-green-cyan)!important}.has-pale-cyan-blue-color{color:var(--wp--preset--color--pale-cyan-blue)!important}.has-vivid-cyan-blue-color{color:var(--wp--preset--color--vivid-cyan-blue)!important}.has-vivid-purple-color{color:var(--wp--preset--color--vivid-purple)!important}.has-black-background-color{background-color:var(--wp--preset--color--black)!important}.has-cyan-bluish-gray-background-color{background-color:var(--wp--preset--color--cyan-bluish-gray)!important}.has-white-background-color{background-color:var(--wp--preset--color--white)!important}.has-pale-pink-background-color{background-color:var(--wp--preset--color--pale-pink)!important}.has-vivid-red-background-color{background-color:var(--wp--preset--color--vivid-red)!important}.has-luminous-vivid-orange-background-color{background-color:var(--wp--preset--color--luminous-vivid-orange)!important}.has-luminous-vivid-amber-background-color{background-color:var(--wp--preset--color--luminous-vivid-amber)!important}.has-light-green-cyan-background-color{background-color:var(--wp--preset--color--light-green-cyan)!important}.has-vivid-green-cyan-background-color{background-color:var(--wp--preset--color--vivid-green-cyan)!important}.has-pale-cyan-blue-background-color{background-color:var(--wp--preset--color--pale-cyan-blue)!important}.has-vivid-cyan-blue-background-color{background-color:var(--wp--preset--color--vivid-cyan-blue)!important}.has-vivid-purple-background-color{background-color:var(--wp--preset--color--vivid-purple)!important}.has-black-border-color{border-color:var(--wp--preset--color--black)!important}.has-cyan-bluish-gray-border-color{border-color:var(--wp--preset--color--cyan-bluish-gray)!important}.has-white-border-color{border-color:var(--wp--preset--color--white)!important}.has-pale-pink-border-color{border-color:var(--wp--preset--color--pale-pink)!important}.has-vivid-red-border-color{border-color:var(--wp--preset--color--vivid-red)!important}.has-luminous-vivid-orange-border-color{border-color:var(--wp--preset--color--luminous-vivid-orange)!important}.has-luminous-vivid-amber-border-color{border-color:var(--wp--preset--color--luminous-vivid-amber)!important}.has-light-green-cyan-border-color{border-color:var(--wp--preset--color--light-green-cyan)!important}.has-vivid-green-cyan-border-color{border-color:var(--wp--preset--color--vivid-green-cyan)!important}.has-pale-cyan-blue-border-color{border-color:var(--wp--preset--color--pale-cyan-blue)!important}.has-vivid-cyan-blue-border-color{border-color:var(--wp--preset--color--vivid-cyan-blue)!important}.has-vivid-purple-border-color{border-color:var(--wp--preset--color--vivid-purple)!important}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background:var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple)!important}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background:var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan)!important}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background:var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange)!important}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background:var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red)!important}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background:var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray)!important}.has-cool-to-warm-spectrum-gradient-background{background:var(--wp--preset--gradient--cool-to-warm-spectrum)!important}.has-blush-light-purple-gradient-background{background:var(--wp--preset--gradient--blush-light-purple)!important}.has-blush-bordeaux-gradient-background{background:var(--wp--preset--gradient--blush-bordeaux)!important}.has-luminous-dusk-gradient-background{background:var(--wp--preset--gradient--luminous-dusk)!important}.has-pale-ocean-gradient-background{background:var(--wp--preset--gradient--pale-ocean)!important}.has-electric-grass-gradient-background{background:var(--wp--preset--gradient--electric-grass)!important}.has-midnight-gradient-background{background:var(--wp--preset--gradient--midnight)!important}.has-small-font-size{font-size:var(--wp--preset--font-size--small)!important}.has-medium-font-size{font-size:var(--wp--preset--font-size--medium)!important}.has-large-font-size{font-size:var(--wp--preset--font-size--large)!important}.has-x-large-font-size{font-size:var(--wp--preset--font-size--x-large)!important}</style>
+<link data-optimized="1" rel='stylesheet' id='ep-lightbox-css' href='https://stackyon.com/wp-content/litespeed/css/d1b667298a114475685bbe1bb17dc042.css?ver=fc4c5' media='all' />
+<link data-optimized="1" rel='stylesheet' id='widget-icon-box-css' href='https://stackyon.com/wp-content/litespeed/css/4f6da1b89d7d8f7e481fb31202daa60e.css?ver=ca129' media='all' />
+<link data-optimized="1" rel='stylesheet' id='widget-social-icons-css' href='https://stackyon.com/wp-content/litespeed/css/2af04077cf5fe71c9c1b0c305248c5b8.css?ver=70e8e' media='all' />
+<link data-optimized="1" rel='stylesheet' id='e-apple-webkit-css' href='https://stackyon.com/wp-content/litespeed/css/033abad34a94f6b26a8f9c9e18b7a5df.css?ver=0df50' media='all' />
+</head>
+
+<body class="error404 wp-embed-responsive wp-theme-twentytwentyone rttpg rttpg-7.8.7 radius-frontend rttpg-body-wrap rttpg-flaticon ehf-header ehf-footer ehf-template-twentytwentyone ehf-stylesheet-twentytwentyone is-light-theme no-js hfeed no-widgets elementor-default elementor-kit-5">
+		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCGJNHH" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+		<div id="page" class="hfeed site">
+
+		<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+			<p class="main-title bhf-hidden" itemprop="headline"><a href="https://stackyon.com" title="Stackyon" rel="home">Stackyon</a></p>
+					<div data-elementor-type="wp-post" data-elementor-id="27" class="elementor elementor-27">
+						<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-fef07df header_section elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-eae-slider="78816" data-id="fef07df" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div data-ep-wrapper-link="{&quot;url&quot;:&quot;https:\/\/stackyon.com\/&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;}" style="cursor: pointer" class="bdt-element-link has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-99a1f50" data-eae-slider="11937" data-id="99a1f50" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-514249f Main_logo elementor-widget elementor-widget-image" data-id="514249f" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="300" height="93" src="https://stackyon.com/wp-content/uploads/2022/12/stackyon-logo-white.png" class="attachment-large size-large wp-image-2548" alt="" style="width:100%;height:31%;max-width:300px" />															</div>
+				</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-8efc7b9" data-eae-slider="66837" data-id="8efc7b9" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6c533ba hfe-nav-menu__align-right hfe-nav-menu__theme-icon-yes hfe-submenu-animation-slide_up nav_menu hfe-submenu-icon-arrow hfe-link-redirect-child hfe-nav-menu__breakpoint-tablet elementor-widget elementor-widget-navigation-menu" data-id="6c533ba" data-element_type="widget" data-settings="{&quot;width_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:17,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;distance_from_menu&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:25,&quot;sizes&quot;:[]},&quot;toggle_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;distance_from_menu_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:3,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:17,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;menu_space_between_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;width_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;dropdown_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;width_dropdown_item_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="navigation-menu.default">
+				<div class="elementor-widget-container">
+								<div class="hfe-nav-menu hfe-layout-horizontal hfe-nav-menu-layout horizontal hfe-pointer__underline hfe-animation__fade" data-layout="horizontal">
+				<div role="button" class="hfe-nav-menu__toggle elementor-clickable" tabindex="0" aria-label="Menu Toggle">
+					<span class="screen-reader-text">Menu</span>
+					<div class="hfe-nav-menu-icon">
+						<i aria-hidden="true"  class="fas fa-align-right"></i>					</div>
+				</div>
+				<nav class="hfe-nav-menu__layout-horizontal hfe-nav-menu__submenu-arrow" data-toggle-icon="&lt;i aria-hidden=&quot;true&quot; tabindex=&quot;0&quot; class=&quot;fas fa-align-right&quot;&gt;&lt;/i&gt;" data-close-icon="&lt;i aria-hidden=&quot;true&quot; tabindex=&quot;0&quot; class=&quot;far fa-window-close&quot;&gt;&lt;/i&gt;" data-full-width="yes">
+					<ul id="menu-1-6c533ba" class="hfe-nav-menu"><li id="menu-item-12511" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children parent hfe-has-submenu hfe-creative-menu"><div class="hfe-has-submenu-container" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><a href="https://stackyon.com/solutions/" class = "hfe-menu-item">Solutions<span class='hfe-menu-toggle sub-arrow hfe-menu-child-0'><i class='fa'></i></span></a></div><button class="sub-menu-toggle" aria-expanded="false" onClick="twentytwentyoneExpandSubMenu(this)"><span class="icon-plus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg></span><span class="icon-minus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11h12v2H6z" fill="currentColor"/></svg></span><span class="screen-reader-text">Open menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-12512" class="solution_mob menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/solutions/" class = "hfe-sub-menu-item">Overview</a></li>
+	<li id="menu-item-361" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/process-automation/" class = "hfe-sub-menu-item">Process Automation</a></li>
+	<li id="menu-item-3083" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/workflow-builders/" class = "hfe-sub-menu-item">Workflow-builders</a></li>
+	<li id="menu-item-358" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/application-integration/" class = "hfe-sub-menu-item">Application Integration</a></li>
+	<li id="menu-item-3041" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/application-development/" class = "hfe-sub-menu-item">Application Development</a></li>
+	<li id="menu-item-363" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/legacy-modernization/" class = "hfe-sub-menu-item">Legacy Modernization</a></li>
+	<li id="menu-item-5211" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/application-customization/" class = "hfe-sub-menu-item">Application Customization</a></li>
+	<li id="menu-item-6063" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/application-rationalization/" class = "hfe-sub-menu-item">Application Rationalization</a></li>
+</ul>
+</li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children parent hfe-has-submenu hfe-creative-menu"><div class="hfe-has-submenu-container" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><a href="https://stackyon.com/platform/" class = "hfe-menu-item">Platform<span class='hfe-menu-toggle sub-arrow hfe-menu-child-0'><i class='fa'></i></span></a></div><button class="sub-menu-toggle" aria-expanded="false" onClick="twentytwentyoneExpandSubMenu(this)"><span class="icon-plus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg></span><span class="icon-minus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11h12v2H6z" fill="currentColor"/></svg></span><span class="screen-reader-text">Open menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-10035" class="solution_mob menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/platform/" class = "hfe-sub-menu-item">Overview</a></li>
+	<li id="menu-item-15812" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/platform/gen-ai/" class = "hfe-sub-menu-item">Gen AI</a></li>
+	<li id="menu-item-15803" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/platform/intelligent-ui/" class = "hfe-sub-menu-item">Intelligent UI</a></li>
+	<li id="menu-item-402" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/architecture/" class = "hfe-sub-menu-item">Architecture</a></li>
+	<li id="menu-item-401" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/apis-and-integration/" class = "hfe-sub-menu-item">APIs and Integration</a></li>
+	<li id="menu-item-403" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/business-logic/" class = "hfe-sub-menu-item">Business Logic</a></li>
+	<li id="menu-item-404" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/configuration-management/" class = "hfe-sub-menu-item">Configuration Management</a></li>
+	<li id="menu-item-405" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/data-management/" class = "hfe-sub-menu-item">Data Management</a></li>
+	<li id="menu-item-406" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/deployment/" class = "hfe-sub-menu-item">Deployment</a></li>
+	<li id="menu-item-407" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/reporting-analytics/" class = "hfe-sub-menu-item">Reporting &amp; Analytics</a></li>
+	<li id="menu-item-408" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/security/" class = "hfe-sub-menu-item">Security</a></li>
+	<li id="menu-item-410" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/workflow-orchestration/" class = "hfe-sub-menu-item">Workflow Orchestration</a></li>
+</ul>
+</li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children parent hfe-has-submenu hfe-creative-menu"><div class="hfe-has-submenu-container" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><a href="https://stackyon.com/success-ecosystem/" class = "hfe-menu-item">Success Ecosystem<span class='hfe-menu-toggle sub-arrow hfe-menu-child-0'><i class='fa'></i></span></a></div><button class="sub-menu-toggle" aria-expanded="false" onClick="twentytwentyoneExpandSubMenu(this)"><span class="icon-plus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg></span><span class="icon-minus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11h12v2H6z" fill="currentColor"/></svg></span><span class="screen-reader-text">Open menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-10037" class="solution_mob menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/success-ecosystem/" class = "hfe-sub-menu-item">Overview</a></li>
+	<li id="menu-item-423" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/consulting-services/" class = "hfe-sub-menu-item">Consulting Services</a></li>
+	<li id="menu-item-428" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/training-knowledge/" class = "hfe-sub-menu-item">Training &amp; knowledge</a></li>
+	<li id="menu-item-5248" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/development-services/" class = "hfe-sub-menu-item">Development Services</a></li>
+	<li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/tech-support/" class = "hfe-sub-menu-item">Tech. Support</a></li>
+	<li id="menu-item-424" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/integration-services/" class = "hfe-sub-menu-item">Integration Services</a></li>
+	<li id="menu-item-425" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/optimization-services/" class = "hfe-sub-menu-item">Optimization Services</a></li>
+	<li id="menu-item-426" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/qa-testing-support/" class = "hfe-sub-menu-item">QA &amp; Testing Support</a></li>
+</ul>
+</li>
+<li id="menu-item-12149" class="Main_about menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent hfe-has-submenu hfe-creative-menu"><div class="hfe-has-submenu-container" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><a class = "hfe-menu-item">Resources<span class='hfe-menu-toggle sub-arrow hfe-menu-child-0'><i class='fa'></i></span></a></div><button class="sub-menu-toggle" aria-expanded="false" onClick="twentytwentyoneExpandSubMenu(this)"><span class="icon-plus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg></span><span class="icon-minus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11h12v2H6z" fill="currentColor"/></svg></span><span class="screen-reader-text">Open menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-16460" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/casestudies/" class = "hfe-sub-menu-item">Case Studies</a></li>
+	<li id="menu-item-12150" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/blog/" class = "hfe-sub-menu-item">Blog</a></li>
+	<li id="menu-item-12154" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/faq/" class = "hfe-sub-menu-item">FAQ</a></li>
+</ul>
+</li>
+<li id="menu-item-12148" class="Main_about menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children parent hfe-has-submenu hfe-creative-menu"><div class="hfe-has-submenu-container" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><a class = "hfe-menu-item">About us<span class='hfe-menu-toggle sub-arrow hfe-menu-child-0'><i class='fa'></i></span></a></div><button class="sub-menu-toggle" aria-expanded="false" onClick="twentytwentyoneExpandSubMenu(this)"><span class="icon-plus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg></span><span class="icon-minus"><svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11h12v2H6z" fill="currentColor"/></svg></span><span class="screen-reader-text">Open menu</span></button>
+<ul class="sub-menu">
+	<li id="menu-item-12141" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/our-company/" class = "hfe-sub-menu-item">Our company</a></li>
+	<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="https://stackyon.com/contact-us/" class = "hfe-sub-menu-item">Contact Us</a></li>
+</ul>
+</li>
+<li id="menu-item-5136" class="menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu"><a href="https://stackyon.com/partner/" class = "hfe-menu-item">Partner</a></li>
+<li id="menu-item-8468" class="book_btn menu-item menu-item-type-custom menu-item-object-custom parent hfe-creative-menu"><a target="_blank"rel="noopener" href="https://meetings.hubspot.com/rajesh-bashyam" class = "hfe-menu-item">Book a Demo</a></li>
+</ul> 
+				</nav>
+			</div>
+							</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+				</header>
+
+	
+	<header class="page-header alignwide">
+		<h1 class="page-title">Nothing here</h1>
+	</header><!-- .page-header -->
+
+	<div class="error-404 not-found default-max-width">
+		<div class="page-content">
+			<p>It looks like nothing was found at this location. Maybe try a search?</p>
+			<form role="search"  method="get" class="search-form" action="https://stackyon.com/">
+	<label for="search-form-1">Search&hellip;</label>
+	<input type="search" id="search-form-1" class="search-field" value="" name="s" />
+	<input type="submit" class="search-submit" value="Search" />
+</form>
+		</div><!-- .page-content -->
+	</div><!-- .error-404 -->
+
+
+		<footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
+			<div class='footer-width-fixer'>		<div data-elementor-type="wp-post" data-elementor-id="283" class="elementor elementor-283">
+						<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-9c9ea58 elementor-section-full_width elementor-hidden-widescreen elementor-hidden-desktop elementor-hidden-laptop elementor-hidden-tablet_extra elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-section-height-default elementor-section-height-default" data-eae-slider="6024" data-id="9c9ea58" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6744974" data-eae-slider="10120" data-id="6744974" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-afdf8ca premium-floating-effects-yes animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="afdf8ca" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;premium_fe_direction&quot;:&quot;alternate&quot;,&quot;premium_fe_loop&quot;:&quot;default&quot;,&quot;premium_fe_easing&quot;:&quot;easeInOutSine&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Enterprise application hub demo
+</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-06e6779 animated-slow elementor-invisible elementor-widget elementor-widget-text-editor" data-id="06e6779" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Immense possibilities for faster legacy application modernization <br>
+with Stackyon’s robust, highly flexible Enterprise Application Hub.								</div>
+				</div>
+				<div class="elementor-element elementor-element-f12300b elementor-align-center animated-slow elementor-invisible elementor-widget elementor-widget-lightbox" data-id="f12300b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="lightbox.default">
+				<div class="elementor-widget-container">
+							<div id="bdt-lightbox-f12300b" class="bdt-lightbox-wrapper">
+			<div data-bdt-lightbox=" animation: slide; video-autoplay: true;">
+
+				<a data-elementor-open-lightbox="no" class="elementor-button elementor-size-md" href="https://www.youtube.com/watch?v=uly1xMSr2UQ">
+
+					
+					
+													<span class="elementor-button-content-wrapper">
+							<span class="elementor-button-icon elementor-align-icon-left">
+
+					<i aria-hidden="true" class="fa-fw fas fa-play"></i>
+				</span>
+						<span class="elementor-button-text">View Demo</span>
+		</span>
+											</a>
+
+				
+			</div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-7ddff23 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-eae-slider="4305" data-id="7ddff23" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="has_eae_slider elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-dbbda07" data-eae-slider="89851" data-id="dbbda07" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-3e3ee53 elementor-widget elementor-widget-heading" data-id="3e3ee53" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Accelerate your legacy application modernization today</h2>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-b14380a" data-eae-slider="90295" data-id="b14380a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-569303b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-eae-slider="13932" data-id="569303b" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div data-ep-wrapper-link="{&quot;url&quot;:&quot;https:\/\/stackyon.com\/contact-us\/&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;}" style="cursor: pointer" class="bdt-element-link has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-157ebfe" data-eae-slider="28409" data-id="157ebfe" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-90788da elementor-position-left elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="90788da" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							Get in Touch						</span>
+					</h3>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div data-ep-wrapper-link="{&quot;url&quot;:&quot;#&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;}" style="cursor: pointer" class="bdt-element-link has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-07b2070" data-eae-slider="34252" data-id="07b2070" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6c2777f elementor-position-left elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="6c2777f" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="https://stackyon.com/wp-content/uploads/2023/07/Stackyon-Low-Code-Application-Platform_Overview.pdf" target="_blank" class="elementor-icon" tabindex="-1" aria-label="Download Brochure">
+				<i aria-hidden="true" class="fas fa-long-arrow-alt-down"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<span class="elementor-icon-box-title">
+						<a href="https://stackyon.com/wp-content/uploads/2023/07/Stackyon-Low-Code-Application-Platform_Overview.pdf" target="_blank" >
+							Download Brochure						</a>
+					</span>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-e57274f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-eae-slider="54405" data-id="e57274f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-3024a55 elementor-hidden-tablet elementor-hidden-mobile_extra" data-eae-slider="3700" data-id="3024a55" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div data-ep-wrapper-link="{&quot;url&quot;:&quot;https:\/\/stackyon.com\/&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;stackyon&quot;}" style="cursor: pointer" class="bdt-element-link elementor-element elementor-element-5b3120f elementor-widget elementor-widget-image" data-id="5b3120f" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="213" height="66" src="https://stackyon.com/wp-content/uploads/2022/12/StackyonAsset-white-1-2.png" class="attachment-large size-large wp-image-285" alt="" style="width:100%;height:30.99%;max-width:213px" />															</div>
+				</div>
+				<div class="elementor-element elementor-element-fe29c88 elementor-position-left elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="fe29c88" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-mail-bulk"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							info@stackyon.com						</span>
+					</h3>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-a1461b3 elementor-position-left elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="a1461b3" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-location-arrow"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							2807 W Busch Blvd, Suite 110, Tampa, FL 33618						</span>
+					</h3>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-e30ee47 elementor-position-left elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="e30ee47" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-map-marker-alt"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							Tech Mahindra IT Park, 4th Floor, ODC1, Tech Hub, Resapuvanipalem, Visakhapatnam, AP, India						</span>
+					</h3>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-11bd767 elementor-widget elementor-widget-heading" data-id="11bd767" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Follow Us</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-4153c0c e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="4153c0c" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-39467bf" href="https://www.facebook.com/stackyon" target="_blank">
+						<span class="elementor-screen-only">Facebook</span>
+						<i aria-hidden="true" class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-repeater-item-4f4fa66" href="https://www.linkedin.com/company/stackyon-lowcode/" target="_blank">
+						<span class="elementor-screen-only">Linkedin</span>
+						<i aria-hidden="true" class="fab fa-linkedin"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-27926aa" href="https://twitter.com/StackyonL" target="_blank">
+						<span class="elementor-screen-only">Twitter</span>
+						<i aria-hidden="true" class="fab fa-twitter"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-2ed21a8" href="https://www.instagram.com/stackyon_/" target="_blank">
+						<span class="elementor-screen-only">Instagram</span>
+						<i aria-hidden="true" class="fab fa-instagram"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-49955df" href="https://www.youtube.com/@stackyon6359" target="_blank">
+						<span class="elementor-screen-only">Youtube</span>
+						<i aria-hidden="true" class="fab fa-youtube"></i>					</a>
+				</span>
+					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-02ec4fd elementor-widget elementor-widget-text-editor" data-id="02ec4fd" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/privacy-policy/">Privacy Policy</a></p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-dd83611" data-eae-slider="23445" data-id="dd83611" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div data-ep-wrapper-link="{&quot;url&quot;:&quot;https:\/\/stackyon.com\/platform\/&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;}" style="cursor: pointer" class="bdt-element-link elementor-element elementor-element-0c273d3 elementor-widget elementor-widget-heading" data-id="0c273d3" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Platform</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-2b946da elementor-widget elementor-widget-text-editor" data-id="2b946da" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/platform/gen-ai/">Gen AI</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-534b8a2 elementor-widget elementor-widget-text-editor" data-id="534b8a2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/architecture/">Architecture</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-9875eb3 elementor-widget elementor-widget-text-editor" data-id="9875eb3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/business-logic/">Business Logic</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-973f56d elementor-widget elementor-widget-text-editor" data-id="973f56d" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/data-management/">Data Management</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-91991e9 elementor-widget elementor-widget-text-editor" data-id="91991e9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/reporting-analytics/">Reporting &amp; Analytics</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-c30ddc2 elementor-widget elementor-widget-text-editor" data-id="c30ddc2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/workflow-orchestration/">Workflow Orchestration</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-95f1b90 elementor-widget elementor-widget-text-editor" data-id="95f1b90" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/platform/intelligent-ui/">Intelligent UI</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-09fb054 elementor-widget elementor-widget-text-editor" data-id="09fb054" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/apis-and-integration/">APIs and Integration</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-404bd0b elementor-widget elementor-widget-text-editor" data-id="404bd0b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/configuration-management/">Configuration Management</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-1255f08 elementor-widget elementor-widget-text-editor" data-id="1255f08" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/deployment/">Deployment</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-60c70fa elementor-widget elementor-widget-text-editor" data-id="60c70fa" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/security/">Security</a></p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-3df544e" data-eae-slider="95366" data-id="3df544e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div data-ep-wrapper-link="{&quot;url&quot;:&quot;https:\/\/stackyon.com\/success-ecosystem\/&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;}" style="cursor: pointer" class="bdt-element-link elementor-element elementor-element-e51301d elementor-widget elementor-widget-heading" data-id="e51301d" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Success Ecosystem</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-c8502cf elementor-widget elementor-widget-text-editor" data-id="c8502cf" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/consulting-services/">Consulting Services</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-b7465e9 elementor-widget elementor-widget-text-editor" data-id="b7465e9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/development-services/">Development Services</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-7e241f5 elementor-widget elementor-widget-text-editor" data-id="7e241f5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/integration-services/">Integration Services</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-7e92f8e elementor-widget elementor-widget-text-editor" data-id="7e92f8e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/qa-testing-support/">QA &amp; Testing Support</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-4d3acf1 elementor-widget elementor-widget-text-editor" data-id="4d3acf1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/training-knowledge/">Training &amp; knowledge</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-d3aa57f elementor-widget elementor-widget-text-editor" data-id="d3aa57f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/tech-support/">Tech. Support</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-3e3dd5a elementor-widget elementor-widget-text-editor" data-id="3e3dd5a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/optimization-services/"> Optimization Services<br /></a></p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-756a002" data-eae-slider="82858" data-id="756a002" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div data-ep-wrapper-link="{&quot;url&quot;:&quot;https:\/\/stackyon.com\/solutions\/&quot;,&quot;is_external&quot;:&quot;&quot;,&quot;nofollow&quot;:&quot;&quot;,&quot;custom_attributes&quot;:&quot;&quot;}" style="cursor: pointer" class="bdt-element-link elementor-element elementor-element-8c87f3f elementor-widget elementor-widget-heading" data-id="8c87f3f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Solutions</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-b9a01c7 elementor-widget elementor-widget-text-editor" data-id="b9a01c7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/process-automation/">Process Automation</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-98226f3 elementor-widget elementor-widget-text-editor" data-id="98226f3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/application-integration/">Application Integration</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-0b6e433 elementor-widget elementor-widget-text-editor" data-id="0b6e433" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/legacy-modernization/">Legacy Modernization</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-09a78d3 elementor-widget elementor-widget-text-editor" data-id="09a78d3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/application-rationalization/">Application Rationalization</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-5c697b9 elementor-widget elementor-widget-text-editor" data-id="5c697b9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/workflow-builders/">Workflow-Builders</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-bbaaeb1 elementor-widget elementor-widget-text-editor" data-id="bbaaeb1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/application-development/">Application Development</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-48fcdc4 elementor-widget elementor-widget-text-editor" data-id="48fcdc4" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a style="color: #fff !important; font-family: Open Sans;" href="https://stackyon.com/application-customization/">Application Customization</a></p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-ae917ff elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-eae-slider="18568" data-id="ae917ff" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-756015a" data-eae-slider="99109" data-id="756015a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-61b567a elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="61b567a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>© 2025 Stackyon, All Rights Reserved</p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		</div>		</footer>
+	</div><!-- #page -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/twentytwentyone/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script>document.body.classList.remove("no-js")</script>	<script>if(-1!==navigator.userAgent.indexOf('MSIE')||-1!==navigator.appVersion.indexOf('Trident/')){document.body.classList.add('is-IE')}</script>
+				<script>const lazyloadRunObserver=()=>{const lazyloadBackgrounds=document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);const lazyloadBackgroundObserver=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){let lazyloadBackground=entry.target;if(lazyloadBackground){lazyloadBackground.classList.add('e-lazyloaded')}
+lazyloadBackgroundObserver.unobserve(entry.target)}})},{rootMargin:'200px 0px 200px 0px'});lazyloadBackgrounds.forEach((lazyloadBackground)=>{lazyloadBackgroundObserver.observe(lazyloadBackground)})};const events=['DOMContentLoaded','elementor/lazyload/observe',];events.forEach((event)=>{document.addEventListener(event,lazyloadRunObserver)})</script>
+					<script>/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",(function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())}),!1)</script>
+		<script data-optimized="1" id="leadin-script-loader-js-js-extra">var leadin_wordpress={"userRole":"visitor","pageType":"other","leadinPluginVersion":"11.3.21"}</script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/7460da870b3f60d46e8e0efa8d8a288b.js?ver=a288b" id="leadin-script-loader-js-js"></script>
+<script data-optimized="1" id="eae-main-js-extra">var eae={"ajaxurl":"https://stackyon.com/wp-admin/admin-ajax.php","current_url":"aHR0cHM6Ly9zdGFja3lvbi5jb20vd3AtY29udGVudC91cGxvYWRzLzIwMjUvMTAvQmFja2dyb3VuZC1wYXR0ZXJuLmpwZy8=","nonce":"f7ea41f57c","plugin_url":"https://stackyon.com/wp-content/plugins/addon-elements-for-elementor-page-builder/"};var eae_editor={"plugin_url":"https://stackyon.com/wp-content/plugins/addon-elements-for-elementor-page-builder/"}</script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/34d16204e0f3bab297b09b7b0fd63098.js?ver=d9f65" id="eae-main-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/60b3729aeb7d803931317fe14a6be030.js?ver=28b1a" id="eae-index-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/396dbb7e50971ee3487dfe538de89180.js?ver=c18d3" id="font-awesome-4-shim-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/6fd0ab73ad39e1695d4225ca9ed33a15.js?ver=1410a" id="animated-main-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/cbbbcaad8c17ddb92c0623813555fd23.js?ver=a414a" id="eae-particles-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/9ae80eaab6088db7db42a56dec954710.js?ver=309af" id="wts-magnific-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/0a6eab80ecc28fb1b5d3ce96237c56df.js?ver=0cc2c" id="vegas-js"></script>
+<script id="twenty-twenty-one-ie11-polyfills-js-after">
+( Element.prototype.matches && Element.prototype.closest && window.NodeList && NodeList.prototype.forEach ) || document.write( '<script src="https://stackyon.com/wp-content/themes/twentytwentyone/assets/js/polyfills.js?ver=1.7"></scr' + 'ipt>' );
+//# sourceURL=twenty-twenty-one-ie11-polyfills-js-after
+</script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/aa5ac82c3e2c7eb79682325063f8feab.js?ver=286d7" id="twenty-twenty-one-responsive-embeds-script-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/9d2b60affc1b02d063a35040df9e9f31.js?ver=e9f31" id="googlesitekit-events-provider-optin-monster-js" defer></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/d7e2393c22886abb9c4cce232f63f153.js?ver=3f153" id="googlesitekit-events-provider-wpforms-js" defer></script>
+<script data-optimized="1" id="eael-general-js-extra">var localize={"ajaxurl":"https://stackyon.com/wp-admin/admin-ajax.php","nonce":"9866072dc4","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping","fg_mfp_counter_text":"of"},"page_permalink":"https://stackyon.com/challenges-application-modernization/","cart_redirectition":"","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":!0},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":!0},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":!0},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":!0},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":!0},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":!0}}}</script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/23e1678454e8f17ffdde0b7682edcf9e.js?ver=076b9" id="eael-general-js"></script>
+<script data-optimized="1" id="bdt-uikit-js-extra">var element_pack_ajax_login_config={"ajaxurl":"https://stackyon.com/wp-admin/admin-ajax.php","language":"en","loadingmessage":"Sending user info, please wait...","unknownerror":"Unknown error, make sure access is correct!"};var ElementPackConfig={"ajaxurl":"https://stackyon.com/wp-admin/admin-ajax.php","nonce":"6d8d26928e","data_table":{"language":{"lengthMenu":"Show _MENU_ Entries","info":"Showing _START_ to _END_ of _TOTAL_ entries","search":"Search :","paginate":{"previous":"Previous","next":"Next"}}},"contact_form":{"sending_msg":"Sending message please wait...","captcha_nd":"Invisible captcha not defined!","captcha_nr":"Could not get invisible captcha response!"},"mailchimp":{"subscribing":"Subscribing you please wait..."},"search":{"more_result":"More Results","search_result":"SEARCH RESULT","not_found":"not found"},"words_limit":{"read_more":"[read more]","read_less":"[read less]"},"elements_data":{"sections":[],"columns":[],"widgets":[]}}</script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/5cbef06a62fc266a68eb1ef94b2ffeb6.js?ver=4a574" id="bdt-uikit-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/2d5fb816b08ceaab7e7bf06f28b88cbb.js?ver=d0d8e" id="element-pack-helper-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/0db767c2f40d3e813a2f91e359973761.js?ver=dcfc7" id="hfe-frontend-js-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/bd374643361b39c7d3ac4a46ef3e59df.js?ver=64032" id="ep-wrapper-link-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/e7a3292a1403e93641537ac81e51a6ed.js?ver=211eb" id="elementor-webpack-runtime-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/c84a4d19d3ffc578f8590433fb3a0ea0.js?ver=cfc9b" id="elementor-frontend-modules-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/7a98e11b8f773cd51703ed70bbb50aa5.js?ver=c7efc" id="jquery-ui-core-js"></script>
+<script data-optimized="1" id="elementor-frontend-js-before">var elementorFrontendConfig={"environmentMode":{"edit":!1,"wpPreview":!1,"isScriptDebug":!1},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":!1,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":!0},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":!0},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":!0},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":!0},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":!0},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":!0}},"hasCustomBreakpoints":!0},"version":"3.32.5","is_static":!1,"experimentalFeatures":{"additional_custom_breakpoints":!0,"home_screen":!0,"global_classes_should_enforce_capabilities":!0,"e_variables":!0,"cloud-library":!0,"e_opt_in_v4_page":!0,"import-export-customization":!0},"urls":{"assets":"https:\/\/stackyon.com\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/stackyon.com\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/stackyon.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"c33a4dcc98"},"swiperClass":"swiper","settings":{"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_mobile_extra","viewport_tablet","viewport_tablet_extra","viewport_laptop","viewport_widescreen"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":0,"title":"Page not found - Stackyon","excerpt":""}}</script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/61d52c2070caf248a5686bd6c544225c.js?ver=8e894" id="elementor-frontend-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/d170814787d5f3c1cabd91cf392702e5.js?ver=05957" id="imagesloaded-js"></script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/2fe1e90ec6e292880cf80c309a8a84c0.js?ver=e7532" id="pa-anime-js"></script>
+<script data-optimized="1" id="pa-feffects-js-extra">var PremiumFESettings={"papro_installed":""}</script>
+<script data-optimized="1" src="https://stackyon.com/wp-content/litespeed/js/91bc60fca3b13ac87f56aca8e8457ddf.js?ver=ee244" id="pa-feffects-js"></script>
+
+<script data-optimized="1" src='https://stackyon.com/wp-content/litespeed/js/814dfbe79a352d4c2007608de96756d4.js?ver=82f5c'></script>
+</body>
+</html> 
+
+
+<!-- Page supported by LiteSpeed Cache 7.6.2 on 2025-12-23 17:55:28 -->

@@ -36,7 +36,7 @@ const TABS: ProductTab[] = [
     screenTitle: "Visual Dev Studio",
     screenDescription:
       "A complete visual environment to build workflows, UI screens, business rules, decision tables, and data models. Everything needed to design an enterprise application, all drag-and-drop.",
-    screenImageSrc: "/agentic-configuration.jpg",
+    screenImageSrc: "/dev-studio.jpg",
     features: [
       {
         icon: Workflow,
@@ -66,11 +66,11 @@ const TABS: ProductTab[] = [
   },
   {
     id: "agentic-hub",
-    label: "Agentic Hub",
-    screenTitle: "Agentic AI Builder",
+    label: "Agentic AI Hub",
+    screenTitle: "Agentic AI Hub",
     screenDescription:
       "Create, configure, and embed AI agents directly into your flows for interpretation, validation, predictions, decision-making, and automated actions.",
-    screenImageSrc: "/agentic-configuration.jpg",
+    screenImageSrc: "/agentic-hub.jpg",
     features: [
       {
         icon: BrainCircuit,
@@ -123,7 +123,15 @@ export default function ProductTabsSection() {
   );
 
   return (
-    <section className="w-full bg-black py-24">
+    <section
+      className="w-full bg-[#05070d] py-24"
+      style={{
+        backgroundImage: "url('/bg-step.webp')",
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'top center',
+      }}
+    >
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4">
         <div className="flex flex-col gap-6">
           <div role="tablist" aria-label="Product capability tabs" className="flex flex-col items-center gap-4">
@@ -167,78 +175,92 @@ export default function ProductTabsSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="flex flex-col items-center gap-10"
+            className="flex w-full flex-col gap-10"
           >
             {activeTab.screenDescription && (
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.25, ease: "easeOut", delay: 0.04 }}
-                className="max-w-3xl text-center text-base text-white/70"
+                className="mx-auto max-w-3xl text-center text-base text-white/70"
               >
                 {activeTab.screenDescription}
               </motion.p>
             )}
 
-            <div className="relative w-full max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900 via-zinc-900/80 to-black shadow-[0_35px_120px_-50px_rgba(56,189,248,0.45)]">
-              {activeTab.screenImageSrc ? (
-                <Image
-                  src={activeTab.screenImageSrc}
-                  alt={activeTab.screenTitle}
-                  width={700}
-                  height={438}
-                  className="h-auto w-full object-cover"
-                  priority={false}
-                />
-              ) : (
-                <div className="flex flex-col gap-4 bg-gradient-to-br from-slate-900 via-slate-900 to-black px-10 py-12">
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/20 text-sky-300">
-                      <Sparkles className="h-4 w-4" />
-                    </span>
-                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">
-                      Stackyon Platform
-                    </p>
+            <div className="flex w-full flex-col gap-10 lg:flex-row lg:items-start">
+              <div className="relative w-full lg:basis-[70%] lg:max-w-[70%]">
+                {activeTab.screenImageSrc ? (
+                  <div className="relative flex h-full w-full items-center justify-center">
+                    <div className="relative flex max-h-[520px] w-full max-w-[760px] items-center justify-center rounded-[32px] bg-[#04070f] p-3 shadow-[0_0_0_1px_rgba(148,163,184,0.25),0_0_45px_rgba(56,189,248,0.35),0_35px_120px_-60px_rgba(56,189,248,0.45)] before:absolute before:inset-0 before:rounded-[32px] before:border before:border-sky-500/30 before:opacity-70 before:[filter:blur(0.5px)] after:absolute after:-inset-6 after:rounded-[40px] after:bg-gradient-to-r after:from-sky-500/15 after:via-indigo-500/10 after:to-purple-500/15 after:blur-[36px] after:content-['']">
+                      <Image
+                        src={activeTab.screenImageSrc}
+                        alt={activeTab.screenTitle}
+                        width={960}
+                        height={600}
+                        className="relative z-10 h-full w-auto rounded-[22px] object-contain"
+                        priority={false}
+                      />
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white md:text-3xl">
-                    {activeTab.screenTitle}
-                  </h3>
-                  <div className="mt-6 grid gap-4 rounded-2xl border border-white/5 bg-black/60 p-6 backdrop-blur">
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="h-2 rounded-full bg-white/10" />
-                      <div className="h-2 rounded-full bg-sky-500/50" />
-                      <div className="h-2 rounded-full bg-white/10" />
+                ) : (
+                  <div className="flex flex-col gap-4 bg-gradient-to-br from-slate-900 via-slate-900 to-black px-10 py-12">
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/20 text-sky-300">
+                        <Sparkles className="h-4 w-4" />
+                      </span>
+                      <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/50">
+                        Stackyon Platform
+                      </p>
                     </div>
-                    <div className="grid gap-3 md:grid-cols-2">
-                      <div className="rounded-xl border border-white/5 bg-white/5 p-4" />
-                      <div className="rounded-xl border border-white/5 bg-white/5 p-4" />
-                      <div className="rounded-xl border border-white/5 bg-white/5 p-4" />
-                      <div className="rounded-xl border border-white/5 bg-white/5 p-4" />
+                    <h3 className="text-2xl font-semibold text-white md:text-3xl">
+                      {activeTab.screenTitle}
+                    </h3>
+                    <div className="mt-6 grid gap-4 rounded-2xl border border-white/5 bg-black/60 p-6 backdrop-blur">
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="h-2 rounded-full bg-white/10" />
+                        <div className="h-2 rounded-full bg-sky-500/50" />
+                        <div className="h-2 rounded-full bg-white/10" />
+                      </div>
+                      <div className="grid gap-3 md:grid-cols-2">
+                        <div className="rounded-xl border border-white/5 bg-white/5 p-4" />
+                        <div className="rounded-xl border border-white/5 bg-white/5 p-4" />
+                        <div className="rounded-xl border border-white/5 bg-white/5 p-4" />
+                        <div className="rounded-xl border border-white/5 bg-white/5 p-4" />
+                      </div>
                     </div>
+                  </div>
+                )}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, ease: "easeOut", delay: 0.1 }}
+                className="w-full lg:basis-[30%] lg:max-w-[30%]"
+              >
+                <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950 via-slate-950/80 to-black shadow-[0_35px_120px_-60px_rgba(56,189,248,0.45)]">
+                  <div className="relative z-10 flex max-h-[412px] flex-col gap-4 overflow-y-auto px-6 py-8 pr-3 [scrollbar-width:thin] [scrollbar-color:rgba(56,189,248,0.45)_transparent]">
+                    {activeTab.features.map((feature) => {
+                      const Icon = feature.icon;
+                      return (
+                        <div
+                          key={feature.title}
+                          className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[0_20px_55px_-45px_rgba(56,189,248,0.55)] backdrop-blur transition hover:border-sky-400/60 hover:bg-white/10"
+                        >
+                          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-500/20 text-sky-300">
+                            <Icon className="h-5 w-5" />
+                          </span>
+                          <div className="flex-1">
+                            <h4 className="text-lg font-semibold text-white">{feature.title}</h4>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-              )}
+              </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, ease: "easeOut", delay: 0.08 }}
-              className="flex w-full flex-wrap justify-center gap-6"
-            >
-              {activeTab.features.map((feature) => {
-                const Icon = feature.icon;
-                return (
-                  <div
-                    key={feature.title}
-                    className="w-full max-w-[260px] rounded-2xl border border-white/10 bg-zinc-900/70 p-6 text-center shadow-[0_30px_80px_-60px_rgba(56,189,248,0.55)] backdrop-blur transition hover:border-sky-500/50 hover:shadow-[0_35px_110px_-55px_rgba(56,189,248,0.65)] sm:w-[calc(50%_-_24px)] lg:w-[calc(33.333%_-_24px)] xl:w-[calc(25%_-_24px)]"
-                  >
-                    <Icon className="mx-auto mb-3 h-7 w-7 text-sky-300" />
-                    <h4 className="text-lg font-semibold text-white">{feature.title}</h4>
-                  </div>
-                );
-              })}
-            </motion.div>
           </motion.div>
         </AnimatePresence>
       </div>

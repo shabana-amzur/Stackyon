@@ -1,7 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import WhatSetsUsApartSection from "@/components/WhatSetsUsApartSection";
 import DifferentiatorsSection from "@/components/DifferentiatorsSection";
 import IndustriesSection from "@/components/IndustriesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -27,9 +26,6 @@ export default function Home() {
       </Reveal>
       <Reveal animation="fade-up" duration={900} delay={80}>
         <ProductTabsSection />
-      </Reveal>
-      <Reveal animation="fade-left" duration={950} delay={120}>
-        <WhatSetsUsApartSection />
       </Reveal>
       <Reveal animation="fade-up" duration={900} delay={100}>
         <DifferentiatorsSection />
