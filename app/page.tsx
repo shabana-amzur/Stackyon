@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ProductTabsSection from "@/components/home/ProductTabsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import WhatSetsUsApartSection from "@/components/WhatSetsUsApartSection";
@@ -10,9 +10,9 @@ import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
-      <Header />
+    <div className="bg-black">
       <HeroSection />
+      <ProductTabsSection />
       <FeaturesSection />
       <HowItWorksSection />
       <WhatSetsUsApartSection />

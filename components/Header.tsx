@@ -29,7 +29,9 @@ const navigation = {
     name: 'Platform',
     description: 'The unified Stackyon low-code platform that connects data, logic, and automation end-to-end.',
     hasDropdown: true,
+    href: '/platform',
     items: [
+      { name: 'Overview', description: 'Discover the Stackyon platform in one view', href: '/platform' },
       { title: 'Gen AI', name: 'Gen AI', description: 'Copilot for App Creation', href: '/platform/gen-ai-copilot' },
       { title: 'Intelligent UI', name: 'Intelligent UI', href: '/platform/intelligent-ui' },
       { title: 'Architecture', name: 'Architecture', description: 'Flexible Enterprise Architecture', href: '/platform/architecture' },
@@ -110,7 +112,7 @@ export default function Header() {
   const renderMegaMenu = (
     section: {
       name: string;
-      items: { name: string; href: string }[];
+      items: MegaMenuItem[];
     },
     position: 'left' | 'right' = 'left'
   ) => {
@@ -166,13 +168,13 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-black/95 backdrop-blur-sm py-[20px] font-[family-name:var(--font-roboto)] border-b border-white/10">
       <div className="max-w-[80rem] mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2.5">
-          <img 
-            src="/stackyon-logo-white.png" 
-            alt="Stackyon Logo" 
+        <a href="/" className="flex items-center gap-2.5">
+          <img
+            src="/stackyon-logo-white.png"
+            alt="Stackyon Logo"
             className="h-16 w-auto"
           />
-        </div>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-10 ml-16">
@@ -197,10 +199,20 @@ export default function Header() {
 
           {/* Platform Dropdown */}
           <Menu as="div" className="relative">
-            <Menu.Button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors">
-              {navigation.platform.name}
-              <ChevronDownIcon className="w-4 h-4" />
-            </Menu.Button>
+            <div className="flex items-center gap-1">
+              <a
+                href={navigation.platform.href}
+                className="text-white/90 transition-colors hover:text-white"
+              >
+                {navigation.platform.name}
+              </a>
+              <Menu.Button
+                className="flex items-center p-1 text-white/70 transition-colors hover:text-white"
+                aria-label="Open Platform menu"
+              >
+                <ChevronDownIcon className="h-4 w-4" />
+              </Menu.Button>
+            </div>
             <Transition
               as={Fragment}
               enter="transition ease-out duration-100"
