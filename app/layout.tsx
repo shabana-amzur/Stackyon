@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const hideGlobalCTA = pathname === '/platform/dev-studio';
+  const hideGlobalCTA = pathname === '/platform/dev-studio' || pathname === '/platform/agentic-ai-hub';
 
   return (
     <html lang="en">
