@@ -110,7 +110,7 @@ export default function AgenticAIHubPage() {
                   {/* Primary Button with Gradient */}
                   <Link
                     href="#features"
-                    className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] px-8 py-3.5 text-base font-medium text-white transition-all duration-500 shadow-lg bg-[length:200%_100%] bg-left hover:bg-right"
+                    className="inline-flex items-center gap-2 rounded-lg bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 shadow-lg hover:bg-[#5a8df0]"
                   >
                     See Agentic AI Hub in action
                     <ArrowRightIcon className="h-5 w-5" />

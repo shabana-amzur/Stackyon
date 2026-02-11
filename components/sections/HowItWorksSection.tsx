@@ -98,8 +98,8 @@ export default function HowItWorksSection() {
                 href="/platform"
                 className="mt-10 relative group inline-block"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#12efeb] to-[#523bdc] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-                <div className="relative flex items-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] border border-transparent text-white font-medium text-base transition-all duration-500 bg-[length:200%_100%] bg-left hover:bg-right">
+                <div className="absolute inset-0 bg-[#3e7ae5] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+                <div className="relative flex items-center gap-2 px-8 py-3.5 rounded-lg bg-[#3e7ae5] border border-transparent text-white font-medium text-base transition-all duration-300 hover:bg-[#5a8df0]">
                   See How Operational Applications Are Built
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

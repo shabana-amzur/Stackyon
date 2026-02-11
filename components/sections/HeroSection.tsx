@@ -106,7 +106,7 @@ export default function HeroSection() {
     return () => document.removeEventListener('mousemove', handleMouseMove);
   }, []);
   return (
-    <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center pt-[80px]">
+    <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center pt-[60px]">
       {/* Particles - Full Width */}
       <div ref={particlesRef} className="stars-container absolute inset-0">
             {isMounted && particles.map((particle, index) => (
@@ -128,29 +128,29 @@ export default function HeroSection() {
 
       {/* Floating callouts */}
       <div className="pointer-events-none absolute inset-0 z-20 hidden md:block">
-        <div className="hero-float-card hero-float-1 absolute left-[6%] top-[20%] flex w-48 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-sky-500/35 via-blue-500/15 to-teal-400/10 px-6 py-5 shadow-[0_30px_80px_-40px_rgba(56,189,248,0.55)] backdrop-blur-xl">
-          <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3rem] text-sky-300/80">
+        <div className="hero-float-card hero-float-1 absolute left-[2%] top-[18%] flex w-64 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-sky-500/35 via-blue-500/15 to-teal-400/10 px-6 py-5 shadow-[0_30px_80px_-40px_rgba(56,189,248,0.55)] backdrop-blur-xl">
+          <span className="inline-flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.3rem] text-sky-300/80">
             <span className="inline-block h-2 w-2 rounded-full bg-gradient-to-r from-sky-400 to-purple-500" />
             Website
           </span>
-          <p className="text-[20px] font-semibold text-white">AI-crafted layouts in seconds</p>
-          <p className="text-[18px] text-white/60">Generate responsive pages, preview instantly, and ship live in one click.</p>
+          <p className="text-[17px] font-semibold text-white">AI-crafted layouts in seconds</p>
+          <p className="text-[14px] text-white/60">Generate responsive pages, preview instantly, and ship live in one click.</p>
         </div>
 
-        <div className="hero-float-card hero-float-2 absolute right-[8%] bottom-[18%] flex w-52 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-violet-500/35 via-blue-500/15 to-purple-500/25 px-6 py-6 shadow-[0_40px_90px_-45px_rgba(129,140,248,0.55)] backdrop-blur-xl">
-          <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3rem] text-violet-300/80">
+        <div className="hero-float-card hero-float-2 absolute right-[2%] bottom-[15%] flex w-72 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-violet-500/35 via-blue-500/15 to-purple-500/25 px-6 py-6 shadow-[0_40px_90px_-45px_rgba(129,140,248,0.55)] backdrop-blur-xl">
+          <span className="inline-flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.3rem] text-violet-300/80">
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-sky-500 text-[0.65rem] font-bold text-black">
               AI
             </span>
             SaaS
           </span>
-          <p className="text-[20px] font-semibold text-white">Automated user provisioning</p>
-          <p className="text-[18px] text-white/60">Launch multi-tenant apps with billing, auth, and environments prebuilt.</p>
+          <p className="text-[17px] font-semibold text-white">Automated user provisioning</p>
+          <p className="text-[14px] text-white/60">Launch multi-tenant apps with billing, auth, and environments prebuilt.</p>
         </div>
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 pt-20">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-4 pt-12">
         {/* Inner box with gradient */}
         <div className="relative rounded-3xl overflow-hidden">
           {/* Gradient orb effect - contained in box */}
@@ -159,9 +159,21 @@ export default function HeroSection() {
           </div>
           
           {/* Content */}
-          <div className="relative z-10 px-8 py-8 flex flex-col items-center text-center">
+          <div className="relative z-10 px-8 py-4 flex flex-col items-center text-center">
+            {/* Pill Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-6 mt-2"
+            >
+              <span className="inline-flex items-center px-5 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-sm font-semibold text-white backdrop-blur-sm">
+                No Code. No Limits.
+              </span>
+            </motion.div>
+            
             {/* Main heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-6 mt-8 max-w-6xl leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-6 max-w-6xl leading-tight">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -206,7 +218,7 @@ export default function HeroSection() {
             <div className="flex flex-col items-center gap-6">
               <div className="flex flex-col sm:flex-row gap-4 items-center">
                 {/* Get Started Button */}
-                <button className="flex items-center gap-3 px-10 py-4 rounded-lg bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] text-white font-semibold text-lg transition-all duration-500 bg-[length:200%_100%] bg-left hover:bg-right">
+                <button className="flex items-center gap-3 px-10 py-4 rounded-lg bg-[#3e7ae5] text-white font-semibold text-lg transition-all duration-300 hover:bg-[#5a8df0]">
                   Get Started
                   <ArrowRightIcon className="w-5 h-5" />
                 </button>

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Reveal from '@/components/ui/Reveal';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 /**
  * Array of customer testimonials with quotes and attribution
@@ -43,7 +44,7 @@ const testimonials = [
  */
 export default function TestimonialsSection() {
   return (
-    <section className="relative overflow-hidden bg-black py-24">
+    <section className="relative overflow-hidden bg-black pt-16 pb-35">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.12),transparent_55%),radial-gradient(circle_at_bottom,_rgba(147,51,234,0.12),transparent_60%)]" aria-hidden="true" />
       <div className="absolute inset-0 -z-10 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.25) 1px, transparent 0)', backgroundSize: '34px 34px' }} aria-hidden="true" />
       <div className="relative z-10 mx-auto flex max-w-[1360px] flex-col gap-16 px-4">
@@ -115,13 +116,13 @@ export default function TestimonialsSection() {
         </div>
 
         <Reveal animation="fade-up" duration={950} delay={300}>
-          <div className="mt-8 flex justify-center">
-            <a
-              href="/case-studies"
-              className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] px-8 py-3.5 text-base font-semibold text-white shadow-[0_20px_70px_-20px_rgba(56,189,248,0.5)] transition-all duration-500 hover:shadow-[0_30px_90px_-20px_rgba(56,189,248,0.7)] hover:scale-[1.02] bg-[length:200%_100%] bg-left hover:bg-right"
-            >
-              <span className="relative z-10">Success Stories</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+          <div className="mt-4 flex justify-center">
+            <a href="/case-studies" className="relative group">
+              <div className="absolute inset-0 bg-[#3e7ae5] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
+              <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:bg-[#5a8df0]">
+                Success Stories
+                <ArrowRightIcon className="h-5 w-5" />
+              </div>
             </a>
           </div>
         </Reveal>

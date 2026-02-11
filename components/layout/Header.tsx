@@ -340,7 +340,7 @@ export default function Header() {
 
         {/* CTA Button */}
         <div className="flex items-center gap-4">
-          <button className="hidden lg:block px-6 py-2.5 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium text-sm hover:opacity-90 transition-opacity">
+          <button className="hidden lg:block px-6 py-2.5 rounded-lg bg-white text-black font-medium text-sm hover:bg-blue-500 hover:text-white transition-all duration-300">
             Book a Demo
           </button>
 
@@ -458,7 +458,7 @@ export default function Header() {
             </div>
 
             {/* Mobile CTA */}
-            <button className="w-full mt-4 px-6 py-2.5 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium">
+            <button className="w-full mt-4 px-6 py-2.5 rounded-lg bg-[#3e7ae5] text-white font-medium hover:bg-[#5a8df0] transition-colors">
               Book a Demo
             </button>
           </div>

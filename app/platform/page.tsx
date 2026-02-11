@@ -147,7 +147,7 @@ export default function PlatformPage() {
                   {/* Primary Button with Gradient */}
                   <Link
                     href="/platform/dev-studio"
-                    className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] px-8 py-3.5 text-base font-medium text-white transition-all duration-500 shadow-lg bg-[length:200%_100%] bg-left hover:bg-right"
+                    className="inline-flex items-center gap-2 rounded-lg bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 shadow-lg hover:bg-[#5a8df0]"
                   >
                     Explore Dev Studio
                   </Link>
@@ -478,7 +478,7 @@ export default function PlatformPage() {
                 return (
                   <article
                     key={card.id}
-                    className="relative flex h-full flex-col gap-6 rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 via-white/[0.04] to-white/[0.02] p-10 backdrop-blur-sm shadow-[0_45px_120px_-65px_rgba(56,189,248,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_55px_140px_-70px_rgba(56,189,248,0.65)]"
+                    className="relative flex h-full flex-col gap-6 rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 via-white/[0.04] to-white/[0.02] p-10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/20"
                   >
                     <div
                       className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 ${card.iconClasses}`}

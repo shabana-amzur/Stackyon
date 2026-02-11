@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { LinkIcon } from '@heroicons/react/24/outline';
 import Reveal from '@/components/ui/Reveal';
 
@@ -28,10 +29,19 @@ import Reveal from '@/components/ui/Reveal';
 export default function CTASection() {
   return (
     <section className="relative isolate overflow-hidden bg-black py-24">
-      <div className="absolute inset-x-0 top-0 h-px bg-gray-800" aria-hidden="true" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gray-800" aria-hidden="true" />
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/digital-information-technology-concept-man-use-cybersecurity-computers-protect-against-online.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
 
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
         <Reveal animation="fade-up" duration={950} delay={120}>
           <h2 className="text-4xl md:text-[40px] font-medium leading-tight text-white">
             See Stackyon in action.
@@ -45,8 +55,8 @@ export default function CTASection() {
         <Reveal animation="fade-up" duration={1000} delay={220}>
           <div className="flex flex-col items-center gap-4 sm:flex-row">
             <Link href="/demo" className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
-              <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] px-8 py-3.5 text-base font-medium text-white transition-all duration-500 bg-[length:200%_100%] bg-left hover:bg-right">
+              <div className="absolute inset-0 bg-[#3e7ae5] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
+              <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:bg-[#5a8df0]">
                 Get Started
                 <LinkIcon className="h-5 w-5" />
               </div>
