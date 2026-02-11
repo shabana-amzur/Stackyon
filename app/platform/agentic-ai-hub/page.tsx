@@ -18,29 +18,29 @@ import Reveal from '@/components/ui/Reveal';
 
 const features = [
   {
-    id: "ai-agent-configuration",
-    title: "AI agent configuration",
+    id: "decision-intensive",
+    title: "Decision-intensive enterprise workflows",
     description: "",
     icon: CpuChipIcon,
     iconClasses: "bg-purple-500/10 text-purple-300",
   },
   {
-    id: "validation-workflows",
-    title: "Validation within workflows",
+    id: "validation-heavy",
+    title: "Validation-heavy processes",
     description: "",
     icon: ShieldCheckIcon,
     iconClasses: "bg-cyan-500/10 text-cyan-300",
   },
   {
-    id: "recommendation-systems",
-    title: "Recommendation systems",
+    id: "assisted-decisions",
+    title: "Applications requiring recommendations or assisted decisions",
     description: "",
     icon: Squares2X2Icon,
     iconClasses: "bg-blue-500/10 text-blue-300",
   },
   {
-    id: "decision-automation",
-    title: "Decision automation",
+    id: "regulated-systems",
+    title: "Regulated systems where auditability is required",
     description: "",
     icon: CommandLineIcon,
     iconClasses: "bg-teal-500/10 text-teal-300",
@@ -49,7 +49,7 @@ const features = [
 
 export default function AgenticAIHubPage() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
-  const [activeAccordion, setActiveAccordion] = useState<number | string>("ai-agents");
+  const [activeAccordion, setActiveAccordion] = useState<number | string>("decision-points");
 
   return (
     <div className="min-h-screen w-full bg-black">
@@ -93,14 +93,14 @@ export default function AgenticAIHubPage() {
               {/* Main Heading */}
               <Reveal animation="fade-up" duration={900} delay={100}>
                 <h1 className="text-[48px] font-medium text-white leading-tight">
-                  Configure AI agents that operate inside workflows
+                  Embed intelligence directly into enterprise workflows
                 </h1>
               </Reveal>
 
               {/* Subtitle */}
               <Reveal animation="fade-up" duration={900} delay={200}>
                 <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
-                  A controlled environment for integrating AI agents directly into business processes, with governance, validation, and traceability built in from the start.
+                  Agentic AI Hub enables organizations to introduce AI into business applications in a controlled, intentional way. Intelligence operates inside workflows, alongside rules and process logic, instead of existing as a separate layer outside the system.
                 </p>
               </Reveal>
 
@@ -112,7 +112,7 @@ export default function AgenticAIHubPage() {
                     href="#features"
                     className="inline-flex items-center gap-2 rounded-lg bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 shadow-lg hover:bg-[#5a8df0]"
                   >
-                    See Agentic AI Hub in action
+                    Explore Agentic AI Hub
                     <ArrowRightIcon className="h-5 w-5" />
                   </Link>
 
@@ -121,7 +121,7 @@ export default function AgenticAIHubPage() {
                     href="/platform"
                     className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 text-base font-medium text-gray-900 transition hover:bg-gray-100"
                   >
-                    Explore the platform
+                    Explore the Platform
                   </Link>
                 </div>
               </Reveal>
@@ -178,14 +178,14 @@ export default function AgenticAIHubPage() {
                 {/* Left Column - Title */}
                 <div>
                   <h2 className="text-4xl font-medium leading-tight md:text-[40px]">
-                    AI agents that work within governed processes
+                    Enterprise AI needs structure, not experiments
                   </h2>
                 </div>
                 
                 {/* Right Column - Text */}
                 <div className="space-y-6">
                   <p className="text-lg text-white/70 leading-relaxed">
-                    Most AI implementations operate outside core systems or replace workflows entirely. Agentic AI Hub integrates AI agents directly into business processes, where they can validate inputs, recommend next steps, or make decisions while maintaining full traceability and compliance.
+                    In most enterprise systems, AI is added as an external service or isolated capability. This makes decisions harder to govern, explain, and evolve over time. Agentic AI Hub was built to ensure intelligence becomes part of how applications operate, without compromising transparency or control.
                   </p>
                 </div>
             </div>
@@ -213,24 +213,24 @@ export default function AgenticAIHubPage() {
               <div className="space-y-2">
                 {[
                   {
-                    id: "ai-agents",
-                    title: "Configure AI agents for specific tasks",
-                    description: "Set up AI agents to handle validation, recommendations, or automated decisions within your workflows, without changing existing processes.",
+                    id: "decision-points",
+                    title: "Embed AI at decision points",
+                    description: "Configure agents to operate where validation, judgment, or recommendations are required within workflows.",
                   },
                   {
-                    id: "governance",
-                    title: "Maintain governance and compliance",
-                    description: "Track every AI decision, audit agent behavior, and enforce compliance standards across all automated interactions.",
+                    id: "interpret-inputs",
+                    title: "Interpret inputs and context",
+                    description: "Use agents to interpret documents, data, and user inputs as part of an application flow.",
+                  },
+                  {
+                    id: "trigger-actions",
+                    title: "Trigger actions and next steps",
+                    description: "Allow agents to initiate workflow transitions, approvals, or follow-up actions based on defined conditions.",
                   },
                   {
                     id: "human-loop",
-                    title: "Enable human-in-the-loop oversight",
-                    description: "Configure when agents operate autonomously and when they escalate to human review, ensuring critical decisions remain controlled.",
-                  },
-                  {
-                    id: "integration",
-                    title: "Integrate with enterprise systems",
-                    description: "Connect AI agents to existing data sources and systems, allowing them to operate with context and real-time information.",
+                    title: "Support human-in-the-loop scenarios",
+                    description: "Design workflows where AI assists decision-making while keeping humans involved when required.",
                   }
                 ].map((feature) => (
                   <div key={feature.id} className="border-b border-white/10">
@@ -284,25 +284,61 @@ export default function AgenticAIHubPage() {
         </div>
       </section>
 
-      {/* Recognition Banner Section */}
-      <section className="relative py-10 overflow-hidden bg-black">
+      {/* Intelligence & Trust Section - 50/50 Layout */}
+      <section className="relative bg-[#030711] py-24 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-slate-900/40 to-black"></div>
+        </div>
 
-        <div className="relative mx-auto max-w-[1360px] px-6 lg:px-12">
-          <Reveal animation="fade-up" duration={900} delay={100}>
-            <div className="max-w-3xl mx-auto text-center">
-              {/* Text Content */}
-              <div className="space-y-6">
-                <div>
-                  <h2 className="text-4xl md:text-5xl font-medium text-white mb-6 leading-tight">
-                    Built for production AI
+        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
+          <div className="grid gap-16 lg:grid-cols-2 items-center">
+            {/* Left Column - Content */}
+            <div className="space-y-12">
+              <Reveal animation="fade-up" duration={900} delay={100}>
+                <div className="space-y-4">
+                  <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight">
+                    Intelligence that works with rules, not around them
                   </h2>
-                  <p className="text-lg text-white/90 leading-relaxed">
-                    Most AI tools operate outside business systems or lack governance for regulated environments. Agentic AI Hub integrates AI agents directly into workflows, with full auditability, compliance controls, and traceability built in from the start.
+                  <div className="space-y-4 text-white/70 text-lg leading-relaxed">
+                    <p>
+                      Agentic AI Hub does not replace business rules or process logic. Agents operate alongside rules and decisions, ensuring that intelligence remains predictable, explainable, and auditable as applications evolve.
+                    </p>
+                    <p>
+                      This allows AI behavior to change safely as policies, data, and operational conditions change.
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal animation="fade-up" duration={900} delay={200}>
+                <div className="space-y-4">
+                  <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight">
+                    Built for enterprise trust
+                  </h2>
+                  <p className="text-white/70 text-lg leading-relaxed">
+                    Agentic AI Hub is designed for environments where decisions carry risk and accountability matters. AI-driven actions remain visible, governed, and aligned with enterprise controls rather than operating as opaque black boxes.
                   </p>
                 </div>
-              </div>
+              </Reveal>
             </div>
-          </Reveal>
+
+            {/* Right Column - Image */}
+            <Reveal animation="fade-left" duration={1000} delay={300}>
+              <div className="relative">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                  <Image
+                    src="/images/products/agentic-hub.jpg"
+                    alt="Enterprise AI Governance"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                
+                {/* Glow effect behind image */}
+                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-purple-500/20 blur-3xl"></div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -325,7 +361,7 @@ export default function AgenticAIHubPage() {
                 duration={800} 
                 delay={100 + index * 50}
               >
-                <div className="group relative rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 p-8 border border-white/5 hover:border-white/10 transition-all duration-300">
+                <div className="group relative h-full rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 p-8 border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col">
                   {/* Icon */}
                   <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${feature.iconClasses} mb-6`}>
                     <feature.icon className="h-7 w-7" />
@@ -347,26 +383,35 @@ export default function AgenticAIHubPage() {
 
       {/* Custom CTA Section for Agentic AI Hub */}
       <section className="relative isolate overflow-hidden bg-black py-24">
-        <div className="absolute inset-x-0 top-0 h-px bg-gray-800" aria-hidden="true" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gray-800" aria-hidden="true" />
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/digital-information-technology-concept-man-use-cybersecurity-computers-protect-against-online.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
 
-        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
           <Reveal animation="fade-up" duration={950} delay={120}>
             <h2 className="text-4xl md:text-[40px] font-medium leading-tight text-white mb-4">
               See Agentic AI Hub in action
             </h2>
             <p className="text-xl text-white/70 max-w-2xl">
-              See how teams integrate AI agents into workflows while maintaining compliance and control.
+              See how intelligence operates inside workflows without breaking enterprise control.
             </p>
           </Reveal>
 
           <Reveal animation="fade-up" duration={1000} delay={220}>
             <div className="flex flex-col items-center gap-4 sm:flex-row">
-              <Link href="/demo" className="relative group">
+              <Link href="#features" className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
                 <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] px-8 py-3.5 text-base font-medium text-white transition-all duration-500 bg-[length:200%_100%] bg-left hover:bg-right">
-                  See Agentic AI Hub in Action
-                  <LinkIcon className="h-5 w-5" />
+                  Explore Agentic AI Hub
+                  <ArrowRightIcon className="h-5 w-5" />
                 </div>
               </Link>
               <Link

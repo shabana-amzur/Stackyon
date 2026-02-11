@@ -366,10 +366,19 @@ export default function DevStudioPage() {
 
       {/* Custom CTA Section for Dev Studio */}
       <section className="relative isolate overflow-hidden bg-black py-24">
-        <div className="absolute inset-x-0 top-0 h-px bg-gray-800" aria-hidden="true" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gray-800" aria-hidden="true" />
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/digital-information-technology-concept-man-use-cybersecurity-computers-protect-against-online.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
 
-        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
           <Reveal animation="fade-up" duration={950} delay={120}>
             <h2 className="text-4xl md:text-[40px] font-medium leading-tight text-white mb-4">
               See Dev Studio in action
