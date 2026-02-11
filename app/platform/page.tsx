@@ -365,7 +365,7 @@ export default function PlatformPage() {
           <Reveal animation="fade-up" duration={900} delay={200}>
             <div className="relative">
               {/* Connecting Line - Aligned through center of boxes */}
-              <div className="absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-400/40 via-purple-400/40 via-blue-400/40 via-purple-400/40 to-transparent hidden lg:block"></div>
+              <div className="absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-400/40 via-purple-400/40 via-blue-400/40 via-purple-400/40 to-transparent hidden lg:block"></div>
               
               {/* Steps Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
@@ -373,10 +373,10 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-sky-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-sky-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-32 h-32 rounded-3xl bg-gradient-to-br from-blue-500 via-blue-400 to-sky-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
-                      <CircleStackIcon className="w-16 h-16 text-white" />
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 via-blue-400 to-sky-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                      <CircleStackIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
                   <h3 className="text-2xl font-medium text-white mb-4">Step 1</h3>
@@ -389,10 +389,10 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-32 h-32 rounded-3xl bg-gradient-to-br from-purple-500 via-purple-400 to-pink-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
-                      <CpuChipIcon className="w-16 h-16 text-white" />
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 via-purple-400 to-pink-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                      <CpuChipIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
                   <h3 className="text-2xl font-medium text-white mb-4">Step 2</h3>
@@ -405,10 +405,10 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-32 h-32 rounded-3xl bg-gradient-to-br from-blue-500 via-cyan-400 to-cyan-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
-                      <LinkIcon className="w-16 h-16 text-white" />
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 via-cyan-400 to-cyan-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                      <LinkIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
                   <h3 className="text-2xl font-medium text-white mb-4">Step 3</h3>
@@ -421,10 +421,10 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-violet-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-violet-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-32 h-32 rounded-3xl bg-gradient-to-br from-purple-500 via-violet-400 to-violet-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
-                      <RocketLaunchIcon className="w-16 h-16 text-white" />
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 via-violet-400 to-violet-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                      <RocketLaunchIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
                   <h3 className="text-2xl font-medium text-white mb-4">Step 4</h3>
@@ -437,10 +437,10 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-32 h-32 rounded-3xl bg-gradient-to-br from-blue-500 via-indigo-400 to-indigo-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
-                      <ArrowPathIcon className="w-16 h-16 text-white" />
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 via-indigo-400 to-indigo-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                      <ArrowPathIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
                   <h3 className="text-2xl font-medium text-white mb-4">Step 5</h3>
@@ -481,9 +481,9 @@ export default function PlatformPage() {
                     className="relative flex h-full flex-col gap-6 rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 via-white/[0.04] to-white/[0.02] p-10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/20"
                   >
                     <div
-                      className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 ${card.iconClasses}`}
+                      className={`inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 ${card.iconClasses}`}
                     >
-                      <Icon className="h-6 w-6" />
+                      <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
                     <p className="text-base leading-relaxed text-white/70">{card.description}</p>
