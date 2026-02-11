@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ArrowRightIcon,
   HeartIcon,
@@ -86,8 +86,129 @@ const useCases = [
   },
 ];
 
+// Word component - tracks mouse distance for individual word
+function Word({ 
+  children, 
+  mousePosition 
+}: { 
+  children: string; 
+  mousePosition: { x: number; y: number };
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [colorMix, setColorMix] = useState(0);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    
+    const rect = ref.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    const distance = Math.sqrt(
+      Math.pow(mousePosition.x - centerX, 2) + 
+      Math.pow(mousePosition.y - centerY, 2)
+    );
+    
+    // Maximum distance to consider (in pixels)
+    const maxDistance = 200;
+    const mix = Math.max(0, 1 - (distance / maxDistance));
+    
+    setColorMix(mix);
+  }, [mousePosition]);
+
+  // Interpolate between #7f9385 and #ffffff
+  const baseColor = { r: 127, g: 147, b: 133 }; // #7f9385
+  const whiteColor = { r: 255, g: 255, b: 255 }; // #ffffff
+  
+  const r = Math.round(baseColor.r + (whiteColor.r - baseColor.r) * colorMix);
+  const g = Math.round(baseColor.g + (whiteColor.g - baseColor.g) * colorMix);
+  const b = Math.round(baseColor.b + (whiteColor.b - baseColor.b) * colorMix);
+  
+  return (
+    <span
+      ref={ref}
+      style={{
+        color: `rgb(${r}, ${g}, ${b})`,
+        transition: 'color 0.2s ease-out'
+      }}
+    >
+      {children}
+    </span>
+  );
+}
+
+// MouseTrackText Component - Changes color from #7f9385 to white word by word
+function MouseTrackText({ 
+  children, 
+  mousePosition, 
+  className = '', 
+  baseOpacity = 0.4, 
+  maxOpacity = 1,
+  as = 'p'
+}: { 
+  children: React.ReactNode; 
+  mousePosition: { x: number; y: number }; 
+  className?: string;
+  baseOpacity?: number;
+  maxOpacity?: number;
+  as?: 'p' | 'span';
+}) {
+  const Component = as;
+  
+  // Split text into words and wrap each in Word component
+  const renderWords = (text: string) => {
+    const words = text.split(/(\s+)/);
+    return words.map((word, index) => {
+      if (word.match(/\s+/)) {
+        return word; // Return whitespace as is
+      }
+      return (
+        <Word key={index} mousePosition={mousePosition}>
+          {word}
+        </Word>
+      );
+    });
+  };
+  
+  return (
+    <Component className={className}>
+      {typeof children === 'string' ? renderWords(children) : children}
+    </Component>
+  );
+}
+
 export default function AIHealthcarePage() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const calculateBrightness = (element: HTMLElement | null) => {
+    if (!element) return 0.4;
+    
+    const rect = element.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    const distance = Math.sqrt(
+      Math.pow(mousePosition.x - centerX, 2) + 
+      Math.pow(mousePosition.y - centerY, 2)
+    );
+    
+    // Maximum distance to consider (in pixels)
+    const maxDistance = 300;
+    const brightness = Math.max(0.4, 1 - (distance / maxDistance));
+    
+    return brightness;
+  };
 
   return (
     <div className="min-h-screen w-full bg-black">
@@ -255,34 +376,150 @@ export default function AIHealthcarePage() {
       </section>
 
       {/* Why Healthcare Needs AI Section */}
-      <section className="relative bg-[#030711] pt-8 pb-24 overflow-hidden">
+      <section ref={sectionRef} className="relative overflow-hidden border-t border-white/10">
+        {/* Deep green background with gradient */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/60 to-black"></div>
-          <div className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"></div>
-          <div className="absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-cyan-500/15 blur-[120px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0D3B2E] via-[#0a2f24] to-[#0D3B2E]"></div>
+          {/* Subtle grain texture overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            }}
+          ></div>
         </div>
 
-        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
-          <Reveal animation="fade-up" duration={950} delay={100}>
-            <div className="grid gap-24 lg:grid-cols-[30%_70%] text-white">
-              {/* Left Column - Title */}
-              <div>
-                <h2 className="text-4xl font-medium leading-tight md:text-[40px]">
+        <div className="mx-auto max-w-[1360px] px-6 lg:px-20">
+          <div className="grid gap-20 lg:grid-cols-2 items-center min-h-[80vh] py-[120px]">
+            {/* Left Column - Large Headline */}
+            <Reveal animation="fade-up" duration={1000} delay={100}>
+              <div className="lg:sticky lg:top-32">
+                <h2 className="text-[52px] md:text-[64px] lg:text-[72px] font-bold leading-[0.95] text-white tracking-tight">
                   The Operational Problem
                 </h2>
               </div>
+            </Reveal>
+            
+            {/* Right Column - Body Text with luxury styling */}
+            <div className="space-y-8">
+              <Reveal animation="fade-up" duration={800} delay={150}>
+                <MouseTrackText 
+                  mousePosition={mousePosition}
+                  className="text-[20px] leading-[1.7] font-normal"
+                  baseOpacity={0.4}
+                >
+                  Healthcare providers spend disproportionate time on administrative and documentation tasks, creating burnout, delays, and financial leakage.
+                </MouseTrackText>
+              </Reveal>
               
-              {/* Right Column - Text */}
-              <div className="space-y-6">
-                <p className="text-lg text-white/70 leading-relaxed">
-                  Healthcare providers spend disproportionate time on administrative and documentation tasks, creating burnout, delays, and financial leakage. Fragmented systems, manual handoffs, and disconnected tools make workflows slow, error-prone, and difficult to evolve. This results in denied claims, compliance risk, care coordination gaps, and rising operational costs.
-                </p>
-                <p className="text-lg text-white/70 leading-relaxed">
-                  Stackyon addresses this by structuring workflows, decisions, and intelligence within a unified operational layer rather than adding another external tool.
-                </p>
-              </div>
+              <Reveal animation="fade-up" duration={800} delay={250}>
+                <MouseTrackText 
+                  mousePosition={mousePosition}
+                  className="text-[18px] leading-[1.8] font-normal"
+                  baseOpacity={0.4}
+                  maxOpacity={0.9}
+                >
+                  Fragmented systems, manual handoffs, and disconnected tools make workflows slow, error-prone, and difficult to evolve. This results in denied claims, compliance risk, care coordination gaps, and rising operational costs.
+                </MouseTrackText>
+              </Reveal>
+              
+              <Reveal animation="fade-up" duration={800} delay={350}>
+                <MouseTrackText 
+                  mousePosition={mousePosition}
+                  className="text-[18px] leading-[1.8] font-normal"
+                  baseOpacity={0.4}
+                  maxOpacity={0.85}
+                >
+                  For healthcare organizations, this is the moment to lean deeper into operational excellence. To pair clinical expertise with systems designed to amplify efficiency and reduce administrative burden.
+                </MouseTrackText>
+              </Reveal>
+              
+              <Reveal animation="fade-up" duration={800} delay={450}>
+                <MouseTrackText 
+                  mousePosition={mousePosition}
+                  className="text-[18px] leading-[1.8] font-normal"
+                  baseOpacity={0.4}
+                  maxOpacity={0.9}
+                >
+                  Stackyon addresses this by structuring workflows, decisions, and intelligence within a unified operational layer—rather than adding another external tool that creates more fragmentation.
+                </MouseTrackText>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Healthcare Intelligence Section */}
+      <section className="relative overflow-hidden border-b border-white/10">
+        {/* Deep green background with gradient */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0D3B2E] via-[#0a2f24] to-[#0D3B2E]"></div>
+          {/* Subtle grain texture overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            }}
+          ></div>
+        </div>
+
+        <div className="mx-auto max-w-[1360px] px-6 lg:px-20">
+          <div className="grid gap-20 lg:grid-cols-2 items-center min-h-[80vh] py-[120px]">
+            {/* Left Column - Large Headline */}
+            <Reveal animation="fade-up" duration={1000} delay={100}>
+              <div className="lg:sticky lg:top-32">
+                <h2 className="text-[52px] md:text-[64px] lg:text-[72px] font-bold leading-[0.95] text-white tracking-tight">
+                  Clinical workflows need intelligence, not just automation.
+                </h2>
+              </div>
+            </Reveal>
+            
+            {/* Right Column - Body Text with luxury styling */}
+            <div className="space-y-8">
+              <Reveal animation="fade-up" duration={800} delay={150}>
+                <MouseTrackText 
+                  mousePosition={mousePosition}
+                  className="text-[20px] leading-[1.7] font-normal"
+                  baseOpacity={0.4}
+                >
+                  AI is reshaping how healthcare organizations coordinate care, manage documentation, and deliver patient outcomes.
+                </MouseTrackText>
+              </Reveal>
+              
+              <Reveal animation="fade-up" duration={800} delay={200}>
+                <MouseTrackText 
+                  mousePosition={mousePosition}
+                  className="text-[18px] leading-[1.8] font-normal"
+                  baseOpacity={0.4}
+                  maxOpacity={0.9}
+                >
+                  Clinical workflows are evolving, and accuracy, context, and compliance matter more than ever in determining which systems drive real value without adding friction.
+                </MouseTrackText>
+              </Reveal>
+              
+              <Reveal animation="fade-up" duration={800} delay={250}>
+                <MouseTrackText 
+                  mousePosition={mousePosition}
+                  className="text-[18px] leading-[1.8] font-normal"
+                  baseOpacity={0.4}
+                  maxOpacity={0.85}
+                >
+                  For healthcare leaders, this is the moment to build operational systems that support clinical excellence. To combine medical expertise with intelligent automation designed to reduce burden and improve care delivery.
+                </MouseTrackText>
+              </Reveal>
+              
+              <Reveal animation="fade-up" duration={800} delay={300}>
+                <MouseTrackText 
+                  mousePosition={mousePosition}
+                  className="text-[18px] leading-[1.8] font-normal"
+                  baseOpacity={0.4}
+                  maxOpacity={0.9}
+                >
+                  Stackyon is where clinical workflows become intelligent operations, and where healthcare organizations build the foundation for sustainable, scalable care delivery.
+                </MouseTrackText>
+              </Reveal>
+            </div>
+          </div>
         </div>
       </section>
 
