@@ -186,14 +186,14 @@ export default function PlatformPage() {
 
               {/* Main Heading */}
               <Reveal animation="fade-up" duration={900} delay={100}>
-                <h1 className="text-[48px] font-medium text-white leading-tight">
+                <h1 className="text-[48px] font-normal text-white leading-tight">
                   An AI-native platform for intelligent enterprise applications
                 </h1>
               </Reveal>
 
               {/* Subtitle */}
               <Reveal animation="fade-up" duration={900} delay={200}>
-                <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
+                <p className="text-white/80 leading-relaxed max-w-xl" style={{ fontSize: '19px', fontWeight: 300 }}>
                   Design processes, embed intelligence, and run business-critical applications on one unified platform. Built for complexity, change, and control.
                 </p>
               </Reveal>
@@ -283,10 +283,10 @@ export default function PlatformPage() {
                 
                 {/* Right Column - Text */}
                 <div className="space-y-6">
-                  <p className="text-white/70 leading-relaxed" style={{ fontSize: '20px', fontWeight: 300 }}>
+                  <p className="text-white/70 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
                   Enterprise applications are shaped by years of business rules, integrations, regulatory constraints, and operational dependencies. Requirements change frequently, but traditional development and stitched tools make every change slow and risky.
                 </p>
-                  <p className="text-white/70 leading-relaxed" style={{ fontSize: '20px', fontWeight: 300 }}>
+                  <p className="text-white/70 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
                     Most platforms automate tasks or add AI as a separate layer. Stackyon was built to treat workflows, decisions, and intelligence as core parts of the system so applications can evolve without losing structure, transparency, or control.
                   </p>
                 </div>
@@ -296,7 +296,7 @@ export default function PlatformPage() {
       </section>
 
       {/* Platform Features Section with Accordion */}
-      <section className="relative py-24 overflow-visible bg-black">
+      <section className="relative py-[80px] overflow-visible bg-black">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <div className="grid gap-16 lg:grid-cols-[400px_1fr] items-start">
             {/* Left Column - Accordion */}
@@ -306,10 +306,10 @@ export default function PlatformPage() {
                 <p className="text-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-3">
                   {platformFeatures.find(f => f.id === activeFeature)?.subtitle || ""}
                 </p>
-                <h2 className="text-4xl md:text-[40px] font-medium text-white">
+                <h2 className="text-4xl md:text-[40px] font-normal text-white">
                   The Stackyon Work Environment
                 </h2>
-                <p className="mt-4 text-lg text-white/70 leading-relaxed">
+                <p className="mt-4 text-white/70 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
                   The Stackyon platform is accessed and used through two tightly integrated components.
                 </p>
               </div>
@@ -347,7 +347,7 @@ export default function PlatformPage() {
                             leaveTo="transform scale-95 opacity-0"
                           >
                             <Disclosure.Panel static className="pb-4 space-y-3">
-                              <p className="text-sm text-white/70 leading-relaxed">
+                              <p className="text-white/70 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
                                 {feature.description}
                               </p>
                               <Link 
@@ -426,12 +426,12 @@ export default function PlatformPage() {
 
       {/* How the Platform Works Section */}
       {/* How the Platform Works Section */}
-      <section className="relative bg-black py-24">
-        <div className="mx-auto w-full max-w-[1360px] px-6 lg:px-8">
+      <section className="relative bg-black pt-[80px] pb-[80px]">
+        <div className="mx-auto w-full max-w-[1400px] px-6 lg:px-8">
           {/* Heading */}
           <Reveal animation="fade-up" duration={950} delay={100}>
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-[40px] font-medium text-white">
+              <h2 className="text-4xl md:text-[40px] font-normal text-white">
                 How the Platform Works end to end
               </h2>
             </div>
@@ -455,8 +455,8 @@ export default function PlatformPage() {
                       <CircleStackIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-medium text-white mb-4">Step 1</h3>
-                  <p className="text-gray-300 text-base leading-relaxed">
+                  <h3 className="text-2xl font-normal text-white mb-4">Step 1</h3>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
                     Model Define how your business behaves using Dev Studio.
                   </p>
                 </div>
@@ -471,8 +471,8 @@ export default function PlatformPage() {
                       <CpuChipIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-medium text-white mb-4">Step 2</h3>
-                  <p className="text-gray-300 text-base leading-relaxed">
+                  <h3 className="text-2xl font-normal text-white mb-4">Step 2</h3>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
                     Add Intelligence Embed AI Agents where judgment and automation matter.
                   </p>
                 </div>
@@ -487,8 +487,8 @@ export default function PlatformPage() {
                       <LinkIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-medium text-white mb-4">Step 3</h3>
-                  <p className="text-gray-300 text-base leading-relaxed">
+                  <h3 className="text-2xl font-normal text-white mb-4">Step 3</h3>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
                     Connect Integrate with existing apps, APIs, and data sources without disruption.
                   </p>
                 </div>
@@ -503,8 +503,8 @@ export default function PlatformPage() {
                       <RocketLaunchIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-medium text-white mb-4">Step 4</h3>
-                  <p className="text-gray-300 text-base leading-relaxed">
+                  <h3 className="text-2xl font-normal text-white mb-4">Step 4</h3>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
                     Run Deploy apps across environments instantly.
                   </p>
                 </div>
@@ -519,8 +519,8 @@ export default function PlatformPage() {
                       <ArrowPathIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-medium text-white mb-4">Step 5</h3>
-                  <p className="text-gray-300 text-base leading-relaxed">
+                  <h3 className="text-2xl font-normal text-white mb-4">Step 5</h3>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
                     Adapt Modify workflows, logic, rules, and UI as requirements evolve, without rewrites.
                   </p>
                 </div>
@@ -531,17 +531,16 @@ export default function PlatformPage() {
       </section>
 
       {/* Platform Capabilities Section */}
-      <section className="relative isolate overflow-hidden bg-black py-24">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.18),transparent_60%)]" />
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_bottom,_rgba(168,85,247,0.18),transparent_65%)]" />
+      <section className="relative isolate overflow-hidden bg-black pt-[80px] pb-[120px]">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black via-black to-blue-950/40" />
 
         <div className="relative mx-auto w-full max-w-[1360px] px-6 lg:px-10">
           <Reveal animation="fade-up" duration={950} delay={120}>
             <div className="mx-auto max-w-4xl text-center mb-16">
-              <h2 className="text-4xl font-medium text-white md:text-5xl mb-6">
+              <h2 className="text-4xl font-normal text-white md:text-5xl mb-6">
                 Platform capabilities
               </h2>
-              <p className="text-lg leading-relaxed text-white/70">
+              <p className="leading-relaxed text-white/70" style={{ fontSize: '19px', fontWeight: 300 }}>
                 Stackyon provides the full set of capabilities required to build, modernize, and operate intelligent enterprise applications.
               </p>
             </div>
@@ -566,16 +565,14 @@ export default function PlatformPage() {
                     <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500 mb-4">
                       <Icon className="h-7 w-7 text-white" />
                     </div>
-                    <h3 className="text-xl font-medium text-white">{card.title}</h3>
-                    <p className="text-base leading-relaxed text-white/60">{card.description}</p>
+                    <h3 className="text-xl font-normal text-white">{card.title}</h3>
+                    <p className="leading-relaxed text-white/60" style={{ fontSize: '19px', fontWeight: 300 }}>{card.description}</p>
                   </article>
                 );
               })}
             </div>
           </Reveal>
         </div>
-
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
       </section>
 
       {/* Additional content sections can go here */}

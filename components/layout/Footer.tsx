@@ -244,7 +244,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative z-10 mt-10 border-t border-white/10">
+      <div className="relative z-10 mt-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-white/60 md:flex-row lg:px-8">
           <p>Stackyon, {currentYear} © All rights reserved</p>
           <button
