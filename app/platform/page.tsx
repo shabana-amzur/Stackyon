@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Disclosure, Transition } from "@headlessui/react";
 import {
   ArrowPathIcon,
@@ -88,9 +88,66 @@ const capabilityCards = [
   },
 ];
 
+type ParticleConfig = {
+  opacity: number;
+  size: number;
+  duration: number;
+  x: number;
+  y: number;
+  delay: number;
+};
+
+const PARTICLE_COUNT = 10;
+
+const createParticles = (): ParticleConfig[] =>
+  Array.from({ length: PARTICLE_COUNT }, () => ({
+    opacity: Math.random() * 0.6 + 0.2,
+    size: Math.random() * 2.5 + 1,
+    duration: (Math.random() * 20 + 15) * 0.9,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 5,
+  }));
+
 export default function PlatformPage() {
   const [activeFeature, setActiveFeature] = useState("dev-studio");
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const particlesRef = useRef<HTMLDivElement>(null);
+  const [particles] = useState<ParticleConfig[]>(() => createParticles());
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!particlesRef.current) return;
+      
+      const particles = particlesRef.current.querySelectorAll('.particle');
+      const rect = particlesRef.current.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      particles.forEach((particle) => {
+        const el = particle as HTMLElement;
+        const particleRect = el.getBoundingClientRect();
+        const particleX = particleRect.left - rect.left + particleRect.width / 2;
+        const particleY = particleRect.top - rect.top + particleRect.height / 2;
+
+        const deltaX = mouseX - particleX;
+        const deltaY = mouseY - particleY;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+        if (distance < 200) {
+          const force = (200 - distance) / 200;
+          const moveX = -(deltaX / distance) * force * 50;
+          const moveY = -(deltaY / distance) * force * 50;
+          el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        } else {
+          el.style.transform = 'translate(0, 0)';
+        }
+      });
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    return () => document.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
     <div className="min-h-screen w-full bg-black">
@@ -101,12 +158,12 @@ export default function PlatformPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-[#0a1929] via-[#0d2847] to-[#0a1929]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent"></div>
           
-          {/* Grid pattern overlay */}
+          {/* Mesh grid pattern overlay */}
           <div 
-            className="absolute inset-0 opacity-[0.03]"
+            className="absolute inset-0 z-10"
             style={{
-              backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
-              backgroundSize: '50px 50px',
+              backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px)`,
+              backgroundSize: '80px 80px',
             }}
           ></div>
         </div>
@@ -188,29 +245,48 @@ export default function PlatformPage() {
       </section>
 
       {/* Enterprise Focus Section */}
-      <section className="relative bg-[#030711] pt-8 pb-24 overflow-hidden">
+      <section className="relative bg-[#030711] py-[80px] overflow-hidden">
+        {/* Particles Background */}
+        <div ref={particlesRef} className="stars-container absolute inset-0 z-0">
+          {particles.map((particle, index) => (
+            <div
+              key={index}
+              className="particle absolute bg-white rounded-full transition-transform duration-300 ease-out"
+              style={{
+                width: `${particle.size}px`,
+                height: `${particle.size}px`,
+                left: `${particle.x}%`,
+                top: `${particle.y}%`,
+                opacity: particle.opacity,
+                animation: `float ${particle.duration}s ease-in-out infinite`,
+                animationDelay: `${particle.delay}s`,
+              }}
+            />
+          ))}
+        </div>
+
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/60 to-black"></div>
           <div className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"></div>
           <div className="absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-purple-500/15 blur-[120px]"></div>
         </div>
 
-        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
+        <div className="mx-auto max-w-[1360px] px-6 lg:px-12 relative z-10">
           <Reveal animation="fade-up" duration={950} delay={100}>
-            <div className="grid gap-24 lg:grid-cols-[30%_70%] text-white">
+            <div className="text-white grid gap-12 lg:grid-cols-[40%_60%] items-start">
                 {/* Left Column - Title */}
                 <div>
-                  <h2 className="text-4xl font-medium leading-tight md:text-[40px]">
+                  <h2 className="leading-tight" style={{ fontSize: '45px', fontWeight: 400 }}>
                     Built for enterprise systems that don't stand still
                   </h2>
                 </div>
                 
                 {/* Right Column - Text */}
                 <div className="space-y-6">
-                  <p className="text-lg text-white/70 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed" style={{ fontSize: '20px', fontWeight: 300 }}>
                   Enterprise applications are shaped by years of business rules, integrations, regulatory constraints, and operational dependencies. Requirements change frequently, but traditional development and stitched tools make every change slow and risky.
                 </p>
-                  <p className="text-lg text-white/70 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed" style={{ fontSize: '20px', fontWeight: 300 }}>
                     Most platforms automate tasks or add AI as a separate layer. Stackyon was built to treat workflows, decisions, and intelligence as core parts of the system so applications can evolve without losing structure, transparency, or control.
                   </p>
                 </div>
@@ -461,32 +537,37 @@ export default function PlatformPage() {
 
         <div className="relative mx-auto w-full max-w-[1360px] px-6 lg:px-10">
           <Reveal animation="fade-up" duration={950} delay={120}>
-            <div className="mx-auto max-w-4xl text-center">
-              <h2 className="mt-6 text-4xl font-medium text-white md:text-[40px]">
-                Platform Capabilities
+            <div className="mx-auto max-w-4xl text-center mb-16">
+              <h2 className="text-4xl font-medium text-white md:text-5xl mb-6">
+                Platform capabilities
               </h2>
-              <p className="mt-5 text-lg leading-relaxed text-white/70">
+              <p className="text-lg leading-relaxed text-white/70">
                 Stackyon provides the full set of capabilities required to build, modernize, and operate intelligent enterprise applications.
               </p>
             </div>
           </Reveal>
 
           <Reveal animation="fade-up" duration={900} delay={180}>
-            <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative">
+              {/* Vertical dividers */}
+              <div className="hidden lg:block absolute left-1/3 top-0 bottom-0 w-px bg-white/10"></div>
+              <div className="hidden lg:block absolute left-2/3 top-0 bottom-0 w-px bg-white/10"></div>
+              
+              {/* Horizontal divider */}
+              <div className="hidden lg:block absolute left-0 right-0 top-1/2 h-px bg-white/10"></div>
+              
               {capabilityCards.map((card) => {
                 const Icon = card.icon;
                 return (
                   <article
                     key={card.id}
-                    className="relative flex h-full flex-col gap-6 rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 via-white/[0.04] to-white/[0.02] p-10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/20"
+                    className="relative flex flex-col gap-4 p-8"
                   >
-                    <div
-                      className={`inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 ${card.iconClasses}`}
-                    >
-                      <Icon className="h-5 w-5" />
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500 mb-4">
+                      <Icon className="h-7 w-7 text-white" />
                     </div>
-                    <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
-                    <p className="text-base leading-relaxed text-white/70">{card.description}</p>
+                    <h3 className="text-xl font-medium text-white">{card.title}</h3>
+                    <p className="text-base leading-relaxed text-white/60">{card.description}</p>
                   </article>
                 );
               })}
