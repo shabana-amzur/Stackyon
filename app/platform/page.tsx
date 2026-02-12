@@ -306,7 +306,7 @@ export default function PlatformPage() {
                 <p className="text-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-3">
                   {platformFeatures.find(f => f.id === activeFeature)?.subtitle || ""}
                 </p>
-                <h2 className="text-4xl md:text-[40px] font-normal text-white">
+                <h2 className="text-[45px] font-normal text-white">
                   The Stackyon Work Environment
                 </h2>
                 <p className="mt-4 text-white/70 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
@@ -431,7 +431,7 @@ export default function PlatformPage() {
           {/* Heading */}
           <Reveal animation="fade-up" duration={950} delay={100}>
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-[40px] font-normal text-white">
+              <h2 className="text-[45px] font-normal text-white">
                 How the Platform Works end to end
               </h2>
             </div>
@@ -455,8 +455,8 @@ export default function PlatformPage() {
                       <CircleStackIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-normal text-white mb-4">Step 1</h3>
-                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
+                  <p className="text-white mb-4" style={{ fontSize: '25px', fontWeight: 400 }}>Step 1</p>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '16px', fontWeight: 300 }}>
                     Model Define how your business behaves using Dev Studio.
                   </p>
                 </div>
@@ -471,8 +471,8 @@ export default function PlatformPage() {
                       <CpuChipIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-normal text-white mb-4">Step 2</h3>
-                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
+                  <p className="text-white mb-4" style={{ fontSize: '25px', fontWeight: 400 }}>Step 2</p>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '16px', fontWeight: 300 }}>
                     Add Intelligence Embed AI Agents where judgment and automation matter.
                   </p>
                 </div>
@@ -487,8 +487,8 @@ export default function PlatformPage() {
                       <LinkIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-normal text-white mb-4">Step 3</h3>
-                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
+                  <p className="text-white mb-4" style={{ fontSize: '25px', fontWeight: 400 }}>Step 3</p>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '16px', fontWeight: 300 }}>
                     Connect Integrate with existing apps, APIs, and data sources without disruption.
                   </p>
                 </div>
@@ -503,8 +503,8 @@ export default function PlatformPage() {
                       <RocketLaunchIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-normal text-white mb-4">Step 4</h3>
-                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
+                  <p className="text-white mb-4" style={{ fontSize: '25px', fontWeight: 400 }}>Step 4</p>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '16px', fontWeight: 300 }}>
                     Run Deploy apps across environments instantly.
                   </p>
                 </div>
@@ -519,8 +519,8 @@ export default function PlatformPage() {
                       <ArrowPathIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-normal text-white mb-4">Step 5</h3>
-                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '19px', fontWeight: 300 }}>
+                  <p className="text-white mb-4" style={{ fontSize: '25px', fontWeight: 400 }}>Step 5</p>
+                  <p className="text-gray-300 leading-relaxed" style={{ fontSize: '16px', fontWeight: 300 }}>
                     Adapt Modify workflows, logic, rules, and UI as requirements evolve, without rewrites.
                   </p>
                 </div>
@@ -537,7 +537,7 @@ export default function PlatformPage() {
         <div className="relative mx-auto w-full max-w-[1360px] px-6 lg:px-10">
           <Reveal animation="fade-up" duration={950} delay={120}>
             <div className="mx-auto max-w-4xl text-center mb-16">
-              <h2 className="text-4xl font-normal text-white md:text-5xl mb-6">
+              <h2 className="text-[45px] font-normal text-white mb-6">
                 Platform capabilities
               </h2>
               <p className="leading-relaxed text-white/70" style={{ fontSize: '19px', fontWeight: 300 }}>

@@ -63,13 +63,7 @@ const createParticles = (): ParticleConfig[] =>
 export default function HeroSection() {
   const particlesRef = useRef<HTMLDivElement>(null);
   const [showVideo, setShowVideo] = useState(false);
-  const [particles, setParticles] = useState<ParticleConfig[]>([]);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    setParticles(createParticles());
-  }, []);
+  const [particles] = useState<ParticleConfig[]>(() => createParticles());
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -109,7 +103,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center pt-[60px]">
       {/* Particles - Full Width */}
       <div ref={particlesRef} className="stars-container absolute inset-0">
-            {isMounted && particles.map((particle, index) => (
+            {particles.map((particle, index) => (
               <div
                 key={index}
                 className="particle absolute bg-white rounded-full transition-transform duration-300 ease-out"

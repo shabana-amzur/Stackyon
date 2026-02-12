@@ -177,7 +177,7 @@ export default function AgenticAIHubPage() {
             <div className="grid gap-24 lg:grid-cols-[30%_70%] text-white">
                 {/* Left Column - Title */}
                 <div>
-                  <h2 className="text-4xl font-medium leading-tight md:text-[40px]">
+                  <h2 className="text-[45px] font-medium leading-tight">
                     Enterprise AI needs structure, not experiments
                   </h2>
                 </div>
@@ -204,7 +204,7 @@ export default function AgenticAIHubPage() {
                 <p className="text-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-3">
                   Key features
                 </p>
-                <h2 className="text-4xl md:text-[40px] font-medium text-white">
+                <h2 className="text-[45px] font-medium text-white">
                   What you can do with Agentic AI Hub
                 </h2>
               </div>
@@ -296,7 +296,7 @@ export default function AgenticAIHubPage() {
             <div className="space-y-12">
               <Reveal animation="fade-up" duration={900} delay={100}>
                 <div className="space-y-4">
-                  <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight">
+                  <h2 className="text-[45px] font-medium text-white leading-tight">
                     Intelligence that works with rules, not around them
                   </h2>
                   <div className="space-y-4 text-white/70 text-lg leading-relaxed">
@@ -312,7 +312,7 @@ export default function AgenticAIHubPage() {
 
               <Reveal animation="fade-up" duration={900} delay={200}>
                 <div className="space-y-4">
-                  <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight">
+                  <h2 className="text-[45px] font-medium text-white leading-tight">
                     Built for enterprise trust
                   </h2>
                   <p className="text-white/70 text-lg leading-relaxed">
@@ -347,7 +347,7 @@ export default function AgenticAIHubPage() {
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-medium text-white">
+              <h2 className="text-[45px] font-medium text-white">
                 Where teams typically use Agentic AI Hub
               </h2>
             </div>
@@ -368,7 +368,7 @@ export default function AgenticAIHubPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-white">
+                  <h3 className="text-[48px] font-semibold text-white">
                     {feature.title}
                   </h3>
 
@@ -397,7 +397,7 @@ export default function AgenticAIHubPage() {
 
         <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
           <Reveal animation="fade-up" duration={950} delay={120}>
-            <h2 className="text-4xl md:text-[40px] font-medium leading-tight text-white mb-4">
+            <h2 className="text-[45px] font-medium leading-tight text-white mb-4">
               See Agentic AI Hub in action
             </h2>
             <p className="text-xl text-white/70 max-w-2xl">
