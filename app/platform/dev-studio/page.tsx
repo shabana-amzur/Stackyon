@@ -337,7 +337,7 @@ export default function DevStudioPage() {
       </section>
 
       {/* Auto-scrolling Platform Screenshots Carousel */}
-      <section className="relative py-[80px] overflow-hidden w-full">
+      <section className="relative pb-[80px] overflow-hidden w-full">
         <div className="relative w-full">
           {/* Carousel wrapper */}
           <div className="overflow-hidden">
