@@ -70,23 +70,30 @@ type ParticleConfig = {
   delay: number;
 };
 
-const PARTICLE_COUNT = 30;
+const PARTICLE_COUNT = 50;
 
 const createParticles = (): ParticleConfig[] =>
   Array.from({ length: PARTICLE_COUNT }, () => ({
-    opacity: Math.random() * 0.2 + 0.15,
-    size: Math.random() * 12 + 8,
-    duration: (Math.random() * 30 + 20),
+    opacity: 1,
+    size: Math.random() * 2.5 + 1,
+    duration: (Math.random() * 20 + 15) * 0.9,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    delay: Math.random() * 10,
+    delay: Math.random() * 5,
   }));
 
 export default function DevStudioPage() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   const [activeAccordion, setActiveAccordion] = useState<number | string>("dev-studio");
   const particlesRef = useRef<HTMLDivElement>(null);
-  const [particles] = useState<ParticleConfig[]>(() => createParticles());
+  const [particles, setParticles] = useState<ParticleConfig[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // Generate particles on client side only to avoid hydration mismatch
+    setParticles(createParticles());
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -103,14 +110,15 @@ export default function DevStudioPage() {
         const particleX = particleRect.left - rect.left + particleRect.width / 2;
         const particleY = particleRect.top - rect.top + particleRect.height / 2;
 
-        const deltaX = mouseX - particleX;
-        const deltaY = mouseY - particleY;
+        const deltaX = particleX - mouseX;
+        const deltaY = particleY - mouseY;
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        const maxDistance = 200;
 
-        if (distance < 200) {
-          const force = (200 - distance) / 200;
-          const moveX = -(deltaX / distance) * force * 50;
-          const moveY = -(deltaY / distance) * force * 50;
+        if (distance < maxDistance) {
+          const force = (maxDistance - distance) / maxDistance;
+          const moveX = deltaX * force * 0.5;
+          const moveY = deltaY * force * 0.5;
           el.style.transform = `translate(${moveX}px, ${moveY}px)`;
         } else {
           el.style.transform = 'translate(0, 0)';
@@ -422,8 +430,8 @@ export default function DevStudioPage() {
       </section>
 
       {/* What is Dev Studio Section */}
-      <section className="relative py-[120px] overflow-hidden">
-        <style jsx>{`
+      <section className="relative py-[120px] overflow-hidden" suppressHydrationWarning>
+        <style jsx global>{`
           @keyframes blob {
             0%, 100% { transform: translate(0, 0) scale(1); }
             25% { transform: translate(20px, -20px) scale(1.1); }
@@ -436,15 +444,19 @@ export default function DevStudioPage() {
             50% { transform: translate(20px, -20px) scale(0.9); }
             75% { transform: translate(-20px, -10px) scale(1.05); }
           }
-          @keyframes floatMove {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(20px, -15px); }
-            50% { transform: translate(-15px, 10px); }
-            75% { transform: translate(10px, 20px); }
-            100% { transform: translate(0, 0); }
+          @keyframes float {
+            0% { transform: translate(0, 0); opacity: 1; }
+            25% { transform: translate(10px, -20px); opacity: 0.8; }
+            50% { transform: translate(-5px, -10px); opacity: 1; }
+            75% { transform: translate(5px, -15px); opacity: 0.9; }
+            100% { transform: translate(0, 0); opacity: 1; }
           }
         `}</style>
-        <div className="absolute inset-0 -z-10 bg-black">
+        <div className="absolute inset-0 -z-10">
+          {/* Dynamic blue gradient base */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-950 to-black"></div>
+          
+          {/* Animated gradient overlays */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/50 to-transparent"></div>
           <div 
             className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"
@@ -458,41 +470,46 @@ export default function DevStudioPage() {
               animation: 'blob-reverse 18s ease-in-out infinite'
             }}
           ></div>
-          
-          {/* Floating particles */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+          <div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl"
+            style={{
+              animation: 'blob 25s ease-in-out infinite reverse'
+            }}
+          ></div>
+        </div>
+        
+        {/* Floating particles - Home page style */}
+        {isMounted && (
+          <div ref={particlesRef} className="absolute inset-0 overflow-hidden pointer-events-none z-10">
             {particles.map((particle, index) => (
               <div
                 key={index}
-                className="particle absolute rounded-full"
+                className="particle absolute bg-white rounded-full transition-transform duration-300 ease-out"
                 style={{
                   width: `${particle.size}px`,
                   height: `${particle.size}px`,
                   left: `${particle.x}%`,
                   top: `${particle.y}%`,
                   opacity: particle.opacity,
-                  animation: `floatMove ${particle.duration}s ease-in-out infinite`,
+                  animation: `float ${particle.duration}s ease-in-out infinite`,
                   animationDelay: `${particle.delay}s`,
-                  transition: 'transform 0.3s ease-out',
-                  filter: 'blur(2px)',
-                  background: 'radial-gradient(circle, rgba(34, 211, 238, 0.6) 0%, rgba(34, 211, 238, 0.3) 50%, transparent 100%)',
                 }}
               />
             ))}
           </div>
-        </div>
+        )}
 
         <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
           <Reveal animation="fade-up" duration={950} delay={100}>
-            <div className="text-white text-center max-w-[60rem] mx-auto">
+            <div className="text-white text-center max-w-[1360px] mx-auto">
                 {/* Title */}
-                <h2 className="text-[45px] font-medium leading-tight mb-8">
+                <h2 className="text-[25px] font-medium leading-tight mb-8">
                   Enterprise applications are built to change
                 </h2>
                 
                 {/* Text */}
                 <div className="space-y-6">
-                  <p className="text-white opacity-70 leading-relaxed" style={{ fontSize: '21px', fontWeight: 200 }}>
+                  <p className="text-white opacity-70" style={{ fontSize: '35px', fontWeight: 100, fontFamily: 'Poppins, sans-serif', lineHeight: 1.3 }}>
                     Enterprise applications are rarely simple. They evolve with business rules, policies, and integrations that can't be rewritten every time something changes. Dev Studio was built to let teams work directly with how the business operates, instead of translating requirements into brittle implementations.
                   </p>
                 </div>
