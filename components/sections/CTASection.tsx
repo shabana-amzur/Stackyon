@@ -44,12 +44,14 @@ export default function CTASection() {
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
         <Reveal animation="fade-up" duration={950} delay={120}>
           <h2 className="text-4xl md:text-[40px] font-medium leading-tight text-white">
-            See Stackyon in action.
-            <br className="hidden md:block" />
-            Build smarter, modernize faster,
-            <br className="hidden md:block" />
-            automate intelligently
+            See Dev Studio in action
           </h2>
+        </Reveal>
+
+        <Reveal animation="fade-up" duration={1000} delay={180}>
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl">
+            See how teams design and evolve enterprise applications without rework.
+          </p>
         </Reveal>
 
         <Reveal animation="fade-up" duration={1000} delay={220}>
@@ -57,15 +59,15 @@ export default function CTASection() {
             <Link href="/demo" className="relative group">
               <div className="absolute inset-0 bg-[#3e7ae5] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
               <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:bg-[#5a8df0]">
-                Get Started
+                See Dev Studio in Action
                 <LinkIcon className="h-5 w-5" />
               </div>
             </Link>
             <Link
-              href="/contact"
+              href="/platform/agentic-ai-hub"
               className="rounded-lg bg-transparent border border-white px-8 py-3.5 text-base font-medium text-white transition hover:bg-white hover:text-black"
             >
-              Book a Demo
+              Explore Agentic AI Hub
             </Link>
           </div>
         </Reveal>
