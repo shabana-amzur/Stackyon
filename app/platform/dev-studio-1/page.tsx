@@ -423,7 +423,28 @@ export default function DevStudioPage() {
 
       {/* What is Dev Studio Section */}
       <section className="relative py-[120px] overflow-hidden">
-        .p-8<div className="absolute inset-0 -z-10 bg-black">
+        <style jsx>{`
+          @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -20px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+          }
+          @keyframes blob-reverse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-20px, 20px) scale(1.1); }
+            50% { transform: translate(20px, -20px) scale(0.9); }
+            75% { transform: translate(-20px, -10px) scale(1.05); }
+          }
+          @keyframes floatMove {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(20px, -15px); }
+            50% { transform: translate(-15px, 10px); }
+            75% { transform: translate(10px, 20px); }
+            100% { transform: translate(0, 0); }
+          }
+        `}</style>
+        <div className="absolute inset-0 -z-10 bg-black">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/50 to-transparent"></div>
           <div 
             className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"
@@ -437,6 +458,28 @@ export default function DevStudioPage() {
               animation: 'blob-reverse 18s ease-in-out infinite'
             }}
           ></div>
+          
+          {/* Floating particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+            {particles.map((particle, index) => (
+              <div
+                key={index}
+                className="particle absolute rounded-full"
+                style={{
+                  width: `${particle.size}px`,
+                  height: `${particle.size}px`,
+                  left: `${particle.x}%`,
+                  top: `${particle.y}%`,
+                  opacity: particle.opacity,
+                  animation: `floatMove ${particle.duration}s ease-in-out infinite`,
+                  animationDelay: `${particle.delay}s`,
+                  transition: 'transform 0.3s ease-out',
+                  filter: 'blur(2px)',
+                  background: 'radial-gradient(circle, rgba(34, 211, 238, 0.6) 0%, rgba(34, 211, 238, 0.3) 50%, transparent 100%)',
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
@@ -476,113 +519,109 @@ export default function DevStudioPage() {
           </div>
 
           {/* Features Grid - First Row (2 columns) */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-6 lg:items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-20 gap-6 mb-6">
             {/* Feature Card 1 - Model workflows */}
-            <Reveal animation="fade-up" duration={900} delay={200} className="lg:col-span-2 flex">
+            <Reveal animation="fade-up" duration={900} delay={200} className="lg:col-span-9 flex">
               <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-transparent"></div>
-                <div className="relative z-10 p-8 pb-0">
+                <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Model workflows and process logic
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed mb-8">
+                  <p className="text-white/60 text-base leading-relaxed">
                     Design conditional, parallel, and long-running processes visually, with execution behavior that reflects real operational flow.
                   </p>
                 </div>
-                <div className="relative rounded-xl overflow-hidden">
-                  <Image
-                    src="/feature-1.webp"
-                    alt="Model workflows and process logic"
-                    width={800}
-                    height={450}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative flex-1 flex items-end">
+                  <div className="relative w-full overflow-hidden">
+                    <Image
+                      src="/feature-2.webp"
+                      alt="Model workflows and process logic"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </Reveal>
 
             {/* Feature Card 2 - Define rules and decisions */}
-            <Reveal animation="fade-up" duration={900} delay={250} className="lg:col-span-3 flex">
+            <Reveal animation="fade-up" duration={900} delay={250} className="lg:col-span-11 flex">
               <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent"></div>
-                <div className="relative z-10 p-8 pb-0">
+                <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Define rules and decisions explicitly
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed mb-8">
+                  <p className="text-white/60 text-base leading-relaxed">
                     Configure business rules and decision tables so logic remains transparent, traceable, and easy to change over time.
                   </p>
                 </div>
-                <div className="relative rounded-xl overflow-hidden">
-                  <Image
-                    src="/feature-2.webp"
-                    alt="Define rules and decisions explicitly"
-                    width={800}
-                    height={450}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative flex-1 flex items-end">
+                  <div className="relative w-full overflow-hidden">
+                    <Image
+                      src="/feature-2.webp"
+                      alt="Define rules and decisions explicitly"
+                      width={800}
+                      height={480}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </Reveal>
           </div>
 
-          {/* Features Grid - Second Row (3 columns) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Feature Card 3 - Woo Commerce */}
-            <Reveal animation="fade-up" duration={900} delay={300}>
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black min-h-[350px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent"></div>
-                <div className="flex-1 relative z-10">
-                  <h3 className="text-xl font-medium text-white mb-3">
-                    Woo Commerce
+          {/* Features Grid - Second Row (2 columns in reverse order) */}
+          <div className="grid grid-cols-1 lg:grid-cols-20 gap-6 mb-6">
+            {/* Feature Card 2 - Define rules and decisions (reversed position) */}
+            <Reveal animation="fade-up" duration={900} delay={300} className="lg:col-span-11 flex">
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent"></div>
+                <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
+                  <h3 className="text-2xl font-medium text-white mb-4">
+                    Design intuitive user journeys
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
-                    Create and manage online stores with full WooCommerce support.
+                  <p className="text-white/60 text-base leading-relaxed">
+                    Define UI flows and user interactions as part of the application, not as a separate layer that needs rework later.
                   </p>
                 </div>
-                <div className="relative mt-6 rounded-xl overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-purple-800/30 to-slate-900 flex items-center justify-center">
-                    <div className="text-white/40 text-xs">Preview</div>
+                <div className="relative flex-1 flex items-end">
+                  <div className="relative w-full overflow-hidden">
+                    <Image
+                      src="/feature-2.webp"
+                      alt="Define rules and decisions explicitly"
+                      width={800}
+                      height={480}
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                 </div>
               </div>
             </Reveal>
 
-            {/* Feature Card 4 - EDD Support */}
-            <Reveal animation="fade-up" duration={900} delay={350}>
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black min-h-[350px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent"></div>
-                <div className="flex-1 relative z-10">
-                  <h3 className="text-xl font-medium text-white mb-3">
-                    EDD Support
-                  </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
-                    Sell digital products easily with Easy Digital Downloads support.
-                  </p>
-                </div>
-                <div className="relative mt-6 rounded-xl overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-cyan-800/30 to-slate-900 flex items-center justify-center">
-                    <div className="text-white/40 text-xs">Preview</div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Feature Card 5 - Google Page Speed */}
-            <Reveal animation="fade-up" duration={900} delay={400}>
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black min-h-[350px] flex flex-col">
+            {/* Feature Card 1 - Model workflows (reversed position) */}
+            <Reveal animation="fade-up" duration={900} delay={350} className="lg:col-span-9 flex">
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-transparent"></div>
-                <div className="flex-1 relative z-10">
-                  <h3 className="text-xl font-medium text-white mb-3">
-                    Google Page <span className="text-white/60">Speed</span>
+                <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
+                  <h3 className="text-2xl font-medium text-white mb-4">
+                    Work with enterprise data and systems
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
-                    Optimized for fast loading and improved PageSpeed scores.
+                  <p className="text-white/60 text-base leading-relaxed">
+                    Model data structures and integrate with existing systems without replacing what already works.
                   </p>
                 </div>
-                <div className="relative mt-6 rounded-xl overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-green-800/30 to-slate-900 flex items-center justify-center">
-                    <div className="text-white/40 text-xs">Preview</div>
+                <div className="relative flex-1 flex items-end">
+                  <div className="relative w-full overflow-hidden">
+                    <Image
+                      src="/feature-2.webp"
+                      alt="Model workflows and process logic"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                 </div>
               </div>

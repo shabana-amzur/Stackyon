@@ -368,7 +368,7 @@ export default function AgenticAIHubPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-[48px] font-semibold text-white">
+                  <h3 className="text-xl font-semibold text-white leading-tight">
                     {feature.title}
                   </h3>
 
