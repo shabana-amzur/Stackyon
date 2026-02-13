@@ -791,6 +791,55 @@ export default function DevStudioPage() {
         </div>
       </section>
 
+      {/* Global CTA Section */}
+      <section className="relative isolate overflow-hidden bg-black py-24">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/digital-information-technology-concept-man-use-cybersecurity-computers-protect-against-online.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center lg:px-12">
+          <Reveal animation="fade-up" duration={900} delay={100}>
+            <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6">
+              Ready to transform your enterprise applications?
+            </h2>
+          </Reveal>
+          
+          <Reveal animation="fade-up" duration={900} delay={200}>
+            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+              See how Dev Studio can help you build, evolve, and maintain complex business applications without the usual complexity.
+            </p>
+          </Reveal>
+
+          <Reveal animation="fade-up" duration={900} delay={300}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-4 text-base font-medium text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                Book a Demo
+                <ArrowRightIcon className="ml-2 h-5 w-5" />
+              </Link>
+              
+              <Link
+                href="/platform"
+                className="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:bg-white/20"
+              >
+                Explore Platform
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Lightbox Modal */}
       {lightbox && (
         <div
