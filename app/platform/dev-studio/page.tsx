@@ -86,6 +86,7 @@ export default function DevStudioPage() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   const [activeAccordion, setActiveAccordion] = useState<number | string>("dev-studio");
   const particlesRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [particles, setParticles] = useState<ParticleConfig[]>([]);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -94,6 +95,12 @@ export default function DevStudioPage() {
     setParticles(createParticles());
     setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.2;
+    }
+  }, [isMounted]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -191,121 +198,23 @@ export default function DevStudioPage() {
         `}</style>
 
         {/* Video Background */}
-        <div className="absolute inset-0 -z-20" suppressHydrationWarning>
+        <div className="absolute inset-0 z-0" suppressHydrationWarning>
           {isMounted && (
             <video
+              ref={videoRef}
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-full object-cover opacity-40"
+              className="w-full h-full object-cover"
             >
               <source src="/color_bg.mp4" type="video/mp4" />
             </video>
           )}
         </div>
 
-        {/* Aurora-style gradient background */}
-        <div className="absolute inset-0 -z-10">
-          {/* Dark base background */}
-          <div className="absolute inset-0 bg-[#020617] z-0"></div>
-          
-          {/* Multi-layer gradient overlays */}
-          {/* Primary aurora glow - center-left emphasis */}
-          <div 
-            className="absolute inset-0 z-5 animate-aurora"
-            style={{
-              background: `radial-gradient(ellipse 80% 60% at 35% 50%, 
-                rgba(34, 211, 238, 0.35) 0%, 
-                rgba(14, 165, 233, 0.25) 25%, 
-                rgba(20, 184, 166, 0.15) 50%, 
-                transparent 70%)`,
-              filter: 'blur(60px)',
-            }}
-          ></div>
-          
-          {/* Secondary glow layer - adds depth */}
-          <div 
-            className="absolute inset-0 z-6 animate-glow"
-            style={{
-              background: `radial-gradient(circle at 30% 40%, 
-                rgba(34, 211, 238, 0.2) 0%, 
-                rgba(14, 165, 233, 0.15) 30%, 
-                transparent 60%)`,
-              filter: 'blur(80px)',
-              animationDelay: '2s'
-            }}
-          ></div>
-          
-          {/* Tertiary accent glow */}
-          <div 
-            className="absolute inset-0 z-7"
-            style={{
-              background: `radial-gradient(ellipse 60% 50% at 40% 45%, 
-                rgba(20, 184, 166, 0.25) 0%, 
-                rgba(14, 165, 233, 0.15) 40%, 
-                transparent 65%)`,
-              filter: 'blur(70px)',
-            }}
-          ></div>
-          
-          {/* Edge vignette fade to navy/black */}
-          <div 
-            className="absolute inset-0 z-8"
-            style={{
-              background: `linear-gradient(90deg, 
-                #020617 0%, 
-                rgba(2, 6, 23, 0.3) 15%, 
-                transparent 40%, 
-                transparent 60%, 
-                rgba(2, 6, 23, 0.3) 85%, 
-                #020617 100%)`,
-            }}
-          ></div>
-          
-          {/* Text area bloom for contrast */}
-          <div 
-            className="absolute inset-0 z-9"
-            style={{
-              background: `radial-gradient(ellipse 50% 40% at 50% 30%, 
-                rgba(255, 255, 255, 0.03) 0%, 
-                transparent 50%)`,
-            }}
-          ></div>
-          
-          {/* Subtle grid pattern overlay */}
-          <div 
-            className="absolute inset-0 z-20"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), 
-                linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px)`,
-              backgroundSize: '50px 50px',
-              opacity: 0.15
-            }}
-          ></div>
-          
-          {/* Fine mesh overlay for depth */}
-          <div 
-            className="absolute inset-0 z-21"
-            style={{
-              backgroundImage: `linear-gradient(rgba(34, 211, 238, 0.1) 1px, transparent 1px), 
-                linear-gradient(90deg, rgba(34, 211, 238, 0.1) 1px, transparent 1px)`,
-              backgroundSize: '25px 25px',
-              opacity: 0.08
-            }}
-          ></div>
-          
-          {/* Gradient fade at bottom for smooth transition to cards */}
-          <div 
-            className="absolute inset-x-0 bottom-0 h-32 z-25"
-            style={{
-              background: 'linear-gradient(to bottom, transparent 0%, #020617 100%)',
-            }}
-          ></div>
-        </div>
-
         {/* Content */}
-        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-12">
+        <div className="relative z-30 mx-auto max-w-7xl px-6 py-20 lg:px-12">
           <div className="flex flex-col items-center text-center">
             {/* Main Heading */}
             <Reveal animation="fade-up" duration={900} delay={100}>
