@@ -191,16 +191,18 @@ export default function DevStudioPage() {
         `}</style>
 
         {/* Video Background */}
-        <div className="absolute inset-0 -z-20">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover opacity-40"
-          >
-            <source src="/color_bg.mp4" type="video/mp4" />
-          </video>
+        <div className="absolute inset-0 -z-20" suppressHydrationWarning>
+          {isMounted && (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover opacity-40"
+            >
+              <source src="/color_bg.mp4" type="video/mp4" />
+            </video>
+          )}
         </div>
 
         {/* Aurora-style gradient background */}
