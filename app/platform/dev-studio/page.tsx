@@ -133,7 +133,7 @@ export default function DevStudioPage() {
   return (
     <div className="min-h-screen w-full bg-black pt-[20px]">
       {/* Hero Banner - Centered Layout */}
-      <section className="relative isolate overflow-hidden min-h-[600px] pt-[80px] pb-[80px]">
+      <section className="relative isolate overflow-hidden min-h-[600px] pt-[78px] pb-0">
         {/* Keyframe animations */}
         <style jsx>{`
           @keyframes auroraShift {
@@ -290,7 +290,7 @@ export default function DevStudioPage() {
         </div>
 
         {/* Content */}
-        <div className="relative mx-auto max-w-7xl px-6 py-[80px] lg:px-12">
+        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-12">
           <div className="flex flex-col items-center text-center">
             {/* Main Heading */}
             <Reveal animation="fade-up" duration={900} delay={100}>
@@ -753,7 +753,7 @@ export default function DevStudioPage() {
       </section>
 
       {/* Where teams typically use Dev Studio Section */}
-      <section id="features" className="relative bg-black pt-[80px] pb-[120px]">
+      <section id="features" className="relative bg-black pt-[80px] pb-[150px]">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
