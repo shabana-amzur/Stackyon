@@ -630,6 +630,150 @@ export default function DevStudioPage() {
         </div>
       </section>
 
+      {/* Built for Life After Go-Live Section */}
+      <section className="relative py-[120px] overflow-hidden bg-black">
+        <style jsx>{`
+          @keyframes floatUp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+          }
+          @keyframes floatDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
+          }
+        `}</style>
+
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
+            {/* Left Side - 50% */}
+            <div className="lg:col-span-5">
+              <Reveal animation="fade-up" duration={900} delay={100}>
+                <h2 className="text-[45px] font-medium text-white mb-6 leading-tight">
+                  Built for life after go-live
+                </h2>
+                <p className="text-white/70 text-lg leading-relaxed">
+                  Most platforms focus on how quickly an application can be built. Dev Studio is designed for what happens after go-live. Workflows, rules, decisions, and user experiences remain visible and governable as applications evolve, without rewrites, fragile handoffs, or loss of control.
+                </p>
+              </Reveal>
+            </div>
+
+            {/* Right Side - 50% */}
+            <div className="lg:col-span-5">
+              <div className="grid grid-cols-2 gap-6">
+                {/* Card 1 - Workflows */}
+                <Reveal animation="fade-up" duration={900} delay={200}>
+                  <div 
+                    className="relative rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-slate-900/50 p-8 hover:border-cyan-500/40 transition-all duration-300"
+                    style={{
+                      animation: 'floatUp 4s ease-in-out infinite',
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-medium text-white">Workflows</h3>
+                  </div>
+                </Reveal>
+
+                {/* Card 2 - Rules */}
+                <Reveal animation="fade-up" duration={900} delay={250}>
+                  <div 
+                    className="relative rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 to-slate-900/50 p-8 hover:border-blue-500/40 transition-all duration-300 mt-12"
+                    style={{
+                      animation: 'floatDown 4.5s ease-in-out infinite',
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-medium text-white">Rules</h3>
+                  </div>
+                </Reveal>
+
+                {/* Card 3 - Decisions */}
+                <Reveal animation="fade-up" duration={900} delay={300}>
+                  <div 
+                    className="relative rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-500/10 to-slate-900/50 p-8 hover:border-purple-500/40 transition-all duration-300 -mt-6"
+                    style={{
+                      animation: 'floatUp 4.2s ease-in-out infinite',
+                      animationDelay: '0.5s',
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-medium text-white">Decisions</h3>
+                  </div>
+                </Reveal>
+
+                {/* Card 4 - User-experience */}
+                <Reveal animation="fade-up" duration={900} delay={350}>
+                  <div 
+                    className="relative rounded-2xl border border-green-500/20 bg-gradient-to-br from-green-500/10 to-slate-900/50 p-8 hover:border-green-500/40 transition-all duration-300 mt-6"
+                    style={{
+                      animation: 'floatDown 4.8s ease-in-out infinite',
+                      animationDelay: '0.3s',
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-medium text-white">User-experience</h3>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Where teams typically use Dev Studio Section */}
+      <section id="features" className="relative bg-black py-24">
+        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
+          <Reveal animation="fade-up" duration={900} delay={100}>
+            <div className="text-center mb-16">
+              <h2 className="text-[45px] font-medium text-white">
+                Where teams typically use Dev Studio
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            {features.slice(0, 4).map((feature, index) => (
+              <Reveal 
+                key={feature.id} 
+                animation="fade-up" 
+                duration={800} 
+                delay={100 + index * 50}
+              >
+                <div className="group relative rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 p-8 border border-white/5 hover:border-white/10 transition-all duration-300">
+                  {/* Icon */}
+                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${feature.iconClasses} mb-6`}>
+                    <feature.icon className="h-7 w-7" />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-white leading-tight">
+                    {feature.title}
+                  </h3>
+
+                  {/* Hover gradient effect */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Lightbox Modal */}
       {lightbox && (
         <div
