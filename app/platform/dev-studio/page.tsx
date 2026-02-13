@@ -133,7 +133,7 @@ export default function DevStudioPage() {
   return (
     <div className="min-h-screen w-full bg-black pt-[20px]">
       {/* Hero Banner - Centered Layout */}
-      <section className="relative isolate overflow-hidden min-h-[600px] pt-[78px] pb-0">
+      <section className="relative isolate overflow-hidden min-h-[600px] pt-[80px] pb-[80px]">
         {/* Keyframe animations */}
         <style jsx>{`
           @keyframes auroraShift {
@@ -290,7 +290,7 @@ export default function DevStudioPage() {
         </div>
 
         {/* Content */}
-        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-12">
+        <div className="relative mx-auto max-w-7xl px-6 py-[80px] lg:px-12">
           <div className="flex flex-col items-center text-center">
             {/* Main Heading */}
             <Reveal animation="fade-up" duration={900} delay={100}>
@@ -337,7 +337,7 @@ export default function DevStudioPage() {
       </section>
 
       {/* Auto-scrolling Platform Screenshots Carousel */}
-      <section className="relative pt-0 pb-[40px] overflow-hidden w-full">
+      <section className="relative py-[80px] overflow-hidden w-full">
         <div className="relative w-full">
           {/* Carousel wrapper */}
           <div className="overflow-hidden">
@@ -430,7 +430,7 @@ export default function DevStudioPage() {
       </section>
 
       {/* What is Dev Studio Section */}
-      <section className="relative py-[120px] overflow-hidden" suppressHydrationWarning>
+      <section className="relative py-[80px] overflow-hidden" suppressHydrationWarning>
         <style jsx global>{`
           @keyframes blob {
             0%, 100% { transform: translate(0, 0) scale(1); }
@@ -648,7 +648,7 @@ export default function DevStudioPage() {
       </section>
 
       {/* Built for Life After Go-Live Section */}
-      <section className="relative py-[120px] overflow-hidden bg-black">
+      <section className="relative py-[80px] overflow-hidden bg-black">
         <style jsx>{`
           @keyframes floatUp {
             0%, 100% { transform: translateY(0); }
@@ -753,7 +753,7 @@ export default function DevStudioPage() {
       </section>
 
       {/* Where teams typically use Dev Studio Section */}
-      <section id="features" className="relative bg-black py-24">
+      <section id="features" className="relative bg-black py-[80px]">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
