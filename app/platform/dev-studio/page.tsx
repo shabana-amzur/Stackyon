@@ -753,7 +753,7 @@ export default function DevStudioPage() {
       </section>
 
       {/* Where teams typically use Dev Studio Section */}
-      <section id="features" className="relative bg-black py-[80px]">
+      <section id="features" className="relative bg-black pt-[80px] pb-[120px]">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
