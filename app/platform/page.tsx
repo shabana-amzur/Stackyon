@@ -211,7 +211,7 @@ export default function PlatformPage() {
 
                   {/* Secondary Button */}
                   <Link
-                    href="/platform/agentic-ai"
+                    href="/platform/agentic-ai-hub"
                     className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 text-base font-medium text-gray-900 transition hover:bg-gray-100"
                   >
                     Explore Agentic AI hub

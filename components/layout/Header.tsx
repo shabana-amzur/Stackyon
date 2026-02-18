@@ -16,8 +16,8 @@ const navigation = {
     name: 'Platform',
     hasDropdown: true,
     items: [
-      { name: 'Dev Studio', description: 'No-code agentic platform delivering the fastest time-to-value and the highest ROI', href: '/platform/dev-studio' },
       { name: 'Agentic AI Hub', description: 'Environment for configuring AI agents', href: '/platform/agentic-ai-hub' },
+      { name: 'Dev Studio', description: 'No-code agentic platform delivering the fastest time-to-value and the highest ROI', href: '/platform/dev-studio' },
     ],
   },
   solutions: {
@@ -133,10 +133,10 @@ export default function Header() {
               leaveTo="transform opacity-0 -translate-y-1"
             >
               <div
-                className="fixed left-0 right-0 z-50 mt-3 border-t border-gray-200 bg-white shadow-[0_20px_70px_-15px_rgba(0,0,0,0.3)] focus:outline-none"
+                className="fixed left-0 right-0 z-50 mt-10 border-t border-gray-200 bg-white shadow-[0_20px_70px_-15px_rgba(0,0,0,0.3)] focus:outline-none mx-[100px] rounded-2xl"
               >
-                <div className="max-w-[80rem] mx-auto px-4 py-16">
-                  <div className="grid grid-cols-2 gap-12 max-w-[680px]">
+                <div className="max-w-[80rem] mx-auto px-4 py-8">
+                  <div className="grid grid-cols-3 gap-12 mr-[180px]">
                     {/* Platform Column */}
                     <div>
                       <div className="mb-4">
@@ -182,6 +182,9 @@ export default function Header() {
                         ))}
                       </div>
                     </div>
+
+                    {/* Empty Column */}
+                    <div></div>
                   </div>
                 </div>
               </div>

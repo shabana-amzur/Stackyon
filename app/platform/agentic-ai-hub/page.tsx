@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ArrowRightIcon,
   CodeBracketIcon,
@@ -20,171 +20,406 @@ const features = [
   {
     id: "decision-intensive",
     title: "Decision-intensive enterprise workflows",
-    description: "",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: CpuChipIcon,
     iconClasses: "bg-purple-500/10 text-purple-300",
   },
   {
     id: "validation-heavy",
     title: "Validation-heavy processes",
-    description: "",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: ShieldCheckIcon,
     iconClasses: "bg-cyan-500/10 text-cyan-300",
   },
   {
     id: "assisted-decisions",
     title: "Applications requiring recommendations or assisted decisions",
-    description: "",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: Squares2X2Icon,
     iconClasses: "bg-blue-500/10 text-blue-300",
   },
   {
     id: "regulated-systems",
     title: "Regulated systems where auditability is required",
-    description: "",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: CommandLineIcon,
     iconClasses: "bg-teal-500/10 text-teal-300",
   },
 ];
 
+type ParticleConfig = {
+  opacity: number;
+  size: number;
+  duration: number;
+  x: number;
+  y: number;
+  delay: number;
+};
+
+const PARTICLE_COUNT = 50;
+
+const createParticles = (): ParticleConfig[] =>
+  Array.from({ length: PARTICLE_COUNT }, () => ({
+    opacity: 1,
+    size: Math.random() * 2.5 + 1,
+    duration: (Math.random() * 10 + 8) * 0.9,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 5,
+  }));
+
 export default function AgenticAIHubPage() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
-  const [activeAccordion, setActiveAccordion] = useState<number | string>("decision-points");
+  const [activeAccordion, setActiveAccordion] = useState<number | string>("agentic-ai-hub");
+  const particlesRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [particles, setParticles] = useState<ParticleConfig[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // Generate particles on client side only to avoid hydration mismatch
+    setParticles(createParticles());
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1;
+    }
+  }, [isMounted]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!particlesRef.current) return;
+      
+      const particles = particlesRef.current.querySelectorAll('.particle');
+      const rect = particlesRef.current.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      particles.forEach((particle) => {
+        const el = particle as HTMLElement;
+        const particleRect = el.getBoundingClientRect();
+        const particleX = particleRect.left - rect.left + particleRect.width / 2;
+        const particleY = particleRect.top - rect.top + particleRect.height / 2;
+
+        const deltaX = particleX - mouseX;
+        const deltaY = particleY - mouseY;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        const maxDistance = 200;
+
+        if (distance < maxDistance) {
+          const force = (maxDistance - distance) / maxDistance;
+          const moveX = deltaX * force * 0.5;
+          const moveY = deltaY * force * 0.5;
+          el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        } else {
+          el.style.transform = 'translate(0, 0)';
+        }
+      });
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    return () => document.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
-    <div className="min-h-screen w-full bg-black">
-      {/* Hero Banner with Two-Column Layout */}
-      <section className="relative isolate overflow-hidden min-h-[350px] pt-[80px] pb-[80px]">
-        {/* Dark blue gradient background */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1929] via-[#0d2847] to-[#0a1929]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent"></div>
-          
-          {/* Grid pattern overlay */}
-          <div 
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
-              backgroundSize: '50px 50px',
-            }}
-          ></div>
+    <div className="min-h-screen w-full bg-black pt-[20px]">
+      {/* Hero Banner - Centered Layout */}
+      <section className="relative isolate overflow-hidden min-h-[600px] pt-[78px] pb-0">
+        {/* Keyframe animations */}
+        <style jsx>{`
+          @keyframes auroraShift {
+            0% {
+              transform: translate(0%, 0%) rotate(0deg);
+              opacity: 0.8;
+            }
+            33% {
+              transform: translate(5%, -2%) rotate(3deg);
+              opacity: 0.9;
+            }
+            66% {
+              transform: translate(-3%, 3%) rotate(-2deg);
+              opacity: 0.85;
+            }
+            100% {
+              transform: translate(0%, 0%) rotate(0deg);
+              opacity: 0.8;
+            }
+          }
+          @keyframes auroraGlow {
+            0% {
+              opacity: 0.6;
+            }
+            50% {
+              opacity: 0.9;
+            }
+            100% {
+              opacity: 0.6;
+            }
+          }
+          @keyframes floatMove {
+            0% {
+              transform: translate(0, 0);
+            }
+            25% {
+              transform: translate(20px, -15px);
+            }
+            50% {
+              transform: translate(-15px, 10px);
+            }
+            75% {
+              transform: translate(10px, 20px);
+            }
+            100% {
+              transform: translate(0, 0);
+            }
+          }
+          .animate-aurora {
+            animation: auroraShift 12s ease-in-out infinite;
+          }
+          .animate-glow {
+            animation: auroraGlow 8s ease-in-out infinite;
+          }
+        `}</style>
+
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0" suppressHydrationWarning>
+          {isMounted && (
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="/ai_hub_bg_video.mp4" type="video/mp4" />
+            </video>
+          )}
         </div>
 
         {/* Content */}
-        <div className="relative mx-auto max-w-[1360px] px-6 py-[120px] lg:px-12">
-          <div className="grid items-start gap-12 lg:grid-cols-[45%_55%] lg:gap-16">
-            {/* Left Column - Text Content */}
-            <div className="space-y-8">
-              {/* Breadcrumb */}
-              <Reveal animation="fade-up" duration={800} delay={50}>
-                <nav className="flex items-center gap-2 text-sm text-white/60">
-                  <Link href="/" className="hover:text-white/90 transition-colors">
-                    Home
-                  </Link>
-                  <ChevronRightIcon className="h-4 w-4" />
-                  <Link href="/platform" className="hover:text-white/90 transition-colors">
-                    Platform
-                  </Link>
-                  <ChevronRightIcon className="h-4 w-4" />
-                  <span className="text-white/90">Agentic AI Hub</span>
-                </nav>
-              </Reveal>
+        <div className="relative z-30 mx-auto max-w-7xl px-6 py-20 lg:px-12">
+          <div className="flex flex-col items-center text-center">
+            {/* Main Heading */}
+            <Reveal animation="fade-up" duration={900} delay={100}>
+              <h1 style={{color: '#0efffb'}} className="text-[60px] font-medium leading-tight tracking-tight mb-6">
+                Embed intelligence directly
+                <br />
+                into enterprise workflows
+              </h1>
+            </Reveal>
 
-              {/* Main Heading */}
-              <Reveal animation="fade-up" duration={900} delay={100}>
-                <h1 className="text-[48px] font-medium text-white leading-tight">
-                  Embed intelligence directly into enterprise workflows
-                </h1>
-              </Reveal>
+            {/* Subtitle */}
+            <Reveal animation="fade-up" duration={900} delay={200}>
+              <p className="text-lg md:text-xl text-white opacity-70 leading-relaxed max-w-3xl mb-8">
+                Agentic AI Hub enables organizations to introduce AI into business applications in a controlled, intentional way. Intelligence operates inside workflows, alongside rules and process logic, instead of existing as a separate layer outside the system.
+              </p>
+            </Reveal>
 
-              {/* Subtitle */}
-              <Reveal animation="fade-up" duration={900} delay={200}>
-                <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl">
-                  Agentic AI Hub enables organizations to introduce AI into business applications in a controlled, intentional way. Intelligence operates inside workflows, alongside rules and process logic, instead of existing as a separate layer outside the system.
-                </p>
-              </Reveal>
+            {/* CTA Buttons */}
+            <Reveal animation="fade-up" duration={900} delay={300}>
+              <div className="flex flex-col sm:flex-row gap-4 items-center">
+                {/* Primary Button */}
+                <Link
+                  href="#features"
+                  style={{backgroundColor: '#0efffb'}}
+                  className="inline-flex items-center justify-center rounded-lg px-12 py-4 text-base font-medium text-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  See Agentic AI Hub in action
+                </Link>
 
-              {/* CTA Buttons */}
-              <Reveal animation="fade-up" duration={900} delay={300}>
-                <div className="flex flex-col sm:flex-row gap-4 items-start">
-                  {/* Primary Button with Gradient */}
-                  <Link
-                    href="#features"
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 shadow-lg hover:bg-[#5a8df0]"
-                  >
-                    Explore Agentic AI Hub
-                    <ArrowRightIcon className="h-5 w-5" />
-                  </Link>
-
-                  {/* Secondary Button */}
-                  <Link
-                    href="/platform"
-                    className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 text-base font-medium text-gray-900 transition hover:bg-gray-100"
-                  >
-                    Explore the Platform
-                  </Link>
-                </div>
-              </Reveal>
-            </div>
-
-            {/* Right Column - Platform Screenshot */}
-            <Reveal animation="fade-left" duration={1000} delay={400}>
-              <div className="relative">
-                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10 shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-blue-500/20 animate-[slideInScale_1s_ease-out]">
-                  <Image
-                    src="/images/products/agentic-hub.jpg"
-                    alt="Agentic AI Hub Interface"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-                
-                {/* Glow effect behind image */}
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#12efeb]/30 via-[#3e7ae5]/30 to-[#523bdc]/30 blur-3xl scale-105 animate-[pulse_4s_ease-in-out_infinite]"></div>
+                {/* Secondary Button */}
+                <Link
+                  href="/platform"
+                  style={{backgroundColor: 'rgba(79, 179, 217, 0.2)', borderColor: 'rgba(79, 179, 217, 0.4)'}}
+                  className="inline-flex items-center justify-center rounded-lg border px-12 py-4 text-base font-medium text-white transition-all duration-300 hover:opacity-80"
+                >
+                  Explore the Platform
+                </Link>
               </div>
             </Reveal>
           </div>
         </div>
 
-        {/* Bottom gradient fade */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
       </section>
 
-      <style jsx>{`
-        @keyframes slideInScale {
-          0% {
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-      `}</style>
+      {/* Auto-scrolling Platform Screenshots Carousel */}
+      <section className="relative pb-[80px] overflow-hidden w-full">
+        <div className="relative w-full">
+          {/* Carousel wrapper */}
+          <div className="overflow-hidden">
+            <div className="flex gap-6 animate-scroll">
+              {/* Screenshot 1 */}
+              <div className="flex-shrink-0 w-96 h-72 rounded-lg overflow-hidden shadow-2xl border border-white border-opacity-10 bg-slate-900">
+                <Image
+                  src="/images/products/agentic-hub.jpg"
+                  alt="Agentic AI Hub Platform"
+                  width={384}
+                  height={288}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-      {/* What is Agentic AI Hub Section */}
-      <section className="relative bg-[#030711] pt-8 pb-[63px] overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/60 to-black"></div>
-          <div className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"></div>
-          <div className="absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-cyan-500/15 blur-[120px]"></div>
+              {/* Screenshot 2 */}
+              <div className="flex-shrink-0 w-96 h-72 rounded-lg overflow-hidden shadow-2xl border border-white border-opacity-10 bg-slate-900">
+                <Image
+                  src="/images/products/dev-studio.jpg"
+                  alt="Dev Studio Platform"
+                  width={384}
+                  height={288}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Screenshot 3 */}
+              <div className="flex-shrink-0 w-96 h-72 rounded-lg overflow-hidden shadow-2xl border border-white border-opacity-10 bg-slate-900">
+                <Image
+                  src="/images/products/agentic-hub.jpg"
+                  alt="AI Platform Workflow"
+                  width={384}
+                  height={288}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Duplicate screenshots for seamless loop */}
+              <div className="flex-shrink-0 w-96 h-72 rounded-lg overflow-hidden shadow-2xl border border-white border-opacity-10 bg-slate-900">
+                <Image
+                  src="/images/products/agentic-hub.jpg"
+                  alt="Agentic AI Hub Platform"
+                  width={384}
+                  height={288}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="flex-shrink-0 w-96 h-72 rounded-lg overflow-hidden shadow-2xl border border-white border-opacity-10 bg-slate-900">
+                <Image
+                  src="/images/products/dev-studio.jpg"
+                  alt="Dev Studio Platform"
+                  width={384}
+                  height={288}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="flex-shrink-0 w-96 h-72 rounded-lg overflow-hidden shadow-2xl border border-white border-opacity-10 bg-slate-900">
+                <Image
+                  src="/images/products/agentic-hub.jpg"
+                  alt="AI Platform Workflow"
+                  width={384}
+                  height={288}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Gradient overlays for fade effect */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent pointer-events-none z-10"></div>
         </div>
 
-        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
+        {/* Carousel animation styles */}
+        <style jsx>{`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .animate-scroll {
+            animation: scroll 25s linear infinite;
+          }
+        `}</style>
+      </section>
+
+      {/* AI that works within your business rules Section */}
+      <section className="relative py-[80px] overflow-hidden" suppressHydrationWarning>
+        <style jsx global>{`
+          @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -20px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+          }
+          @keyframes blob-reverse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-20px, 20px) scale(1.1); }
+            50% { transform: translate(20px, -20px) scale(0.9); }
+            75% { transform: translate(-20px, -10px) scale(1.05); }
+          }
+          @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            25% { transform: translateY(-25px); opacity: 0.8; }
+            50% { transform: translateY(-50px); opacity: 1; }
+            75% { transform: translateY(-75px); opacity: 0.9; }
+            100% { transform: translateY(-100px); opacity: 0; }
+          }
+        `}</style>
+        <div className="absolute inset-0 -z-10">
+          {/* Dynamic blue gradient base */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-950 to-black"></div>
+          
+          {/* Animated gradient overlays */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/50 to-transparent"></div>
+          <div 
+            className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"
+            style={{
+              animation: 'blob 20s ease-in-out infinite'
+            }}
+          ></div>
+          <div 
+            className="absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-cyan-500/15 blur-3xl"
+            style={{
+              animation: 'blob-reverse 18s ease-in-out infinite'
+            }}
+          ></div>
+          <div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl"
+            style={{
+              animation: 'blob 25s ease-in-out infinite reverse'
+            }}
+          ></div>
+        </div>
+        
+        {/* Floating particles - Home page style */}
+        {isMounted && (
+          <div ref={particlesRef} className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+            {particles.map((particle, index) => (
+              <div
+                key={index}
+                className="particle absolute bg-white rounded-full transition-transform duration-300 ease-out"
+                style={{
+                  width: `${particle.size}px`,
+                  height: `${particle.size}px`,
+                  left: `${particle.x}%`,
+                  top: `${particle.y}%`,
+                  opacity: particle.opacity,
+                  animation: `float ${particle.duration}s ease-in-out infinite`,
+                  animationDelay: `${particle.delay}s`,
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
           <Reveal animation="fade-up" duration={950} delay={100}>
-            <div className="grid gap-24 lg:grid-cols-[30%_70%] text-white">
-                {/* Left Column - Title */}
-                <div>
-                  <h2 className="text-[45px] font-medium leading-tight">
-                    Enterprise AI needs structure, not experiments
-                  </h2>
-                </div>
+            <div className="text-white text-center max-w-[1360px] mx-auto">
+                {/* Title */}
+                <h2 className="text-[25px] font-medium leading-tight mb-8">
+                  Enterprise AI needs structure, not experiments
+                </h2>
                 
-                {/* Right Column - Text */}
+                {/* Text */}
                 <div className="space-y-6">
-                  <p className="text-lg text-white/70 leading-relaxed">
+                  <p className="text-white opacity-70" style={{ fontSize: '35px', fontWeight: 100, fontFamily: 'Poppins, sans-serif', lineHeight: 1.3 }}>
                     In most enterprise systems, AI is added as an external service or isolated capability. This makes decisions harder to govern, explain, and evolve over time. Agentic AI Hub was built to ensure intelligence becomes part of how applications operate, without compromising transparency or control.
                   </p>
                 </div>
@@ -193,125 +428,168 @@ export default function AgenticAIHubPage() {
         </div>
       </section>
 
-      {/* Platform Features Section with Accordion */}
-      <section className="relative pt-[63px] pb-12 overflow-visible bg-black">
-        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
-          <div className="grid gap-24 lg:grid-cols-[400px_1fr] items-start">
-            {/* Left Column - Accordion */}
-            <div className="space-y-4">
-              {/* Main Title */}
-              <div className="mb-8">
-                <p className="text-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-3">
-                  Key features
-                </p>
-                <h2 className="text-[45px] font-medium text-white">
-                  What you can do with Agentic AI Hub
-                </h2>
+      {/* Key Features Section */}
+      <section className="relative py-[80px] overflow-hidden bg-black">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <Reveal animation="fade-up" duration={900} delay={100}>
+              <div className="inline-block mb-6">
+                <span className="px-6 py-2 rounded-full bg-white text-black text-sm font-medium">
+                  Features
+                </span>
               </div>
+              <h2 className="text-[45px] font-medium text-white mb-6">
+                What you can do with Agentic AI Hub
+              </h2>
+            </Reveal>
+          </div>
 
-              {/* Accordion Items */}
-              <div className="space-y-2">
-                {[
-                  {
-                    id: "decision-points",
-                    title: "Embed AI at decision points",
-                    description: "Configure agents to operate where validation, judgment, or recommendations are required within workflows.",
-                  },
-                  {
-                    id: "interpret-inputs",
-                    title: "Interpret inputs and context",
-                    description: "Use agents to interpret documents, data, and user inputs as part of an application flow.",
-                  },
-                  {
-                    id: "trigger-actions",
-                    title: "Trigger actions and next steps",
-                    description: "Allow agents to initiate workflow transitions, approvals, or follow-up actions based on defined conditions.",
-                  },
-                  {
-                    id: "human-loop",
-                    title: "Support human-in-the-loop scenarios",
-                    description: "Design workflows where AI assists decision-making while keeping humans involved when required.",
-                  }
-                ].map((feature) => (
-                  <div key={feature.id} className="border-b border-white/10">
-                    <button
-                      onClick={() => setActiveAccordion(activeAccordion === feature.id ? '' : feature.id)}
-                      className={`flex w-full items-center justify-between py-4 text-left transition-colors ${
-                        activeAccordion === feature.id ? 'text-white' : 'text-white/60 hover:text-white'
-                      }`}
-                    >
-                      <span className="text-base font-medium tracking-wide">
-                        {feature.title}
-                      </span>
-                      <ChevronRightIcon className={`h-5 w-5 text-white/60 transition-transform duration-300 ${
-                        activeAccordion === feature.id ? 'rotate-90' : ''
-                      }`} />
-                    </button>
-                    {activeAccordion === feature.id && (
-                      <div className="pb-4">
-                        <p className="text-sm text-white/70 leading-relaxed">
-                          {feature.description}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Column - Image */}
-            <div className="relative -mr-6 lg:-mr-12">
-              <button
-                type="button"
-                onClick={() => setLightbox({
-                  src: "/images/products/agentic-hub.jpg",
-                  alt: "Agentic AI Hub"
-                })}
-                className="group block w-full cursor-pointer focus:outline-none"
-              >
-                <div className="relative aspect-[16/10] rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-black transition-all duration-300 hover:border-white/30 hover:shadow-[0_40px_120px_-40px_rgba(56,189,248,0.6)]">
-                  <Image
-                    src="/images/products/agentic-hub.jpg"
-                    alt="Agentic AI Hub"
-                    fill
-                    className="object-contain transition-all duration-300 group-hover:scale-[1.02]"
-                    priority
-                  />
+          {/* Features Grid - First Row (2 columns) */}
+          <div className="grid grid-cols-1 lg:grid-cols-20 gap-6 mb-6">
+            {/* Feature Card 1 - Configure AI decision points */}
+            <Reveal animation="fade-up" duration={900} delay={200} className="lg:col-span-9 flex">
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent"></div>
+                <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
+                  <h3 className="text-2xl font-medium text-white mb-4">
+                    Embed ai at decision points
+                  </h3>
+                  <p className="text-white/60 text-base leading-relaxed">
+                    Configure agents to operate where validation, judgment, or recommendations are required within workflows.
+                  </p>
                 </div>
-              </button>
-            </div>
+                <div className="relative flex-1 flex items-end">
+                  <div className="relative w-full overflow-hidden">
+                    <Image
+                      src="/feature-2.webp"
+                      alt="Configure AI decision points within workflows"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Feature Card 2 - Set guardrails and validation rules */}
+            <Reveal animation="fade-up" duration={900} delay={250} className="lg:col-span-11 flex">
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent"></div>
+                <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
+                  <h3 className="text-2xl font-medium text-white mb-4">
+                    Interpret inputs and context
+                  </h3>
+                  <p className="text-white/60 text-base leading-relaxed">
+                    Use agents to interpret documents, data, and user inputs as part of an application flow.
+                  </p>
+                </div>
+                <div className="relative flex-1 flex items-end">
+                  <div className="relative w-full overflow-hidden">
+                    <Image
+                      src="/feature-2.webp"
+                      alt="Set guardrails and validation rules for AI outputs"
+                      width={800}
+                      height={480}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Features Grid - Second Row (2 columns in reverse order) */}
+          <div className="grid grid-cols-1 lg:grid-cols-20 gap-6 mb-6">
+            {/* Feature Card 2 - Build audit trails (reversed position) */}
+            <Reveal animation="fade-up" duration={900} delay={300} className="lg:col-span-11 flex">
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent"></div>
+                <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
+                  <h3 className="text-2xl font-medium text-white mb-4">
+                    Trigger actions and next steps
+                  </h3>
+                  <p className="text-white/60 text-base leading-relaxed">
+                    Allow agents to initiate workflow transitions, approvals, or follow-up actions based on defined conditions.
+                  </p>
+                </div>
+                <div className="relative flex-1 flex items-end">
+                  <div className="relative w-full overflow-hidden">
+                    <Image
+                      src="/feature-2.webp"
+                      alt="Build audit trails for AI-driven actions"
+                      width={800}
+                      height={480}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Feature Card 1 - Design human-in-the-loop approval flows (reversed position) */}
+            <Reveal animation="fade-up" duration={900} delay={350} className="lg:col-span-9 flex">
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-transparent"></div>
+                <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
+                  <h3 className="text-2xl font-medium text-white mb-4">
+                    Support human-in-the-loop scenarios
+                  </h3>
+                  <p className="text-white/60 text-base leading-relaxed">
+                    Design workflows where AI assists decision-making while keeping humans involved when required.
+                  </p>
+                </div>
+                <div className="relative flex-1 flex items-end">
+                  <div className="relative w-full overflow-hidden">
+                    <Image
+                      src="/feature-2.webp"
+                      alt="Design human-in-the-loop approval flows"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Intelligence & Trust Section - 50/50 Layout */}
-      <section className="relative bg-[#030711] py-24 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-slate-900/40 to-black"></div>
-        </div>
+      {/* Built for governance and control Section */}
+      <section className="relative py-[80px] overflow-hidden bg-black">
+        <style jsx>{`
+          @keyframes floatUp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+          }
+          @keyframes floatDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
+          }
+        `}</style>
 
-        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
-          <div className="grid gap-16 lg:grid-cols-2 items-center">
-            {/* Left Column - Content */}
-            <div className="space-y-12">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 items-center">
+            {/* Left Side - 50% */}
+            <div className="lg:col-span-5">
               <Reveal animation="fade-up" duration={900} delay={100}>
-                <div className="space-y-4">
-                  <h2 className="text-[45px] font-medium text-white leading-tight">
-                    Intelligence that works with rules, not around them
-                  </h2>
-                  <div className="space-y-4 text-white/70 text-lg leading-relaxed">
-                    <p>
-                      Agentic AI Hub does not replace business rules or process logic. Agents operate alongside rules and decisions, ensuring that intelligence remains predictable, explainable, and auditable as applications evolve.
-                    </p>
-                    <p>
-                      This allows AI behavior to change safely as policies, data, and operational conditions change.
-                    </p>
-                  </div>
+                <h2 className="text-[45px] font-medium text-white mb-6 leading-tight">
+                  Intelligence that works with rules, not around them
+                </h2>
+                <div className="space-y-4 text-white/70 text-lg leading-relaxed">
+                  <p>
+                    Agentic AI Hub does not replace business rules or process logic. Agents operate alongside rules and decisions, ensuring that intelligence remains predictable, explainable, and auditable as applications evolve.
+                  </p>
+                  <p>
+                    This allows AI behavior to change safely as policies, data, and operational conditions change.
+                  </p>
                 </div>
               </Reveal>
 
               <Reveal animation="fade-up" duration={900} delay={200}>
-                <div className="space-y-4">
+                <div className="mt-12 space-y-4">
                   <h2 className="text-[45px] font-medium text-white leading-tight">
                     Built for enterprise trust
                   </h2>
@@ -322,28 +600,90 @@ export default function AgenticAIHubPage() {
               </Reveal>
             </div>
 
-            {/* Right Column - Image */}
-            <Reveal animation="fade-left" duration={1000} delay={300}>
-              <div className="relative">
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10 shadow-2xl">
-                  <Image
-                    src="/images/products/agentic-hub.jpg"
-                    alt="Enterprise AI Governance"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                
-                {/* Glow effect behind image */}
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-purple-500/20 blur-3xl"></div>
+            {/* Right Side - 50% */}
+            <div className="lg:col-span-5">
+              <div className="grid grid-cols-2 gap-6">
+                {/* Card 1 - Decision Points */}
+                <Reveal animation="fade-up" duration={900} delay={200}>
+                  <div 
+                    className="relative rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-slate-900/50 p-8 hover:border-cyan-500/40 transition-all duration-300"
+                    style={{
+                      animation: 'floatUp 4s ease-in-out infinite',
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-medium text-white mb-3">Governed Decisions</h3>
+                    <p className="text-white/60 text-sm">AI actions remain policy-aware and compliant.</p>
+                  </div>
+                </Reveal>
+
+                {/* Card 2 - Guardrails */}
+                <Reveal animation="fade-up" duration={900} delay={250}>
+                  <div 
+                    className="relative rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 to-slate-900/50 p-8 hover:border-blue-500/40 transition-all duration-300 mt-12"
+                    style={{
+                      animation: 'floatDown 4.5s ease-in-out infinite',
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-medium text-white mb-3">Explainable Behaviour</h3>
+                    <p className="text-white/60 text-sm">Every output is traceable and auditable.</p>
+                  </div>
+                </Reveal>
+
+                {/* Card 3 - Audit Trails */}
+                <Reveal animation="fade-up" duration={900} delay={300}>
+                  <div 
+                    className="relative rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-500/10 to-slate-900/50 p-8 hover:border-purple-500/40 transition-all duration-300 -mt-6"
+                    style={{
+                      animation: 'floatUp 4.2s ease-in-out infinite',
+                      animationDelay: '0.5s',
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-medium text-white mb-3">Operational Alignment</h3>
+                    <p className="text-white/60 text-sm">Agents work within real workflows, not outside them.</p>
+                  </div>
+                </Reveal>
+
+                {/* Card 4 - Human Oversight */}
+                <Reveal animation="fade-up" duration={900} delay={350}>
+                  <div 
+                    className="relative rounded-2xl border border-green-500/20 bg-gradient-to-br from-green-500/10 to-slate-900/50 p-8 hover:border-green-500/40 transition-all duration-300 mt-6"
+                    style={{
+                      animation: 'floatDown 4.8s ease-in-out infinite',
+                      animationDelay: '0.3s',
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-medium text-white mb-3">Risk-Aware Intelligence</h3>
+                    <p className="text-white/60 text-sm">Designed for regulated, high-accountability environments.</p>
+                  </div>
+                </Reveal>
               </div>
-            </Reveal>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Key Features Section */}
-      <section id="features" className="relative bg-black py-24">
+      {/* Where teams typically use Agentic AI Hub Section */}
+      <section id="features" className="relative bg-black pt-[80px] pb-[150px]">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
@@ -354,26 +694,33 @@ export default function AgenticAIHubPage() {
           </Reveal>
 
           <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-            {features.slice(0, 4).map((feature, index) => (
+            {features.map((feature, index) => (
               <Reveal 
                 key={feature.id} 
                 animation="fade-up" 
                 duration={800} 
                 delay={100 + index * 50}
               >
-                <div className="group relative h-full rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 p-8 border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col">
+                <div className="group relative rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 p-8 border border-white/5 hover:border-white/10 transition-all duration-300">
                   {/* Icon */}
                   <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${feature.iconClasses} mb-6`}>
                     <feature.icon className="h-7 w-7" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-white leading-tight">
+                  <h3 className="text-xl font-semibold text-white leading-tight mb-3">
                     {feature.title}
                   </h3>
 
+                  {/* Description */}
+                  {feature.description && (
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  )}
+
                   {/* Hover gradient effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
               </Reveal>
             ))}
@@ -381,7 +728,7 @@ export default function AgenticAIHubPage() {
         </div>
       </section>
 
-      {/* Custom CTA Section for Agentic AI Hub */}
+      {/* CTA Section */}
       <section className="relative isolate overflow-hidden bg-black py-24">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
@@ -397,21 +744,24 @@ export default function AgenticAIHubPage() {
 
         <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center text-white">
           <Reveal animation="fade-up" duration={950} delay={120}>
-            <h2 className="text-[45px] font-medium leading-tight text-white mb-4">
+            <h2 className="text-[45px] font-medium leading-tight text-white">
               See Agentic AI Hub in action
             </h2>
-            <p className="text-xl text-white/70 max-w-2xl">
+          </Reveal>
+
+          <Reveal animation="fade-up" duration={1000} delay={180}>
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl">
               See how intelligence operates inside workflows without breaking enterprise control.
             </p>
           </Reveal>
 
           <Reveal animation="fade-up" duration={1000} delay={220}>
             <div className="flex flex-col items-center gap-4 sm:flex-row">
-              <Link href="#features" className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
-                <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-gradient-to-r from-[#12efeb] via-[#3e7ae5] to-[#523bdc] px-8 py-3.5 text-base font-medium text-white transition-all duration-500 bg-[length:200%_100%] bg-left hover:bg-right">
+              <Link href="/platform/agentic-ai-hub" className="relative group">
+                <div className="absolute inset-0 bg-[#3e7ae5] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
+                <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:bg-[#5a8df0]">
                   Explore Agentic AI Hub
-                  <ArrowRightIcon className="h-5 w-5" />
+                  <LinkIcon className="h-5 w-5" />
                 </div>
               </Link>
               <Link
@@ -428,16 +778,16 @@ export default function AgenticAIHubPage() {
       {/* Lightbox Modal */}
       {lightbox && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black opacity-90 p-4"
           onClick={() => setLightbox(null)}
         >
-          <div className="relative max-h-[90vh] max-w-[90vw]">
+          <div className="relative max-h-screen max-w-screen-lg">
             <Image
               src={lightbox.src}
               alt={lightbox.alt}
               width={1200}
               height={800}
-              className="h-auto w-auto max-h-[90vh] max-w-[90vw] rounded-lg"
+              className="h-auto w-auto max-h-screen max-w-full rounded-lg"
             />
             <button
               onClick={() => setLightbox(null)}

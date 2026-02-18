@@ -20,28 +20,28 @@ const features = [
   {
     id: "legacy-modernization",
     title: "Legacy application modernization",
-    description: "",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: Squares2X2Icon,
     iconClasses: "bg-blue-500 bg-opacity-10 text-blue-300",
   },
   {
     id: "rule-heavy-workflows",
     title: "Rule-heavy enterprise workflows",
-    description: "",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: CommandLineIcon,
     iconClasses: "bg-cyan-500 bg-opacity-10 text-cyan-300",
   },
   {
     id: "regulated-systems",
     title: "Regulated operational systems",
-    description: "",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: CubeIcon,
     iconClasses: "bg-cyan-500 bg-opacity-10 text-cyan-300",
   },
   {
     id: "proprietary-platforms",
     title: "Proprietary internal platforms",
-    description: "",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: PaintBrushIcon,
     iconClasses: "bg-teal-500 bg-opacity-10 text-teal-300",
   },
@@ -98,7 +98,7 @@ export default function DevStudioPage() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.2;
+      videoRef.current.playbackRate = 1;
     }
   }, [isMounted]);
 
@@ -208,7 +208,7 @@ export default function DevStudioPage() {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src="/color_bg.mp4" type="video/mp4" />
+              <source src="/devstudio_bg.mp4" type="video/mp4" />
             </video>
           )}
         </div>
@@ -241,7 +241,7 @@ export default function DevStudioPage() {
                   style={{backgroundColor: '#0efffb'}}
                   className="inline-flex items-center justify-center rounded-lg px-12 py-4 text-base font-medium text-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 >
-                  See dev studio in action
+                  See Dev Studio in action
                 </Link>
 
                 {/* Secondary Button */}
@@ -702,9 +702,16 @@ export default function DevStudioPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-white leading-tight">
+                  <h3 className="text-xl font-semibold text-white leading-tight mb-3">
                     {feature.title}
                   </h3>
+
+                  {/* Description */}
+                  {feature.description && (
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  )}
 
                   {/* Hover gradient effect */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
