@@ -16,6 +16,7 @@ import {
   CpuChipIcon,
   ArrowPathIcon,
 } from "@heroicons/react/24/outline";
+import HealthcareCTASection from '@/components/sections/HealthcareCTASection';
 import Reveal from '@/components/ui/Reveal';
 
 const healthcareFeatures = [
@@ -566,11 +567,11 @@ export default function AIHealthcarePage() {
       </section>
 
       {/* How Stackyon Applies to Healthcare Section */}
-      <section className="relative bg-black py-24">
+      <section className="relative bg-black py-16">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
-              <h2 className="text-[48px] font-medium text-white mb-12">How Stackyon Applies to Healthcare</h2>
+              <h2 className="text-[50px] font-medium text-white mb-12">How Stackyon Applies to Healthcare</h2>
               <div className="flex justify-center">
                 <div className="relative w-full max-w-5xl">
                   <Image
@@ -588,12 +589,12 @@ export default function AIHealthcarePage() {
       </section>
 
       {/* Healthcare Workflows Section */}
-      <section className="relative bg-black py-24">
+      <section className="relative bg-black py-16">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           {/* Tabs at the top */}
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-12">
-              <h2 className="text-[48px] font-medium text-white mb-6">Healthcare Workflows</h2>
+              <h2 className="text-[50px] font-medium text-white mb-6">Healthcare Workflows</h2>
               <p className="text-lg text-white/70 max-w-5xl mx-auto mb-8">
                 Our AI-powered platform adapts to your existing processes while introducing smart automation that reduces burden and improves patient outcomes.
               </p>
@@ -861,11 +862,11 @@ export default function AIHealthcarePage() {
       </section>
 
       {/* Role of AI Agents in Healthcare Workflows */}
-      <section className="relative bg-black py-24">
+      <section className="relative bg-black py-16">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
-              <h2 className="text-[48px] font-medium text-white mb-12">Role of AI Agents in Healthcare Workflows</h2>
+              <h2 className="text-[50px] font-medium text-white mb-12">Role of AI Agents in Healthcare Workflows</h2>
               <p className="text-xl text-white/80">AI agents in Stackyon:</p>
             </div>
           </Reveal>
@@ -968,16 +969,30 @@ export default function AIHealthcarePage() {
       </section>
 
       {/* Smart AI Services Section */}
-      <section className="relative bg-gradient-to-br from-[#0033cc]/10 via-black to-[#0066ff]/10 py-24">
-        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
-          <Reveal animation="fade-up" duration={900} delay={100}>
-            <div className="text-center mb-16">
-              <h2 className="text-[48px] font-medium text-white mb-6">Outcomes Healthcare Teams Care About</h2>
+      <section className="relative bg-gradient-to-br from-[#0033cc]/10 via-black to-[#0066ff]/10 py-16">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+          {/* Black Rounded Container */}
+          <div className="relative rounded-3xl bg-black border border-white/10 p-12 md:p-16 overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0 -z-0 rounded-3xl overflow-hidden">
+              <Image
+                src="/Outcomes Healthcare Teams Care About_bg.jpg"
+                alt="Outcomes background"
+                fill
+                className="object-cover"
+                quality={100}
+              />
             </div>
-          </Reveal>
+            
+            <div className="relative z-10">
+            <Reveal animation="fade-up" duration={900} delay={100}>
+              <div className="text-center mb-16">
+                <h2 className="text-[50px] font-medium text-white mb-6">Outcomes Healthcare Teams Care About</h2>
+              </div>
+            </Reveal>
 
-          {/* First Row - 3 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {/* First Row - 3 columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {/* Service Card 1 */}
             <Reveal animation="fade-up" duration={900} delay={100}>
               <div className="relative group h-full rounded-3xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-white/10 p-10 hover:border-[#0066ff]/30 transition-all duration-300 flex flex-col">
@@ -1099,8 +1114,13 @@ export default function AIHealthcarePage() {
               </div>
             </Reveal>
           </div>
+          </div>
+          </div>
         </div>
       </section>
+
+      {/* Healthcare CTA Section */}
+      <HealthcareCTASection />
 
       {/* Lightbox Modal */}
       {lightbox && (

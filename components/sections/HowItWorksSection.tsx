@@ -53,7 +53,7 @@ export default function HowItWorksSection() {
           <div>
             {/* Heading */}
             <Reveal animation="fade-up" duration={950} delay={140}>
-              <h2 className="text-4xl md:text-[40px] font-medium text-white mb-4 leading-tight">
+              <h2 className="text-[50px] font-medium text-white mb-4 leading-tight">
                 Built to Handle Healthcare-Level Complexity and Beyond
               </h2>
             </Reveal>

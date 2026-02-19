@@ -51,7 +51,7 @@ export default function TestimonialsSection() {
         <header className="flex flex-col items-center gap-6 text-center">
 
           <Reveal animation="fade-up" duration={950} delay={140}>
-            <h2 className="text-4xl md:text-[40px] font-medium leading-tight text-white">
+            <h2 className="text-[50px] font-medium leading-tight text-white">
               Client Testimonials
             </h2>
           </Reveal>

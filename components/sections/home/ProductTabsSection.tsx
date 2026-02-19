@@ -182,7 +182,7 @@ export default function ProductTabsSection() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4">
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-4xl md:text-[40px] font-medium text-white mb-6">
+          <h2 className="text-[50px] font-medium text-white mb-6">
             Meet the Stackyon Platform
           </h2>
         </div>

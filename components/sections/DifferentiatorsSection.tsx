@@ -67,7 +67,7 @@ export default function DifferentiatorsSection() {
     <section className="relative overflow-hidden bg-black py-24">
       <div className="mx-auto flex max-w-7xl flex-col gap-16 px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl md:text-[40px] font-medium text-white reveal-child" style={{ transitionDelay: '140ms' }}>
+          <h2 className="text-[50px] font-medium text-white reveal-child" style={{ transitionDelay: '140ms' }}>
             Why to Choose Stackyon
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>

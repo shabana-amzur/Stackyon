@@ -90,7 +90,7 @@ export default function WhatSetsUsApartSection() {
     <section className="relative bg-black py-24 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="mb-16 flex flex-col items-center gap-6 text-center">
-          <h2 className="text-4xl md:text-[40px] font-medium text-white reveal-child" style={{ transitionDelay: '140ms' }}>
+          <h2 className="text-[50px] font-medium text-white reveal-child" style={{ transitionDelay: '140ms' }}>
             From Idea to Action in Minutes
           </h2>
           <p className="max-w-3xl text-lg text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>
