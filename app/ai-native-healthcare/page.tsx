@@ -203,7 +203,7 @@ function MouseTrackText({
 export default function AIHealthcarePage() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [activeAccordion, setActiveAccordion] = useState<string>('clinical-intelligence');
+  const [activeAccordion, setActiveAccordion] = useState<string>('scheduling-coordination');
   const [activeTab, setActiveTab] = useState<string>('administrative');
   const sectionRef = useRef<HTMLElement>(null);
   const particlesRef = useRef<HTMLDivElement>(null);
@@ -568,10 +568,35 @@ export default function AIHealthcarePage() {
       {/* How Stackyon Applies to Healthcare Section */}
       <section className="relative bg-black py-24">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
+          <Reveal animation="fade-up" duration={900} delay={100}>
+            <div className="text-center mb-16">
+              <h2 className="text-[48px] font-medium text-white mb-12">How Stackyon Applies to Healthcare</h2>
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-5xl">
+                  <Image
+                    src="/Stackyon-Impact.png"
+                    alt="How Stackyon Applies to Healthcare"
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Healthcare Workflows Section */}
+      <section className="relative bg-black py-24">
+        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           {/* Tabs at the top */}
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-12">
-              <h2 className="text-[48px] font-medium text-white mb-8">Healthcare Workflows</h2>
+              <h2 className="text-[48px] font-medium text-white mb-6">Healthcare Workflows</h2>
+              <p className="text-lg text-white/70 max-w-5xl mx-auto mb-8">
+                Our AI-powered platform adapts to your existing processes while introducing smart automation that reduces burden and improves patient outcomes.
+              </p>
               <div className="flex justify-center gap-4 mb-8">
                 <button
                   onClick={() => {
@@ -608,12 +633,65 @@ export default function AIHealthcarePage() {
             <Reveal animation="fade-right" duration={900} delay={200}>
               <div className="relative w-full">
                 <div className="relative w-full aspect-[16/9] bg-gradient-to-br from-slate-900/50 to-slate-800/30 rounded-2xl border border-white/10 overflow-hidden">
-                  <Image
-                    src="/images/products/agentic-hub.jpg"
-                    alt="Healthcare Platform Interface"
-                    fill
-                    className="object-cover transition-opacity duration-500"
-                  />
+                  {/* Administrative Workflows Images */}
+                  {activeTab === 'administrative' && (
+                    <>
+                      {activeAccordion === 'scheduling-coordination' && (
+                        <Image
+                          src="/images/workflows/workflow_1.jpg"
+                          alt="Scheduling & Resource Coordination"
+                          fill
+                          className="object-cover transition-opacity duration-500"
+                        />
+                      )}
+                      {activeAccordion === 'revenue-cycle' && (
+                        <Image
+                          src="/images/workflows/workflow_2.jpg"
+                          alt="Revenue Cycle Management"
+                          fill
+                          className="object-cover transition-opacity duration-500"
+                        />
+                      )}
+                      {activeAccordion === 'transition-care' && (
+                        <Image
+                          src="/images/workflows/workflow_3.jpg"
+                          alt="Transition of Care Management"
+                          fill
+                          className="object-cover transition-opacity duration-500"
+                        />
+                      )}
+                    </>
+                  )}
+                  
+                  {/* Clinical Workflows Images */}
+                  {activeTab === 'clinical' && (
+                    <>
+                      {activeAccordion === 'patient-intake' && (
+                        <Image
+                          src="/images/workflows/workflow_1.jpg"
+                          alt="Patient Intake & Documentation"
+                          fill
+                          className="object-cover transition-opacity duration-500"
+                        />
+                      )}
+                      {activeAccordion === 'orders-management' && (
+                        <Image
+                          src="/images/workflows/workflow_2.jpg"
+                          alt="Orders Management"
+                          fill
+                          className="object-cover transition-opacity duration-500"
+                        />
+                      )}
+                      {activeAccordion === 'clinical-documentation' && (
+                        <Image
+                          src="/images/workflows/workflow_3.jpg"
+                          alt="Clinical Documentation & SOAP Notes"
+                          fill
+                          className="object-cover transition-opacity duration-500"
+                        />
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             </Reveal>
@@ -782,92 +860,244 @@ export default function AIHealthcarePage() {
         </div>
       </section>
 
-      {/* Healthcare Solutions Grid */}
-      <section id="solutions" className="relative bg-black py-24">
+      {/* Role of AI Agents in Healthcare Workflows */}
+      <section className="relative bg-black py-24">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
-              <p className="text-lg bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent mb-3">
-                Comprehensive Solutions
-              </p>
-              <h2 className="text-4xl md:text-5xl font-medium text-white">
-                AI-powered healthcare capabilities
-              </h2>
+              <h2 className="text-[48px] font-medium text-white mb-12">Role of AI Agents in Healthcare Workflows</h2>
+              <p className="text-xl text-white/80">AI agents in Stackyon:</p>
             </div>
           </Reveal>
 
-          <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {healthcareFeatures.map((feature, index) => (
-              <Reveal 
-                key={feature.id} 
-                animation="fade-up" 
-                duration={800} 
-                delay={100 + index * 50}
-              >
-                <div className="group relative h-full rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 p-8 border border-white/5 hover:border-white/10 transition-all duration-300">
-                  {/* Icon */}
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${feature.iconClasses} mb-6`}>
-                    <feature.icon className="h-7 w-7" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Box 1 */}
+            <Reveal animation="fade-up" duration={900} delay={100}>
+              <div className="relative group h-full rounded-2xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10 p-8 hover:border-white/20 transition-all duration-300">
+                {/* Icon */}
+                <div className="mb-8 mt-8">
+                  <div className="w-32 h-32 mx-auto relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0033cc]/20 to-[#0066ff]/20 rounded-xl transform rotate-6"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-700/40 to-slate-800/40 rounded-xl"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <DocumentCheckIcon className="h-16 w-16 text-[#0066ff]/60" />
+                    </div>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {feature.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-white/70 leading-relaxed">
-                    {feature.description}
-                  </p>
-
-                  {/* Hover gradient effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
-              </Reveal>
-            ))}
+
+                {/* Content */}
+                <div className="mt-auto">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Interpret clinical and administrative inputs from voice, text, and documents</h3>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Box 2 */}
+            <Reveal animation="fade-up" duration={900} delay={200}>
+              <div className="relative group h-full rounded-2xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10 p-8 hover:border-white/20 transition-all duration-300">
+                {/* Icon */}
+                <div className="mb-8 mt-8">
+                  <div className="w-32 h-32 mx-auto relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0033cc]/20 to-[#0066ff]/20 rounded-xl transform -rotate-6"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-700/40 to-slate-800/40 rounded-xl"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <ShieldCheckIcon className="h-16 w-16 text-[#0066ff]/60" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="mt-auto">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Support validation and decision points inside workflows</h3>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Box 3 */}
+            <Reveal animation="fade-up" duration={900} delay={300}>
+              <div className="relative group h-full rounded-2xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10 p-8 hover:border-white/20 transition-all duration-300">
+                {/* Icon */}
+                <div className="mb-8 mt-8">
+                  <div className="w-32 h-32 mx-auto relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0033cc]/20 to-[#0066ff]/20 rounded-xl transform rotate-6"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-700/40 to-slate-800/40 rounded-xl"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <ArrowPathIcon className="h-16 w-16 text-[#0066ff]/60" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="mt-auto">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Trigger next steps, approvals, or follow-up actions</h3>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Box 4 */}
+            <Reveal animation="fade-up" duration={900} delay={400}>
+              <div className="relative group h-full rounded-2xl bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-white/10 p-8 hover:border-white/20 transition-all duration-300">
+                {/* Icon */}
+                <div className="mb-8 mt-8">
+                  <div className="w-32 h-32 mx-auto relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0033cc]/20 to-[#0066ff]/20 rounded-xl transform -rotate-6"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-700/40 to-slate-800/40 rounded-xl"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <UserGroupIcon className="h-16 w-16 text-[#0066ff]/60" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="mt-auto">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Assist clinicians and staff without removing human oversight</h3>
+                </div>
+              </div>
+            </Reveal>
           </div>
+
+          {/* Bottom Text */}
+          <Reveal animation="fade-up" duration={900} delay={500}>
+            <div className="text-center mt-16">
+              <p className="text-lg text-white/70 max-w-4xl mx-auto">
+                Intelligence operates alongside rules and process logic to ensure transparency and auditability
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="relative bg-[#030711] py-24 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-slate-900/40 to-black"></div>
-        </div>
-
+      {/* Smart AI Services Section */}
+      <section className="relative bg-gradient-to-br from-[#0033cc]/10 via-black to-[#0066ff]/10 py-24">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-medium text-white">
-                Healthcare use cases
-              </h2>
+              <h2 className="text-[48px] font-medium text-white mb-6">Outcomes Healthcare Teams Care About</h2>
             </div>
           </Reveal>
 
-          <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-            {useCases.map((useCase, index) => (
-              <Reveal 
-                key={useCase.id} 
-                animation="fade-up" 
-                duration={800} 
-                delay={100 + index * 50}
-              >
-                <div className="group relative h-full rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 p-8 border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col">
-                  {/* Title */}
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {useCase.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-white/70 leading-relaxed">
-                    {useCase.description}
-                  </p>
-
-                  {/* Hover gradient effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          {/* First Row - 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {/* Service Card 1 */}
+            <Reveal animation="fade-up" duration={900} delay={100}>
+              <div className="relative group h-full rounded-3xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-white/10 p-10 hover:border-[#0066ff]/30 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-16 h-16 mx-auto">
+                    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full stroke-white/70 stroke-[1.5]">
+                      <path d="M32 8L40 16L32 24L24 16L32 8Z" />
+                      <path d="M48 24L56 32L48 40L40 32L48 24Z" />
+                      <path d="M16 24L24 32L16 40L8 32L16 24Z" />
+                      <path d="M32 40L40 48L32 56L24 48L32 40Z" />
+                    </svg>
+                  </div>
                 </div>
-              </Reveal>
-            ))}
+
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Reduce administrative burden</h3>
+                </div>
+
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+            </Reveal>
+
+            {/* Service Card 2 */}
+            <Reveal animation="fade-up" duration={900} delay={200}>
+              <div className="relative group h-full rounded-3xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-white/10 p-10 hover:border-[#0066ff]/30 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-16 h-16 mx-auto">
+                    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full stroke-white/70 stroke-[1.5]">
+                      <rect x="16" y="12" width="32" height="8" />
+                      <rect x="16" y="24" width="32" height="8" />
+                      <rect x="16" y="36" width="32" height="8" />
+                      <rect x="16" y="48" width="32" height="8" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Improve documentation quality</h3>
+                </div>
+
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+            </Reveal>
+
+            {/* Service Card 3 */}
+            <Reveal animation="fade-up" duration={900} delay={300}>
+              <div className="relative group h-full rounded-3xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-white/10 p-10 hover:border-[#0066ff]/30 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-16 h-16 mx-auto">
+                    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full stroke-white/70 stroke-[1.5]">
+                      <path d="M32 8L48 24L32 40L16 24L32 8Z" />
+                      <path d="M32 24L48 40L32 56L16 40L32 24Z" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Support care coordination</h3>
+                </div>
+
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Second Row - 2 columns centered */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Service Card 4 */}
+            <Reveal animation="fade-up" duration={900} delay={400}>
+              <div className="relative group h-full rounded-3xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-white/10 p-10 hover:border-[#0066ff]/30 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-16 h-16 mx-auto">
+                    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full stroke-white/70 stroke-[1.5]">
+                      <path d="M16 16L24 8L40 24L48 16L56 24L40 40L56 56L48 48L32 32L24 40L16 32L32 16L16 16Z" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Improve claim accuracy and operational efficiency</h3>
+                </div>
+
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+            </Reveal>
+
+            {/* Service Card 5 */}
+            <Reveal animation="fade-up" duration={900} delay={500}>
+              <div className="relative group h-full rounded-3xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-white/10 p-10 hover:border-[#0066ff]/30 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-16 h-16 mx-auto">
+                    <svg viewBox="0 0 64 64" fill="none" className="w-full h-full stroke-white/70 stroke-[1.5]">
+                      <polygon points="32,8 56,24 48,48 16,48 8,24" />
+                      <polygon points="32,24 44,32 40,44 24,44 20,32" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Reduce clinician burnout by embedding assistance into workflows rather than adding separate tools</h3>
+                </div>
+
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
