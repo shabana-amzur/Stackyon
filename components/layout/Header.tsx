@@ -345,7 +345,7 @@ export default function Header() {
         {/* CTA Button */}
         <div className="flex items-center gap-4">
           <button className="hidden lg:block px-8 py-2.5 rounded-full bg-white text-black font-medium text-[15px] hover:bg-gray-100 transition-all duration-300">
-            Get started
+            Book a Demo
           </button>
 
           {/* Mobile menu button */}

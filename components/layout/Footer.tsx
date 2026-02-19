@@ -145,15 +145,7 @@ export default function Footer() {
   return (
     <footer className="relative isolate overflow-hidden bg-[#05070d] text-white">
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-        <div
-          className="
-      absolute inset-x-0 bottom-0 z-0 h-[260px]
-      bg-[url('/images/backgrounds/footer-bottom-bg.jpg')] bg-cover bg-bottom
-      opacity-80
-      [mask-image:linear-gradient(to_top,transparent,black_35%,black)]
-      [-webkit-mask-image:linear-gradient(to_top,transparent,black_35%,black)]
-    "
-        />
+        <div className="absolute inset-x-0 bottom-0 z-0 h-[260px] bg-[url('/images/backgrounds/footer-bottom-bg.jpg')] bg-cover bg-bottom opacity-80" style={{maskImage: 'linear-gradient(to top, transparent, black 35%, black)', WebkitMaskImage: 'linear-gradient(to top, transparent, black 35%, black)'}} />
         <div className="absolute bottom-[26px] left-1/2 z-10 -translate-x-1/2 text-[13.5rem] font-black uppercase tracking-[0.85rem] text-white/[0.035]">
           Stackyon
         </div>

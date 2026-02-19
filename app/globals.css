@@ -49,10 +49,10 @@ p {
     transform: translateY(0px) translateX(0px);
   }
   33% {
-    transform: translateY(-15px) translateX(10px);
+    transform: translateY(-8px) translateX(5px);
   }
   66% {
-    transform: translateY(15px) translateX(-10px);
+    transform: translateY(8px) translateX(-5px);
   }
 }
 

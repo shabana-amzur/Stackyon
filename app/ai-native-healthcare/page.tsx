@@ -86,6 +86,27 @@ const useCases = [
   },
 ];
 
+type ParticleConfig = {
+  opacity: number;
+  size: number;
+  duration: number;
+  x: number;
+  y: number;
+  delay: number;
+};
+
+const PARTICLE_COUNT = 50;
+
+const createParticles = (): ParticleConfig[] =>
+  Array.from({ length: PARTICLE_COUNT }, () => ({
+    opacity: 1,
+    size: Math.random() * 2.5 + 1,
+    duration: (Math.random() * 10 + 8) * 0.9,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 5,
+  }));
+
 // Word component - tracks mouse distance for individual word
 function Word({ 
   children, 
@@ -144,7 +165,8 @@ function MouseTrackText({
   className = '', 
   baseOpacity = 0.4, 
   maxOpacity = 1,
-  as = 'p'
+  as = 'p',
+  style
 }: { 
   children: React.ReactNode; 
   mousePosition: { x: number; y: number }; 
@@ -152,6 +174,7 @@ function MouseTrackText({
   baseOpacity?: number;
   maxOpacity?: number;
   as?: 'p' | 'span';
+  style?: React.CSSProperties;
 }) {
   const Component = as;
   
@@ -171,7 +194,7 @@ function MouseTrackText({
   };
   
   return (
-    <Component className={className}>
+    <Component className={className} style={style}>
       {typeof children === 'string' ? renderWords(children) : children}
     </Component>
   );
@@ -180,7 +203,18 @@ function MouseTrackText({
 export default function AIHealthcarePage() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [activeAccordion, setActiveAccordion] = useState<string>('clinical-intelligence');
+  const [activeTab, setActiveTab] = useState<string>('administrative');
   const sectionRef = useRef<HTMLElement>(null);
+  const particlesRef = useRef<HTMLDivElement>(null);
+  const [particles, setParticles] = useState<ParticleConfig[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // Generate particles on client side only to avoid hydration mismatch
+    setParticles(createParticles());
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -189,6 +223,41 @@ export default function AIHealthcarePage() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!particlesRef.current) return;
+      
+      const particles = particlesRef.current.querySelectorAll('.particle');
+      const rect = particlesRef.current.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      particles.forEach((particle) => {
+        const el = particle as HTMLElement;
+        const particleRect = el.getBoundingClientRect();
+        const particleX = particleRect.left - rect.left + particleRect.width / 2;
+        const particleY = particleRect.top - rect.top + particleRect.height / 2;
+
+        const deltaX = particleX - mouseX;
+        const deltaY = particleY - mouseY;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        const maxDistance = 200;
+
+        if (distance < maxDistance) {
+          const force = (maxDistance - distance) / maxDistance;
+          const moveX = deltaX * force * 0.5;
+          const moveY = deltaY * force * 0.5;
+          el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        } else {
+          el.style.transform = 'translate(0, 0)';
+        }
+      });
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    return () => document.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const calculateBrightness = (element: HTMLElement | null) => {
@@ -214,6 +283,16 @@ export default function AIHealthcarePage() {
     <div className="min-h-screen w-full bg-black">
       {/* Hero Banner */}
       <section className="relative isolate overflow-hidden min-h-[600px] pt-[80px] pb-[80px]">
+        <style jsx>{`
+          @keyframes floatUp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+          }
+          @keyframes floatDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
+          }
+        `}</style>
         {/* Background Image */}
         <div className="absolute inset-0 -z-10">
           <Image
@@ -243,7 +322,7 @@ export default function AIHealthcarePage() {
 
               {/* Subtitle */}
               <Reveal animation="fade-up" duration={900} delay={200}>
-                <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-xl">
+                <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-xl">
                   Stackyon enables healthcare organizations to structure, automate, and evolve clinical and administrative workflows using multimodal AI agents that operate directly within existing systems.
                 </p>
               </Reveal>
@@ -285,7 +364,12 @@ export default function AIHealthcarePage() {
             <Reveal animation="fade-left" duration={1000} delay={400}>
               <div className="grid grid-cols-2 gap-6">
                 {/* Row 1: 97% Clean Claim Rate with Dashboard */}
-                <div className="relative rounded-3xl bg-gradient-to-br from-slate-800/60 to-slate-900/80 border border-white/10 p-8 backdrop-blur-xl animate-float" style={{ animationDelay: '0s' }}>
+                <div 
+                  className="relative rounded-3xl bg-gradient-to-br from-slate-800/60 to-slate-900/80 border border-white/10 p-8 backdrop-blur-xl"
+                  style={{
+                    animation: 'floatUp 4s ease-in-out infinite',
+                  }}
+                >
                   <div className="mb-6">
                     <div className="w-full h-32 rounded-xl bg-gradient-to-br from-[#0033cc]/20 to-[#0066ff]/10 border border-[#0066ff]/20 p-4 overflow-hidden">
                       <div className="w-full h-full rounded bg-gradient-to-r from-[#0033cc]/20 to-[#0066ff]/20 flex items-center justify-center relative">
@@ -315,7 +399,12 @@ export default function AIHealthcarePage() {
                 </div>
 
                 {/* Row 1: 60% Time Saved */}
-                <div className="relative rounded-3xl bg-gradient-to-br from-slate-800/60 to-slate-900/80 border border-white/10 p-8 backdrop-blur-xl animate-float" style={{ animationDelay: '0.5s' }}>
+                <div 
+                  className="relative rounded-3xl bg-gradient-to-br from-slate-800/60 to-slate-900/80 border border-white/10 p-8 backdrop-blur-xl"
+                  style={{
+                    animation: 'floatDown 4.5s ease-in-out infinite',
+                  }}
+                >
                   <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0066ff]/20 mb-6">
                     <svg className="h-10 w-10 text-[#0066ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -327,7 +416,13 @@ export default function AIHealthcarePage() {
                 </div>
 
                 {/* Row 2: AI Agents */}
-                <div className="relative rounded-3xl bg-gradient-to-br from-[#0033cc]/20 to-slate-900/80 border border-[#0066ff]/20 p-8 backdrop-blur-xl animate-float" style={{ animationDelay: '1s' }}>
+                <div 
+                  className="relative rounded-3xl bg-gradient-to-br from-[#0033cc]/20 to-slate-900/80 border border-[#0066ff]/20 p-8 backdrop-blur-xl"
+                  style={{
+                    animation: 'floatUp 4.2s ease-in-out infinite',
+                    animationDelay: '0.5s',
+                  }}
+                >
                   <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0066ff]/20 mb-6">
                     <CpuChipIcon className="h-10 w-10 text-[#0066ff]" />
                   </div>
@@ -336,7 +431,13 @@ export default function AIHealthcarePage() {
                 </div>
 
                 {/* Row 2: Workflow Automation */}
-                <div className="relative rounded-3xl bg-gradient-to-br from-slate-800/60 to-slate-900/80 border border-white/10 p-6 backdrop-blur-xl overflow-hidden animate-float" style={{ animationDelay: '1.5s' }}>
+                <div 
+                  className="relative rounded-3xl bg-gradient-to-br from-slate-800/60 to-slate-900/80 border border-white/10 p-6 backdrop-blur-xl overflow-hidden"
+                  style={{
+                    animation: 'floatDown 4.8s ease-in-out infinite',
+                    animationDelay: '0.3s',
+                  }}
+                >
                   <div className="relative z-10 mb-4">
                     <div className="w-full h-32 rounded-xl bg-gradient-to-br from-[#0033cc]/20 to-[#0066ff]/20 border border-[#0066ff]/20 overflow-hidden relative">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#0033cc]/10 to-[#0066ff]/10">
@@ -368,150 +469,315 @@ export default function AIHealthcarePage() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
       </section>
 
-      {/* Why Healthcare Needs AI Section */}
-      <section ref={sectionRef} className="relative overflow-hidden border-t border-white/10">
-        {/* Deep green background with gradient */}
+      {/* AI that works within your business rules Section */}
+      <section className="relative pt-[20px] pb-[80px] overflow-hidden" suppressHydrationWarning>
+        <style jsx global>{`
+          @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -20px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.9); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+          }
+          @keyframes blob-reverse {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-20px, 20px) scale(1.1); }
+            50% { transform: translate(20px, -20px) scale(0.9); }
+            75% { transform: translate(-20px, -10px) scale(1.05); }
+          }
+          @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            25% { transform: translateY(-25px); opacity: 1; }
+            50% { transform: translateY(-50px); opacity: 1; }
+            75% { transform: translateY(-75px); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 1; }
+          }
+        `}</style>
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0D3B2E] via-[#0a2f24] to-[#0D3B2E]"></div>
-          {/* Subtle grain texture overlay */}
+          {/* Dynamic blue gradient base */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-950 to-black"></div>
+          
+          {/* Animated gradient overlays */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/50 to-transparent"></div>
           <div 
-            className="absolute inset-0 opacity-[0.03]"
+            className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+              animation: 'blob 20s ease-in-out infinite'
+            }}
+          ></div>
+          <div 
+            className="absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-cyan-500/15 blur-3xl"
+            style={{
+              animation: 'blob-reverse 18s ease-in-out infinite'
+            }}
+          ></div>
+          <div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl"
+            style={{
+              animation: 'blob 25s ease-in-out infinite reverse'
             }}
           ></div>
         </div>
+        
+        {/* Floating particles - Home page style */}
+        {isMounted && (
+          <div ref={particlesRef} className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+            {particles.map((particle, index) => (
+              <div
+                key={index}
+                className="particle absolute bg-white rounded-full transition-transform duration-300 ease-out"
+                style={{
+                  width: `${particle.size}px`,
+                  height: `${particle.size}px`,
+                  left: `${particle.x}%`,
+                  top: `${particle.y}%`,
+                  opacity: particle.opacity,
+                  animation: `float ${particle.duration}s ease-in-out infinite`,
+                  animationDelay: `${particle.delay}s`,
+                }}
+              />
+            ))}
+          </div>
+        )}
 
-        <div className="mx-auto max-w-[1360px] px-6 lg:px-20">
-          <div className="grid gap-20 lg:grid-cols-2 items-center min-h-[80vh] py-[120px]">
-            {/* Left Column - Large Headline */}
-            <Reveal animation="fade-up" duration={1000} delay={100}>
-              <div className="lg:sticky lg:top-32">
-                <h2 className="text-[52px] md:text-[64px] lg:text-[72px] font-medium leading-[0.95] text-white tracking-tight">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+          <Reveal animation="fade-up" duration={950} delay={100}>
+            <div className="text-white text-center max-w-[1360px] mx-auto">
+                {/* Title */}
+                <h2 className="text-[25px] font-medium leading-tight mb-8">
                   The Operational Problem
                 </h2>
-              </div>
-            </Reveal>
-            
-            {/* Right Column - Body Text with luxury styling */}
-            <div className="space-y-8">
-              <Reveal animation="fade-up" duration={800} delay={150}>
-                <MouseTrackText 
-                  mousePosition={mousePosition}
-                  className="text-[20px] leading-[1.7] font-normal"
-                  baseOpacity={0.4}
-                >
-                  Healthcare providers spend disproportionate time on administrative and documentation tasks, creating burnout, delays, and financial leakage.
-                </MouseTrackText>
-              </Reveal>
-              
-              <Reveal animation="fade-up" duration={800} delay={250}>
-                <MouseTrackText 
-                  mousePosition={mousePosition}
-                  className="text-[18px] leading-[1.8] font-normal"
-                  baseOpacity={0.4}
-                  maxOpacity={0.9}
-                >
-                  Fragmented systems, manual handoffs, and disconnected tools make workflows slow, error-prone, and difficult to evolve. This results in denied claims, compliance risk, care coordination gaps, and rising operational costs.
-                </MouseTrackText>
-              </Reveal>
-              
-              <Reveal animation="fade-up" duration={800} delay={350}>
-                <MouseTrackText 
-                  mousePosition={mousePosition}
-                  className="text-[18px] leading-[1.8] font-normal"
-                  baseOpacity={0.4}
-                  maxOpacity={0.85}
-                >
-                  For healthcare organizations, this is the moment to lean deeper into operational excellence. To pair clinical expertise with systems designed to amplify efficiency and reduce administrative burden.
-                </MouseTrackText>
-              </Reveal>
-              
-              <Reveal animation="fade-up" duration={800} delay={450}>
-                <MouseTrackText 
-                  mousePosition={mousePosition}
-                  className="text-[18px] leading-[1.8] font-normal"
-                  baseOpacity={0.4}
-                  maxOpacity={0.9}
-                >
-                  Stackyon addresses this by structuring workflows, decisions, and intelligence within a unified operational layer—rather than adding another external tool that creates more fragmentation.
-                </MouseTrackText>
-              </Reveal>
+                
+                {/* Text */}
+                <div className="space-y-6">
+                  <MouseTrackText 
+                    mousePosition={mousePosition}
+                    className="text-center"
+                    baseOpacity={0.4}
+                    maxOpacity={1}
+                    as="p"
+                    style={{ fontSize: '32px', fontWeight: 100, fontFamily: 'Google Sans, sans-serif', lineHeight: 1.3 }}
+                  >
+                    Healthcare providers spend disproportionate time on administrative and documentation tasks, creating burnout, delays, and financial leakage. Fragmented systems, manual handoffs, and disconnected tools make workflows slow, error-prone, and difficult to evolve. This results in denied claims, compliance risk, care coordination gaps, and rising operational costs. Stackyon addresses this by structuring workflows, decisions, and intelligence within a unified operational layer rather than adding another external tool.
+                  </MouseTrackText>
+                </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* Healthcare Intelligence Section */}
-      <section className="relative overflow-hidden border-b border-white/10">
-        {/* Deep green background with gradient */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0D3B2E] via-[#0a2f24] to-[#0D3B2E]"></div>
-          {/* Subtle grain texture overlay */}
-          <div 
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-            }}
-          ></div>
-        </div>
+      {/* How Stackyon Applies to Healthcare Section */}
+      <section className="relative bg-black py-24">
+        <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
+          {/* Tabs at the top */}
+          <Reveal animation="fade-up" duration={900} delay={100}>
+            <div className="text-center mb-12">
+              <h2 className="text-[48px] font-medium text-white mb-8">Healthcare Workflows</h2>
+              <div className="flex justify-center gap-4 mb-8">
+                <button
+                  onClick={() => {
+                    setActiveTab('administrative');
+                    setActiveAccordion('scheduling-coordination');
+                  }}
+                  className={`px-8 py-3 rounded-lg border transition-all duration-300 ${
+                    activeTab === 'administrative'
+                      ? 'bg-[#0066ff] border-[#0066ff] text-white'
+                      : 'bg-transparent border-white/20 text-white/70 hover:border-white/40'
+                  }`}
+                >
+                  Administrative Workflows
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveTab('clinical');
+                    setActiveAccordion('patient-intake');
+                  }}
+                  className={`px-8 py-3 rounded-lg border transition-all duration-300 ${
+                    activeTab === 'clinical'
+                      ? 'bg-[#0066ff] border-[#0066ff] text-white'
+                      : 'bg-transparent border-white/20 text-white/70 hover:border-white/40'
+                  }`}
+                >
+                  Clinical Workflows
+                </button>
+              </div>
+            </div>
+          </Reveal>
 
-        <div className="mx-auto max-w-[1360px] px-6 lg:px-20">
-          <div className="grid gap-20 lg:grid-cols-2 items-center min-h-[80vh] py-[120px]">
-            {/* Left Column - Large Headline */}
-            <Reveal animation="fade-up" duration={1000} delay={100}>
-              <div className="lg:sticky lg:top-32">
-                <h2 className="text-[52px] md:text-[64px] lg:text-[72px] font-medium leading-[0.95] text-white tracking-tight">
-                  Clinical workflows need intelligence, not just automation.
-                </h2>
+          <div className="grid lg:grid-cols-[70%_30%] gap-12 items-start">
+            {/* Left Side - Image that changes based on tab and accordion */}
+            <Reveal animation="fade-right" duration={900} delay={200}>
+              <div className="relative w-full">
+                <div className="relative w-full aspect-[16/9] bg-gradient-to-br from-slate-900/50 to-slate-800/30 rounded-2xl border border-white/10 overflow-hidden">
+                  <Image
+                    src="/images/products/agentic-hub.jpg"
+                    alt="Healthcare Platform Interface"
+                    fill
+                    className="object-cover transition-opacity duration-500"
+                  />
+                </div>
               </div>
             </Reveal>
-            
-            {/* Right Column - Body Text with luxury styling */}
-            <div className="space-y-8">
-              <Reveal animation="fade-up" duration={800} delay={150}>
-                <MouseTrackText 
-                  mousePosition={mousePosition}
-                  className="text-[20px] leading-[1.7] font-normal"
-                  baseOpacity={0.4}
-                >
-                  AI is reshaping how healthcare organizations coordinate care, manage documentation, and deliver patient outcomes.
-                </MouseTrackText>
-              </Reveal>
-              
-              <Reveal animation="fade-up" duration={800} delay={200}>
-                <MouseTrackText 
-                  mousePosition={mousePosition}
-                  className="text-[18px] leading-[1.8] font-normal"
-                  baseOpacity={0.4}
-                  maxOpacity={0.9}
-                >
-                  Clinical workflows are evolving, and accuracy, context, and compliance matter more than ever in determining which systems drive real value without adding friction.
-                </MouseTrackText>
-              </Reveal>
-              
-              <Reveal animation="fade-up" duration={800} delay={250}>
-                <MouseTrackText 
-                  mousePosition={mousePosition}
-                  className="text-[18px] leading-[1.8] font-normal"
-                  baseOpacity={0.4}
-                  maxOpacity={0.85}
-                >
-                  For healthcare leaders, this is the moment to build operational systems that support clinical excellence. To combine medical expertise with intelligent automation designed to reduce burden and improve care delivery.
-                </MouseTrackText>
-              </Reveal>
-              
-              <Reveal animation="fade-up" duration={800} delay={300}>
-                <MouseTrackText 
-                  mousePosition={mousePosition}
-                  className="text-[18px] leading-[1.8] font-normal"
-                  baseOpacity={0.4}
-                  maxOpacity={0.9}
-                >
-                  Stackyon is where clinical workflows become intelligent operations, and where healthcare organizations build the foundation for sustainable, scalable care delivery.
-                </MouseTrackText>
-              </Reveal>
-            </div>
+
+            {/* Right Side - Heading and Accordion (changes based on tab) */}
+            <Reveal animation="fade-left" duration={900} delay={300}>
+              <div>
+                {/* Administrative Workflows Tab Content */}
+                {activeTab === 'administrative' && (
+                  <>
+                    {/* Heading and subtitle */}
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-medium text-white mb-3">
+                        Administrative Workflows
+                      </h3>
+                      <p className="text-sm text-white/60">
+                        Automate administrative tasks and reduce operational burden
+                      </p>
+                    </div>
+
+                    {/* Accordion */}
+                    <div className="space-y-4">
+                      {/* Accordion Item 1 */}
+                      <div className="border border-white/10 rounded-xl overflow-hidden bg-slate-900/30">
+                        <button
+                          onClick={() => setActiveAccordion(activeAccordion === 'scheduling-coordination' ? '' : 'scheduling-coordination')}
+                          className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                        >
+                          <h4 className="text-lg font-semibold text-white">Scheduling & Resource Coordination</h4>
+                          <ChevronRightIcon 
+                            className={`h-6 w-6 text-white transition-transform ${activeAccordion === 'scheduling-coordination' ? 'rotate-90' : ''}`} 
+                          />
+                        </button>
+                        {activeAccordion === 'scheduling-coordination' && (
+                          <div className="px-6 pb-5">
+                            <p className="text-white/70 leading-relaxed text-sm">
+                              AI-assisted scheduling, resource allocation, and patient flow optimization to reduce wait times and improve operational efficiency.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Accordion Item 2 */}
+                      <div className="border border-white/10 rounded-xl overflow-hidden bg-slate-900/30">
+                        <button
+                          onClick={() => setActiveAccordion(activeAccordion === 'revenue-cycle' ? '' : 'revenue-cycle')}
+                          className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                        >
+                          <h4 className="text-lg font-semibold text-white">Revenue Cycle Management</h4>
+                          <ChevronRightIcon 
+                            className={`h-6 w-6 text-white transition-transform ${activeAccordion === 'revenue-cycle' ? 'rotate-90' : ''}`} 
+                          />
+                        </button>
+                        {activeAccordion === 'revenue-cycle' && (
+                          <div className="px-6 pb-5">
+                            <p className="text-white/70 leading-relaxed text-sm">
+                              Patient registration, insurance verification, billing, claims processing, and payment collection are structured within governed workflows. Clean claim rates and administrative efficiency improve when logic and documentation remain connected.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Accordion Item 3 */}
+                      <div className="border border-white/10 rounded-xl overflow-hidden bg-slate-900/30">
+                        <button
+                          onClick={() => setActiveAccordion(activeAccordion === 'transition-care' ? '' : 'transition-care')}
+                          className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                        >
+                          <h4 className="text-lg font-semibold text-white">Transition of Care Management</h4>
+                          <ChevronRightIcon 
+                            className={`h-6 w-6 text-white transition-transform ${activeAccordion === 'transition-care' ? 'rotate-90' : ''}`} 
+                          />
+                        </button>
+                        {activeAccordion === 'transition-care' && (
+                          <div className="px-6 pb-5">
+                            <p className="text-white/70 leading-relaxed text-sm">
+                              Discharge planning, referral coordination, and post-acute follow-up workflows supported by automated communication and tracking.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {/* Clinical Workflows Tab Content */}
+                {activeTab === 'clinical' && (
+                  <>
+                    {/* Heading and subtitle */}
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-medium text-white mb-3">
+                        Clinical Workflows
+                      </h3>
+                      <p className="text-sm text-white/60">
+                        Enhance clinical decision-making with AI-powered intelligence
+                      </p>
+                    </div>
+
+                    {/* Accordion */}
+                    <div className="space-y-4">
+                      {/* Accordion Item 1 */}
+                      <div className="border border-white/10 rounded-xl overflow-hidden bg-slate-900/30">
+                        <button
+                          onClick={() => setActiveAccordion(activeAccordion === 'patient-intake' ? '' : 'patient-intake')}
+                          className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                        >
+                          <h4 className="text-lg font-semibold text-white">Patient Intake & Documentation</h4>
+                          <ChevronRightIcon 
+                            className={`h-6 w-6 text-white transition-transform ${activeAccordion === 'patient-intake' ? 'rotate-90' : ''}`} 
+                          />
+                        </button>
+                        {activeAccordion === 'patient-intake' && (
+                          <div className="px-6 pb-5">
+                            <p className="text-white/70 leading-relaxed text-sm">
+                              Demographics capture, vital signs recording, allergy verification, and chief complaint documentation are structured with AI assistance.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Accordion Item 2 */}
+                      <div className="border border-white/10 rounded-xl overflow-hidden bg-slate-900/30">
+                        <button
+                          onClick={() => setActiveAccordion(activeAccordion === 'orders-management' ? '' : 'orders-management')}
+                          className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                        >
+                          <h4 className="text-lg font-semibold text-white">Orders Management</h4>
+                          <ChevronRightIcon 
+                            className={`h-6 w-6 text-white transition-transform ${activeAccordion === 'orders-management' ? 'rotate-90' : ''}`} 
+                          />
+                        </button>
+                        {activeAccordion === 'orders-management' && (
+                          <div className="px-6 pb-5">
+                            <p className="text-white/70 leading-relaxed text-sm">
+                              Physician order entry, diagnostic test ordering, medication prescribing, and order tracking supported by intelligent validation and workflow coordination.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Accordion Item 3 */}
+                      <div className="border border-white/10 rounded-xl overflow-hidden bg-slate-900/30">
+                        <button
+                          onClick={() => setActiveAccordion(activeAccordion === 'clinical-documentation' ? '' : 'clinical-documentation')}
+                          className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                        >
+                          <h4 className="text-lg font-semibold text-white">Clinical Documentation & SOAP Notes</h4>
+                          <ChevronRightIcon 
+                            className={`h-6 w-6 text-white transition-transform ${activeAccordion === 'clinical-documentation' ? 'rotate-90' : ''}`} 
+                          />
+                        </button>
+                        {activeAccordion === 'clinical-documentation' && (
+                          <div className="px-6 pb-5">
+                            <p className="text-white/70 leading-relaxed text-sm">
+                              Subjective, objective, assessment, and planning documentation supported by AI agents that assist while preserving structured records and oversight.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
