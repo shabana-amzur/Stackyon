@@ -283,7 +283,7 @@ export default function AIHealthcarePage() {
   return (
     <div className="min-h-screen w-full bg-black">
       {/* Hero Banner */}
-      <section className="relative isolate overflow-hidden min-h-[600px] py-[60px]">
+      <section className="relative isolate overflow-hidden min-h-[600px] pt-[80px] pb-[80px]">
         <style jsx>{`
           @keyframes floatUp {
             0%, 100% { transform: translateY(0); }
@@ -323,7 +323,7 @@ export default function AIHealthcarePage() {
 
               {/* Subtitle */}
               <Reveal animation="fade-up" duration={900} delay={200}>
-                <p className="text-[1.25rem] text-white/70 leading-relaxed max-w-xl">
+                <p className="text-xl text-white/70 leading-relaxed max-w-xl">
                   Stackyon enables healthcare organizations to structure, automate, and evolve clinical and administrative workflows using multimodal AI agents that operate directly within existing systems.
                 </p>
               </Reveal>
@@ -334,7 +334,7 @@ export default function AIHealthcarePage() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     {/* Primary Button with Gradient */}
                     <Link
-                      href="#healthcare-workflows"
+                      href="#solutions"
                       className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#0033cc] to-[#0066ff] px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-[#0066ff]/50 hover:scale-105"
                     >
                       Explore Healthcare Workflows
@@ -343,9 +343,12 @@ export default function AIHealthcarePage() {
 
                     {/* Secondary Button */}
                     <Link
-                      href="#"
+                      href="/demo"
                       className="inline-flex items-center gap-2 rounded-lg bg-transparent border-2 border-white/20 px-8 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 hover:border-white/40"
                     >
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
                       See AI in Action
                     </Link>
                   </div>
@@ -467,8 +470,8 @@ export default function AIHealthcarePage() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
       </section>
 
-      {/* AI that works within your business rules Section */}
-      <section className="relative py-[60px] overflow-hidden" suppressHydrationWarning>
+      {/* AI that works within your business rules Section */
+      <section className="relative pt-[20px] pb-[80px] overflow-hidden" suppressHydrationWarning>
         <style jsx global>{`
           @keyframes blob {
             0%, 100% { transform: translate(0, 0) scale(1); }
@@ -490,19 +493,11 @@ export default function AIHealthcarePage() {
             100% { transform: translateY(-100px); opacity: 1; }
           }
         `}</style>
-        {/* Background Image */}
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/bg_image.jpg"
-            alt="Healthcare background"
-            fill
-            className="object-cover"
-            quality={100}
-          />
-        </div>
-        
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-slate-950/80 to-black/80"></div>
+          {/* Dynamic blue gradient base */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-slate-950 to-black"></div>
+          
+          {/* Animated gradient overlays */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/50 to-transparent"></div>
           <div 
             className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"
@@ -524,6 +519,7 @@ export default function AIHealthcarePage() {
           ></div>
         </div>
         
+        {/* Floating particles - Home page style */}
         {isMounted && (
           <div ref={particlesRef} className="absolute inset-0 overflow-hidden pointer-events-none z-10">
             {particles.map((particle, index) => (
@@ -547,29 +543,31 @@ export default function AIHealthcarePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
           <Reveal animation="fade-up" duration={950} delay={100}>
             <div className="text-white text-center max-w-[1360px] mx-auto">
-              <h2 className="text-[25px] font-medium leading-tight mb-8">
-                The Operational Problem
-              </h2>
-              
-              <div className="space-y-6">
-                <MouseTrackText 
-                  mousePosition={mousePosition}
-                  className="text-center"
-                  baseOpacity={0.4}
-                  maxOpacity={1}
-                  as="p"
-                  style={{ fontSize: '32px', fontWeight: 100, fontFamily: 'Google Sans, sans-serif', lineHeight: 1.3 }}
-                >
-                  Healthcare providers spend disproportionate time on administrative and documentation tasks, creating burnout, delays, and financial leakage. Fragmented systems, manual handoffs, and disconnected tools make workflows slow, error-prone, and difficult to evolve. This results in denied claims, compliance risk, care coordination gaps, and rising operational costs. Stackyon addresses this by structuring workflows, decisions, and intelligence within a unified operational layer rather than adding another external tool.
-                </MouseTrackText>
-              </div>
+                {/* Title */}
+                <h2 className="text-[25px] font-medium leading-tight mb-8">
+                  The Operational Problem
+                </h2>
+                
+                {/* Text */}
+                <div className="space-y-6">
+                  <MouseTrackText 
+                    mousePosition={mousePosition}
+                    className="text-center"
+                    baseOpacity={0.4}
+                    maxOpacity={1}
+                    as="p"
+                    style={{ fontSize: '32px', fontWeight: 100, fontFamily: 'Google Sans, sans-serif', lineHeight: 1.3 }}
+                  >
+                    Healthcare providers spend disproportionate time on administrative and documentation tasks, creating burnout, delays, and financial leakage. Fragmented systems, manual handoffs, and disconnected tools make workflows slow, error-prone, and difficult to evolve. This results in denied claims, compliance risk, care coordination gaps, and rising operational costs. Stackyon addresses this by structuring workflows, decisions, and intelligence within a unified operational layer rather than adding another external tool.
+                  </MouseTrackText>
+                </div>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* How Stackyon Applies to Healthcare Section */}
-      <section className="relative bg-black py-[60px]">
+      <section className="relative bg-black py-16">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
@@ -591,13 +589,13 @@ export default function AIHealthcarePage() {
       </section>
 
       {/* Healthcare Workflows Section */}
-      <section id="healthcare-workflows" className="relative bg-black py-[60px]">
+      <section className="relative bg-black py-16">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           {/* Tabs at the top */}
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-12">
               <h2 className="text-[50px] font-medium text-white mb-6">Healthcare Workflows</h2>
-              <p className="text-[1.25rem] text-white/70 max-w-5xl mx-auto mb-8">
+              <p className="text-xl text-white/70 max-w-5xl mx-auto mb-8">
                 Our AI-powered platform adapts to your existing processes while introducing smart automation that reduces burden and improves patient outcomes.
               </p>
               <div className="flex justify-center gap-4 mb-8">
@@ -864,10 +862,10 @@ export default function AIHealthcarePage() {
       </section>
 
       {/* Role of AI Agents in Healthcare Workflows */}
-      <section className="relative bg-black py-[60px]">
+      <section className="relative bg-black py-16">
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
-            <div className="text-center mb-8">
+            <div className="text-center mb-16">
               <h2 className="text-[50px] font-medium text-white mb-12">Role of AI Agents in Healthcare Workflows</h2>
               <p className="text-xl text-white/80">AI agents in Stackyon:</p>
             </div>
@@ -961,7 +959,7 @@ export default function AIHealthcarePage() {
 
           {/* Bottom Text */}
           <Reveal animation="fade-up" duration={900} delay={500}>
-            <div className="text-center mt-8">
+            <div className="text-center mt-16">
               <p className="text-xl text-white/70 max-w-4xl mx-auto">
                 Intelligence operates alongside rules and process logic to ensure transparency and auditability
               </p>
@@ -971,7 +969,7 @@ export default function AIHealthcarePage() {
       </section>
 
       {/* Smart AI Services Section */}
-      <section className="relative bg-gradient-to-br from-[#0033cc]/10 via-black to-[#0066ff]/10 py-[60px]">
+      <section className="relative bg-gradient-to-br from-[#0033cc]/10 via-black to-[#0066ff]/10 py-16">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
           {/* Black Rounded Container */}
           <div className="relative rounded-3xl bg-black border border-white/10 p-12 md:p-16 overflow-hidden">
@@ -987,157 +985,168 @@ export default function AIHealthcarePage() {
             </div>
             
             <div className="relative z-10">
-              <Reveal animation="fade-up" duration={900} delay={100}>
-                <div className="text-center mb-16">
-                  <h2 className="text-[50px] font-medium text-white mb-6">Outcomes Healthcare Teams Care About</h2>
-                  <p className="text-[1.25rem] text-white/80">Healthcare organizations use Stackyon to</p>
+            <Reveal animation="fade-up" duration={900} delay={100}>
+              <div className="text-center mb-16">
+                <h2 className="text-[50px] font-medium text-white mb-6">Outcomes Healthcare Teams Care About</h2>
+                <p className="text-xl text-white/80">Healthcare organizations use Stackyon to</p>
+              </div>
+            </Reveal>
+
+            {/* First Row - 3 columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {/* Service Card 1 */}
+            <Reveal animation="fade-up" duration={900} delay={100}>
+              <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-20 h-20 mx-auto">
+                    <Image
+                      src="/reduce.gif"
+                      alt="Reduce administrative burden"
+                      width={80}
+                      height={80}
+                      className="w-full h-full"
+                    />
+                  </div>
                 </div>
-              </Reveal>
 
-              {/* First Row - 3 columns */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                {/* Service Card 1 */}
-                <Reveal animation="fade-up" duration={900} delay={100}>
-                  <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
-                    {/* Icon */}
-                    <div className="mb-8">
-                      <div className="w-20 h-20 mx-auto">
-                        <Image
-                          src="/reduce.gif"
-                          alt="Reduce administrative burden"
-                          width={80}
-                          height={80}
-                          className="w-full h-full"
-                        />
-                      </div>
-                    </div>
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-black mb-4">Reduce administrative burden</h3>
+                </div>
 
-                    {/* Content */}
-                    <div className="text-center mt-auto">
-                      <h3 className="text-2xl font-semibold text-black mb-4">Reduce administrative burden</h3>
-                    </div>
-
-                    {/* Hover Effect */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                  </div>
-                </Reveal>
-
-                {/* Service Card 2 */}
-                <Reveal animation="fade-up" duration={900} delay={200}>
-                  <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
-                    {/* Icon */}
-                    <div className="mb-8">
-                      <div className="w-20 h-20 mx-auto">
-                        <Image
-                          src="/quality.gif"
-                          alt="Improve documentation quality"
-                          width={80}
-                          height={80}
-                          className="w-full h-full"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="text-center mt-auto">
-                      <h3 className="text-2xl font-semibold text-black mb-4">Improve documentation quality</h3>
-                    </div>
-
-                    {/* Hover Effect */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                  </div>
-                </Reveal>
-
-                {/* Service Card 3 */}
-                <Reveal animation="fade-up" duration={900} delay={300}>
-                  <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
-                    {/* Icon */}
-                    <div className="mb-8">
-                      <div className="w-20 h-20 mx-auto">
-                        <Image
-                          src="/support.gif"
-                          alt="Support care coordination"
-                          width={80}
-                          height={80}
-                          className="w-full h-full"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="text-center mt-auto">
-                      <h3 className="text-2xl font-semibold text-black mb-4">Support care coordination</h3>
-                    </div>
-
-                    {/* Hover Effect */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                  </div>
-                </Reveal>
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
               </div>
+            </Reveal>
 
-              {/* Second Row - 2 columns centered */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {/* Service Card 4 */}
-                <Reveal animation="fade-up" duration={900} delay={400}>
-                  <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
-                    {/* Icon */}
-                    <div className="mb-8">
-                      <div className="w-20 h-20 mx-auto">
-                        <Image
-                          src="/efficiency.gif"
-                          alt="Improve claim accuracy and operational efficiency"
-                          width={80}
-                          height={80}
-                          className="w-full h-full"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="text-center mt-auto">
-                      <h3 className="text-2xl font-semibold text-black mb-4">Improve claim accuracy and operational efficiency</h3>
-                    </div>
-
-                    {/* Hover Effect */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+            {/* Service Card 2 */}
+            <Reveal animation="fade-up" duration={900} delay={200}>
+              <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-20 h-20 mx-auto">
+                    <Image
+                      src="/quality.gif"
+                      alt="Improve documentation quality"
+                      width={80}
+                      height={80}
+                      className="w-full h-full"
+                    />
                   </div>
-                </Reveal>
+                </div>
 
-                {/* Service Card 5 */}
-                <Reveal animation="fade-up" duration={900} delay={500}>
-                  <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
-                    {/* Icon */}
-                    <div className="mb-8">
-                      <div className="w-20 h-20 mx-auto">
-                        <Image
-                          src="/assistance.gif"
-                          alt="Reduce clinician burnout"
-                          width={80}
-                          height={80}
-                          className="w-full h-full"
-                        />
-                      </div>
-                    </div>
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-black mb-4">Improve documentation quality</h3>
+                </div>
 
-                    {/* Content */}
-                    <div className="text-center mt-auto">
-                      <h3 className="text-2xl font-semibold text-black mb-4">Reduce clinician burnout by embedding assistance into workflows rather than adding separate tools</h3>
-                    </div>
-
-                    {/* Hover Effect */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                  </div>
-                </Reveal>
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
               </div>
-            </div>
+            </Reveal>
+
+            {/* Service Card 3 */}
+            <Reveal animation="fade-up" duration={900} delay={300}>
+              <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-20 h-20 mx-auto">
+                    <Image
+                      src="/support.gif"
+                      alt="Support care coordination"
+                      width={80}
+                      height={80}
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-black mb-4">Support care coordination</h3>
+                </div>
+
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Second Row - 2 columns centered */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Service Card 4 */}
+            <Reveal animation="fade-up" duration={900} delay={400}>
+              <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-20 h-20 mx-auto">
+                    <Image
+                      src="/efficiency.gif"
+                      alt="Improve claim accuracy and operational efficiency"
+                      width={80}
+                      height={80}
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-black mb-4">Improve claim accuracy and operational efficiency</h3>
+                </div>
+
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+            </Reveal>
+
+            {/* Service Card 5 */}
+            <Reveal animation="fade-up" duration={900} delay={500}>
+              <div className="relative group h-full rounded-3xl bg-white border border-gray-200 p-10 hover:border-[#0066ff]/50 transition-all duration-300 flex flex-col">
+                {/* Icon */}
+                <div className="mb-8">
+                  <div className="w-20 h-20 mx-auto">
+                    <Image
+                      src="/assistance.gif"
+                      alt="Reduce clinician burnout"
+                      width={80}
+                      height={80}
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="text-center mt-auto">
+                  <h3 className="text-2xl font-semibold text-black mb-4">Reduce clinician burnout by embedding assistance into workflows rather than adding separate tools</h3>
+                </div>
+
+                {/* Hover Effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </div>
+            </Reveal>
+          </div>
+          </div>
           </div>
         </div>
       </section>
 
       {/* Built to Handle Healthcare-Level Complexity Section */}
-      <section className="relative bg-black overflow-hidden py-[60px] mb-[80px]">
+      <section className="relative bg-black overflow-hidden py-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://brighthub.casethemes.net/wp-content/uploads/2025/07/bg-step.jpg"
+            alt="Stackyon platform background"
+            fill
+            className="object-cover opacity-80"
+            sizes="100vw"
+          />
+        </div>
+
         <div className="relative z-10 max-w-[80rem] mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-16 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
             {/* Left Side - Steps */}
             <div>
               {/* Heading */}
@@ -1149,7 +1158,7 @@ export default function AIHealthcarePage() {
               
               {/* Description */}
               <Reveal animation="fade-up" duration={950} delay={200}>
-                <p className="text-[1.25rem] text-white/70 mb-8 max-w-2xl leading-relaxed">
+                <p className="text-xl text-white/70 mb-8 max-w-2xl leading-relaxed">
                   Healthcare environments require structured governance. Stackyon supports:
                 </p>
               </Reveal>
@@ -1165,7 +1174,7 @@ export default function AIHealthcarePage() {
                         </svg>
                       </div>
                     </div>
-                    <p className="text-[1.25rem] text-white/70 leading-relaxed flex items-center">
+                    <p className="text-xl text-white/70 leading-relaxed flex items-center">
                       Secure data handling
                     </p>
                   </div>
@@ -1178,7 +1187,7 @@ export default function AIHealthcarePage() {
                         </svg>
                       </div>
                     </div>
-                    <p className="text-[1.25rem] text-white/70 leading-relaxed flex items-center">
+                    <p className="text-xl text-white/70 leading-relaxed flex items-center">
                       Workflow visibility and auditability
                     </p>
                   </div>
@@ -1191,7 +1200,7 @@ export default function AIHealthcarePage() {
                         </svg>
                       </div>
                     </div>
-                    <p className="text-[1.25rem] text-white/70 leading-relaxed flex items-center">
+                    <p className="text-xl text-white/70 leading-relaxed flex items-center">
                       Controlled integration with existing systems
                     </p>
                   </div>
@@ -1204,7 +1213,7 @@ export default function AIHealthcarePage() {
                         </svg>
                       </div>
                     </div>
-                    <p className="text-[1.25rem] text-white/70 leading-relaxed flex items-center">
+                    <p className="text-xl text-white/70 leading-relaxed flex items-center">
                       Configurable decision logic and AI behavior
                     </p>
                   </div>
@@ -1213,7 +1222,7 @@ export default function AIHealthcarePage() {
 
               {/* Closing Text */}
               <Reveal animation="fade-up" duration={950} delay={400}>
-                <p className="text-[1.25rem] text-white/70 leading-relaxed">
+                <p className="text-xl text-white/70 leading-relaxed">
                   This allows operational evolution without compromising compliance or control.
                 </p>
               </Reveal>

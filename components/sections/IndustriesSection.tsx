@@ -143,7 +143,7 @@ export default function IndustriesSection() {
           <h2 className="text-[50px] font-medium text-white reveal-child" style={{ transitionDelay: '140ms' }}>
             Where Stackyon Creates Maximum Impact
           </h2>
-          <p className="max-w-2xl text-lg text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>
+          <p className="max-w-2xl text-xl text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>
             Accelerate industry programs with end-to-end automation, AI orchestration, and deployment-ready experiences.
           </p>
         </header>
@@ -166,7 +166,7 @@ export default function IndustriesSection() {
                       {item.icon}
                     </div>
                     <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
-                    <p className="text-white/70 text-base leading-relaxed">{item.description}</p>
+                    <p className="text-white/70 text-xl leading-relaxed">{item.description}</p>
                   </div>
                 </article>
               </Reveal>
@@ -189,7 +189,7 @@ export default function IndustriesSection() {
                       {item.icon}
                     </div>
                     <h3 className="text-2xl font-semibold text-white">{item.title}</h3>
-                    <p className="text-white/70 text-base leading-relaxed">{item.description}</p>
+                    <p className="text-white/70 text-xl leading-relaxed">{item.description}</p>
                   </div>
                 </article>
               </Reveal>

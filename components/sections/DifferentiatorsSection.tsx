@@ -70,7 +70,7 @@ export default function DifferentiatorsSection() {
           <h2 className="text-[50px] font-medium text-white reveal-child" style={{ transitionDelay: '140ms' }}>
             Why to Choose Stackyon
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>
+          <p className="mt-6 text-xl leading-relaxed text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>
             Compare Stackyon head-to-head with the platforms you know. Every card calls out what stays manual elsewhere and just ships inside Stackyon.
           </p>
         </div>

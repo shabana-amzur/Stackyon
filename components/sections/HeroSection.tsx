@@ -3,6 +3,7 @@
 import { XMarkIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 /**
  * Configuration for a single particle in the animated background
@@ -64,6 +65,11 @@ export default function HeroSection() {
   const particlesRef = useRef<HTMLDivElement>(null);
   const [showVideo, setShowVideo] = useState(false);
   const [particles] = useState<ParticleConfig[]>(() => createParticles());
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -101,8 +107,20 @@ export default function HeroSection() {
   }, []);
   return (
     <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center pt-[60px]">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/bg_image.jpg"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+          quality={100}
+        />
+      </div>
+      
       {/* Particles - Full Width */}
-      {typeof window !== 'undefined' && (
+      {isMounted && (
       <div ref={particlesRef} className="stars-container absolute inset-0">
             {particles.map((particle, index) => (
               <div
@@ -206,7 +224,7 @@ export default function HeroSection() {
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg md:text-xl text-white/70 mb-12 max-w-4xl leading-relaxed">
+            <p className="text-xl text-white/70 mb-12 max-w-4xl leading-relaxed">
               Build, automate, and deploy complex business applications with AI Agents, drag-and-drop workflows, and a complete end-to-end Dev Studio, all without writing a single line of code. From legacy modernization to net-new digital apps, Stackyon delivers production-ready enterprise solutions in a fraction of the time.
             </p>
 

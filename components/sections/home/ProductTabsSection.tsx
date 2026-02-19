@@ -318,7 +318,7 @@ export default function ProductTabsSection() {
                             <Icon className="h-5 w-5" />
                           </span>
                           <div className="flex-1">
-                            <h4 className="text-lg font-semibold text-white">{feature.title}</h4>
+                            <h4 className="text-xl font-semibold text-white">{feature.title}</h4>
                           </div>
                         </div>
                       );

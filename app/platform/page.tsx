@@ -303,7 +303,7 @@ export default function PlatformPage() {
             <div className="space-y-4">
               {/* Main Title */}
               <div className="mb-8">
-                <p className="text-lg bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent mb-3">
+                <p className="text-xl bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent mb-3">
                   {platformFeatures.find(f => f.id === activeFeature)?.subtitle || ""}
                 </p>
                 <h2 className="text-[45px] font-normal text-white">

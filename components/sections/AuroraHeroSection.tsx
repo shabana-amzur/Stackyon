@@ -118,7 +118,7 @@ export default function AuroraHeroSection({ children, className = '' }: AuroraHe
                 Aurora Technology
               </span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Experience the next generation of enterprise solutions with our AI-native platform
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

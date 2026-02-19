@@ -93,7 +93,7 @@ export default function WhatSetsUsApartSection() {
           <h2 className="text-[50px] font-medium text-white reveal-child" style={{ transitionDelay: '140ms' }}>
             From Idea to Action in Minutes
           </h2>
-          <p className="max-w-3xl text-lg text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>
+          <p className="max-w-3xl text-xl text-white/70 reveal-child" style={{ transitionDelay: '200ms' }}>
             We blend real-time transparency, bank-grade security, and predictive intelligence to power the next generation of finance experiences.
           </p>
         </div>
@@ -136,7 +136,7 @@ export default function WhatSetsUsApartSection() {
 
                     <div className="flex flex-1 flex-col">
                       <h3 className="text-2xl font-semibold text-white mb-3">{card.title}</h3>
-                      <p className="text-white/70 text-base leading-relaxed">{card.description}</p>
+                      <p className="text-white/70 text-xl leading-relaxed">{card.description}</p>
                     </div>
                   </div>
                 </Reveal>

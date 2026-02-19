@@ -227,7 +227,7 @@ export default function DevStudioPage() {
 
             {/* Subtitle */}
             <Reveal animation="fade-up" duration={900} delay={200}>
-              <p className="text-lg md:text-xl text-white opacity-70 leading-relaxed max-w-3xl mb-8">
+              <p className="text-xl text-white opacity-70 leading-relaxed max-w-3xl mb-8">
                 A visual, model-driven workspace for building and evolving applications with complex processes, rules, and user journeys, without scattering logic across code and tools.
               </p>
             </Reveal>
@@ -469,7 +469,7 @@ export default function DevStudioPage() {
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Model workflows and process logic
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed">
+                  <p className="text-white/60 text-xl leading-relaxed">
                     Design conditional, parallel, and long-running processes visually, with execution behavior that reflects real operational flow.
                   </p>
                 </div>
@@ -495,7 +495,7 @@ export default function DevStudioPage() {
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Define rules and decisions explicitly
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed">
+                  <p className="text-white/60 text-xl leading-relaxed">
                     Configure business rules and decision tables so logic remains transparent, traceable, and easy to change over time.
                   </p>
                 </div>
@@ -524,7 +524,7 @@ export default function DevStudioPage() {
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Design intuitive user journeys
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed">
+                  <p className="text-white/60 text-xl leading-relaxed">
                     Define UI flows and user interactions as part of the application, not as a separate layer that needs rework later.
                   </p>
                 </div>
@@ -550,7 +550,7 @@ export default function DevStudioPage() {
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Work with enterprise data and systems
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed">
+                  <p className="text-white/60 text-xl leading-relaxed">
                     Model data structures and integrate with existing systems without replacing what already works.
                   </p>
                 </div>
@@ -592,7 +592,7 @@ export default function DevStudioPage() {
                 <h2 className="text-[45px] font-medium text-white mb-6 leading-tight">
                   Built for life after go-live
                 </h2>
-                <p className="text-white/70 text-lg leading-relaxed">
+                <p className="text-white/70 text-xl leading-relaxed">
                   Most platforms focus on how quickly an application can be built. Dev Studio is designed for what happens after go-live. Workflows, rules, decisions, and user experiences remain visible and governable as applications evolve, without rewrites, fragile handoffs, or loss of control.
                 </p>
               </Reveal>

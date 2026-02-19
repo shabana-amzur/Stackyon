@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
             </h2>
           </Reveal>
           <Reveal animation="fade-up" duration={950} delay={200}>
-            <p className="max-w-2xl text-lg text-white/70">
+            <p className="max-w-2xl text-xl text-white/70">
               Trusted by enterprises solving complex workflows, modernization challenges, and AI-driven decisioning.
             </p>
           </Reveal>

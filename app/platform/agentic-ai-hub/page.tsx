@@ -213,7 +213,7 @@ export default function AgenticAIHubPage() {
 
             {/* Subtitle */}
             <Reveal animation="fade-up" duration={900} delay={200}>
-              <p className="text-lg md:text-xl text-white opacity-70 leading-relaxed max-w-3xl mb-8">
+              <p className="text-xl text-white opacity-70 leading-relaxed max-w-3xl mb-8">
                 Agentic AI Hub enables organizations to introduce AI into business applications in a controlled, intentional way. Intelligence operates inside workflows, alongside rules and process logic, instead of existing as a separate layer outside the system.
               </p>
             </Reveal>
@@ -455,7 +455,7 @@ export default function AgenticAIHubPage() {
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Embed ai at decision points
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed">
+                  <p className="text-white/60 text-xl leading-relaxed">
                     Configure agents to operate where validation, judgment, or recommendations are required within workflows.
                   </p>
                 </div>
@@ -481,7 +481,7 @@ export default function AgenticAIHubPage() {
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Interpret inputs and context
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed">
+                  <p className="text-white/60 text-xl leading-relaxed">
                     Use agents to interpret documents, data, and user inputs as part of an application flow.
                   </p>
                 </div>
@@ -510,7 +510,7 @@ export default function AgenticAIHubPage() {
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Trigger actions and next steps
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed">
+                  <p className="text-white/60 text-xl leading-relaxed">
                     Allow agents to initiate workflow transitions, approvals, or follow-up actions based on defined conditions.
                   </p>
                 </div>
@@ -536,7 +536,7 @@ export default function AgenticAIHubPage() {
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Support human-in-the-loop scenarios
                   </h3>
-                  <p className="text-white/60 text-base leading-relaxed">
+                  <p className="text-white/60 text-xl leading-relaxed">
                     Design workflows where AI assists decision-making while keeping humans involved when required.
                   </p>
                 </div>
@@ -578,7 +578,7 @@ export default function AgenticAIHubPage() {
                 <h2 className="text-[45px] font-medium text-white mb-6 leading-tight">
                   Intelligence that works with rules, not around them
                 </h2>
-                <div className="space-y-4 text-white/70 text-lg leading-relaxed">
+                <div className="space-y-4 text-white/70 text-xl leading-relaxed">
                   <p>
                     Agentic AI Hub does not replace business rules or process logic. Agents operate alongside rules and decisions, ensuring that intelligence remains predictable, explainable, and auditable as applications evolve.
                   </p>
@@ -593,7 +593,7 @@ export default function AgenticAIHubPage() {
                   <h2 className="text-[45px] font-medium text-white leading-tight">
                     Built for enterprise trust
                   </h2>
-                  <p className="text-white/70 text-lg leading-relaxed">
+                  <p className="text-white/70 text-xl leading-relaxed">
                     Agentic AI Hub is designed for environments where decisions carry risk and accountability matters. AI-driven actions remain visible, governed, and aligned with enterprise controls rather than operating as opaque black boxes.
                   </p>
                 </div>
@@ -750,7 +750,7 @@ export default function AgenticAIHubPage() {
           </Reveal>
 
           <Reveal animation="fade-up" duration={1000} delay={180}>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl">
+            <p className="text-xl text-white/80 max-w-2xl">
               See how intelligence operates inside workflows without breaking enterprise control.
             </p>
           </Reveal>
