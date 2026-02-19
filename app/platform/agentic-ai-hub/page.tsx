@@ -22,21 +22,21 @@ const features = [
     title: "Decision-intensive enterprise workflows",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: CpuChipIcon,
-    iconClasses: "bg-purple-500/10 text-purple-300",
+    iconClasses: "bg-[#0033cc]/10 text-[#0033cc]",
   },
   {
     id: "validation-heavy",
     title: "Validation-heavy processes",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: ShieldCheckIcon,
-    iconClasses: "bg-cyan-500/10 text-cyan-300",
+    iconClasses: "bg-[#0066ff]/10 text-[#0066ff]",
   },
   {
     id: "assisted-decisions",
     title: "Applications requiring recommendations or assisted decisions",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: Squares2X2Icon,
-    iconClasses: "bg-blue-500/10 text-blue-300",
+    iconClasses: "bg-[#0033cc]/10 text-[#0066ff]",
   },
   {
     id: "regulated-systems",
@@ -450,7 +450,7 @@ export default function AgenticAIHubPage() {
             {/* Feature Card 1 - Configure AI decision points */}
             <Reveal animation="fade-up" duration={900} delay={200} className="lg:col-span-9 flex">
               <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0033cc]/5 via-transparent to-transparent"></div>
                 <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Embed ai at decision points
@@ -476,7 +476,7 @@ export default function AgenticAIHubPage() {
             {/* Feature Card 2 - Set guardrails and validation rules */}
             <Reveal animation="fade-up" duration={900} delay={250} className="lg:col-span-11 flex">
               <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-slate-900/80 via-black to-black flex flex-col w-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff]/5 via-transparent to-transparent"></div>
                 <div className="relative z-10 p-8 pb-4 h-[220px] flex flex-col justify-start">
                   <h3 className="text-2xl font-medium text-white mb-4">
                     Interpret inputs and context
@@ -606,13 +606,13 @@ export default function AgenticAIHubPage() {
                 {/* Card 1 - Decision Points */}
                 <Reveal animation="fade-up" duration={900} delay={200}>
                   <div 
-                    className="relative rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-slate-900/50 p-8 hover:border-cyan-500/40 transition-all duration-300"
+                    className="relative rounded-2xl border border-[#0066ff]/20 bg-gradient-to-br from-[#0066ff]/10 to-slate-900/50 p-8 hover:border-[#0066ff]/40 transition-all duration-300"
                     style={{
                       animation: 'floatUp 4s ease-in-out infinite',
                     }}
                   >
-                    <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center mb-6">
-                      <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-full bg-[#0066ff]/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-[#0066ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -624,13 +624,13 @@ export default function AgenticAIHubPage() {
                 {/* Card 2 - Guardrails */}
                 <Reveal animation="fade-up" duration={900} delay={250}>
                   <div 
-                    className="relative rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 to-slate-900/50 p-8 hover:border-blue-500/40 transition-all duration-300 mt-12"
+                    className="relative rounded-2xl border border-[#0066ff]/20 bg-gradient-to-br from-[#0066ff]/10 to-slate-900/50 p-8 hover:border-[#0066ff]/40 transition-all duration-300 mt-12"
                     style={{
                       animation: 'floatDown 4.5s ease-in-out infinite',
                     }}
                   >
-                    <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mb-6">
-                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-full bg-[#0066ff]/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-[#0066ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -642,14 +642,14 @@ export default function AgenticAIHubPage() {
                 {/* Card 3 - Audit Trails */}
                 <Reveal animation="fade-up" duration={900} delay={300}>
                   <div 
-                    className="relative rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-500/10 to-slate-900/50 p-8 hover:border-purple-500/40 transition-all duration-300 -mt-6"
+                    className="relative rounded-2xl border border-[#0033cc]/20 bg-gradient-to-br from-[#0033cc]/10 to-slate-900/50 p-8 hover:border-[#0033cc]/40 transition-all duration-300 -mt-6"
                     style={{
                       animation: 'floatUp 4.2s ease-in-out infinite',
                       animationDelay: '0.5s',
                     }}
                   >
-                    <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
-                      <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-full bg-[#0033cc]/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-[#0033cc]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -720,7 +720,7 @@ export default function AgenticAIHubPage() {
                   )}
 
                   {/* Hover gradient effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
               </Reveal>
             ))}
@@ -758,8 +758,8 @@ export default function AgenticAIHubPage() {
           <Reveal animation="fade-up" duration={1000} delay={220}>
             <div className="flex flex-col items-center gap-4 sm:flex-row">
               <Link href="/platform/agentic-ai-hub" className="relative group">
-                <div className="absolute inset-0 bg-[#3e7ae5] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
-                <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:bg-[#5a8df0]">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0033cc] to-[#0066ff] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
+                <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-gradient-to-r from-[#0033cc] to-[#0066ff] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:opacity-90">
                   Explore Agentic AI Hub
                   <LinkIcon className="h-5 w-5" />
                 </div>

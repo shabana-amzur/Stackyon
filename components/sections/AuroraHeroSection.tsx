@@ -112,9 +112,9 @@ export default function AuroraHeroSection({ children, className = '' }: AuroraHe
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         {children || (
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6 leading-tight">
               Build the future with{' '}
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-teal-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent">
                 Aurora Technology
               </span>
             </h1>
@@ -122,7 +122,7 @@ export default function AuroraHeroSection({ children, className = '' }: AuroraHe
               Experience the next generation of enterprise solutions with our AI-native platform
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300">
+              <button className="px-8 py-4 bg-gradient-to-r from-[#0033cc] to-[#0066ff] text-white rounded-lg font-medium hover:opacity-90 hover:shadow-lg hover:shadow-[#0066ff]/50 transition-all duration-300">
                 Get Started
               </button>
               <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-medium border border-white/20 hover:bg-white/20 transition-all duration-300">

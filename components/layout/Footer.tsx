@@ -177,7 +177,7 @@ export default function Footer() {
 
                 return (
                   <div key={item.label} className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-sky-500/40 via-indigo-500/30 to-purple-500/40 text-white">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#0033cc]/40 via-[#0066ff]/30 to-[#0066ff]/40 text-white">
                       {item.icon}
                     </span>
                     <div className="flex-1 leading-relaxed">{content}</div>

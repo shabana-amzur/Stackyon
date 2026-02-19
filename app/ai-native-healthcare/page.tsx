@@ -24,21 +24,21 @@ const healthcareFeatures = [
     title: "Clinical Workflow Automation",
     description: "Streamline patient care processes with intelligent workflow orchestration that adapts to clinical protocols and patient needs.",
     icon: ClipboardDocumentListIcon,
-    iconClasses: "bg-blue-500/10 text-blue-300",
+    iconClasses: "bg-[#0033cc]/10 text-[#0066ff]",
   },
   {
     id: "compliance-management",
     title: "Compliance & Regulatory Management",
     description: "Built-in HIPAA, HL7, and FHIR compliance with automated audit trails and regulatory reporting.",
     icon: ShieldCheckIcon,
-    iconClasses: "bg-cyan-500/10 text-cyan-300",
+    iconClasses: "bg-[#0066ff]/10 text-[#0066ff]",
   },
   {
     id: "patient-engagement",
     title: "Patient Engagement & Experience",
     description: "Personalized patient journeys with AI-driven recommendations and proactive care coordination.",
     icon: UserGroupIcon,
-    iconClasses: "bg-purple-500/10 text-purple-300",
+    iconClasses: "bg-[#0033cc]/10 text-[#0033cc]",
   },
   {
     id: "clinical-decision-support",
@@ -214,19 +214,16 @@ export default function AIHealthcarePage() {
     <div className="min-h-screen w-full bg-black">
       {/* Hero Banner */}
       <section className="relative isolate overflow-hidden min-h-[600px] pt-[80px] pb-[80px]">
-        {/* Dark blue gradient background */}
+        {/* Background Image */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1929] via-[#1a2942] to-[#0f1e35]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent"></div>
-          
-          {/* Subtle grid pattern overlay */}
-          <div 
-            className="absolute inset-0 opacity-[0.02]"
-            style={{
-              backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
-              backgroundSize: '50px 50px',
-            }}
-          ></div>
+          <Image
+            src="/bg_image.jpg"
+            alt="Healthcare background"
+            fill
+            className="object-cover"
+            priority
+            quality={100}
+          />
         </div>
 
         {/* Content */}
@@ -234,19 +231,11 @@ export default function AIHealthcarePage() {
           <div className="grid items-center gap-12 lg:grid-cols-[50%_50%] lg:gap-16">
             {/* Left Column - Text Content */}
             <div className="space-y-8">
-              {/* Badge */}
-              <Reveal animation="fade-up" duration={800} delay={50}>
-                <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 border border-blue-500/20 px-4 py-2 text-sm text-blue-300">
-                  <HeartIcon className="h-4 w-4" />
-                  <span>AI-native Healthcare Platform</span>
-                </div>
-              </Reveal>
-
               {/* Main Heading with highlighted text */}
               <Reveal animation="fade-up" duration={900} delay={100}>
-                <h1 className="text-[52px] md:text-[56px] font-bold text-white leading-[1.1]">
+                <h1 className="text-[52px] md:text-[56px] font-medium text-white leading-[1.1]">
                   AI-Native Healthcare Applications for{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent">
                     Clinical and Operational Workflows
                   </span>
                 </h1>
@@ -261,111 +250,115 @@ export default function AIHealthcarePage() {
 
               {/* CTA Buttons */}
               <Reveal animation="fade-up" duration={900} delay={300}>
-                <div className="flex flex-col sm:flex-row gap-4 items-start">
-                  {/* Primary Button with Gradient */}
-                  <Link
-                    href="#solutions"
-                    className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105"
-                  >
-                    Explore Healthcare Workflows
-                    <ArrowRightIcon className="h-5 w-5" />
-                  </Link>
+                <div className="flex flex-col gap-4 items-start">
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    {/* Primary Button with Gradient */}
+                    <Link
+                      href="#solutions"
+                      className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#0033cc] to-[#0066ff] px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-[#0066ff]/50 hover:scale-105"
+                    >
+                      Explore Healthcare Workflows
+                      <ArrowRightIcon className="h-5 w-5" />
+                    </Link>
 
-                  {/* Secondary Button */}
-                  <Link
-                    href="/demo"
-                    className="inline-flex items-center gap-2 rounded-lg bg-transparent border-2 border-white/20 px-8 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 hover:border-white/40"
-                  >
-                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                    See AI in Action
-                  </Link>
-                </div>
-              </Reveal>
-
-              {/* Social Proof */}
-              <Reveal animation="fade-up" duration={900} delay={400}>
-                <div className="flex items-center gap-4 pt-4">
-                  <div className="flex -space-x-2">
-                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-[#0a1929]"></div>
-                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 border-2 border-[#0a1929]"></div>
-                    <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-[#0a1929]"></div>
+                    {/* Secondary Button */}
+                    <Link
+                      href="/demo"
+                      className="inline-flex items-center gap-2 rounded-lg bg-transparent border-2 border-white/20 px-8 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 hover:border-white/40"
+                    >
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                      See AI in Action
+                    </Link>
                   </div>
-                  <p className="text-sm text-white/60">
-                    Trusted by <span className="text-white font-semibold">healthcare leaders</span> worldwide
+                  
+                  {/* Description Text */}
+                  <p className="italic text-[14px] text-gray-400 max-w-2xl leading-relaxed">
+                    Used to support care coordination, documentation, billing, and workflow automation across healthcare environments where accuracy, compliance, and operational control are critical.
                   </p>
                 </div>
               </Reveal>
             </div>
 
-            {/* Right Column - Feature Cards */}
+            {/* Right Column - Stats Grid */}
             <Reveal animation="fade-left" duration={1000} delay={400}>
-              <div className="relative">
-                {/* Main Card Container */}
-                <div className="relative rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/60 border border-white/10 p-8 backdrop-blur-xl">
-                  <div className="space-y-4">
-                    {/* Feature 1 - AI Agent Builder - Active */}
-                    <div className="relative rounded-2xl bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/20 p-6 backdrop-blur-sm">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-500/20">
-                            <CpuChipIcon className="h-7 w-7 text-blue-400" />
+              <div className="grid grid-cols-2 gap-6">
+                {/* Row 1: 97% Clean Claim Rate with Dashboard */}
+                <div className="relative rounded-3xl bg-gradient-to-br from-slate-800/60 to-slate-900/80 border border-white/10 p-8 backdrop-blur-xl animate-float" style={{ animationDelay: '0s' }}>
+                  <div className="mb-6">
+                    <div className="w-full h-32 rounded-xl bg-gradient-to-br from-[#0033cc]/20 to-[#0066ff]/10 border border-[#0066ff]/20 p-4 overflow-hidden">
+                      <div className="w-full h-full rounded bg-gradient-to-r from-[#0033cc]/20 to-[#0066ff]/20 flex items-center justify-center relative">
+                        <ChartBarIcon className="h-16 w-16 text-[#0066ff]/40 absolute" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="grid grid-cols-4 gap-1 w-3/4 h-3/4">
+                            <div className="bg-[#0066ff]/30 rounded"></div>
+                            <div className="bg-red-400/30 rounded"></div>
+                            <div className="bg-[#0033cc]/30 rounded"></div>
+                            <div className="bg-[#0066ff]/30 rounded"></div>
                           </div>
-                          <div>
-                            <h3 className="text-xl font-semibold text-white mb-1">AI Agent Builder</h3>
-                            <p className="text-sm text-white/50">Drag & Drop Interface</p>
-                          </div>
-                        </div>
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-500 flex-shrink-0">
-                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Feature 2 - Smart Automation - Active */}
-                    <div className="relative rounded-2xl bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-500/20 p-6 backdrop-blur-sm">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-green-500/20">
-                            <ArrowPathIcon className="h-7 w-7 text-green-400" />
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-semibold text-white mb-1">Smart Automation</h3>
-                            <p className="text-sm text-white/50">Intelligent Workflows</p>
-                          </div>
-                        </div>
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-500 flex-shrink-0">
-                          <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Feature 3 - Analytics Dashboard - Inactive */}
-                    <div className="relative rounded-2xl bg-gradient-to-br from-slate-700/20 to-slate-800/10 border border-white/10 p-6 backdrop-blur-sm">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-500/20">
-                            <ChartBarIcon className="h-7 w-7 text-slate-400" />
-                          </div>
-                          <div>
-                            <h3 className="text-xl font-semibold text-white mb-1">Analytics Dashboard</h3>
-                            <p className="text-sm text-white/50">Real-time insights</p>
-                          </div>
-                        </div>
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white/20 flex-shrink-0">
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <div className="text-6xl font-bold text-[#0066ff] mb-2">97%</div>
+                      <div className="text-lg text-white/60">Clean Claim Rate</div>
+                    </div>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0066ff]/20">
+                      <svg className="h-6 w-6 text-[#0066ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-                
-                {/* Glow effect */}
-                <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500/20 via-green-500/20 to-purple-500/10 blur-3xl"></div>
+
+                {/* Row 1: 60% Time Saved */}
+                <div className="relative rounded-3xl bg-gradient-to-br from-slate-800/60 to-slate-900/80 border border-white/10 p-8 backdrop-blur-xl animate-float" style={{ animationDelay: '0.5s' }}>
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0066ff]/20 mb-6">
+                    <svg className="h-10 w-10 text-[#0066ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-5xl font-bold text-white mb-2">60%</div>
+                  <div className="text-lg text-white/60 mb-1">Time Saved</div>
+                  <div className="text-sm text-white/40">On administrative tasks</div>
+                </div>
+
+                {/* Row 2: AI Agents */}
+                <div className="relative rounded-3xl bg-gradient-to-br from-[#0033cc]/20 to-slate-900/80 border border-[#0066ff]/20 p-8 backdrop-blur-xl animate-float" style={{ animationDelay: '1s' }}>
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0066ff]/20 mb-6">
+                    <CpuChipIcon className="h-10 w-10 text-[#0066ff]" />
+                  </div>
+                  <div className="text-2xl font-bold text-white mb-2">AI Agents</div>
+                  <div className="text-sm text-white/60">Multimodal intelligence across workflows</div>
+                </div>
+
+                {/* Row 2: Workflow Automation */}
+                <div className="relative rounded-3xl bg-gradient-to-br from-slate-800/60 to-slate-900/80 border border-white/10 p-6 backdrop-blur-xl overflow-hidden animate-float" style={{ animationDelay: '1.5s' }}>
+                  <div className="relative z-10 mb-4">
+                    <div className="w-full h-32 rounded-xl bg-gradient-to-br from-[#0033cc]/20 to-[#0066ff]/20 border border-[#0066ff]/20 overflow-hidden relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#0033cc]/10 to-[#0066ff]/10">
+                        <div className="absolute right-4 bottom-0 w-20 h-24 bg-gradient-to-t from-[#0066ff]/30 to-transparent rounded-t-full"></div>
+                        <div className="absolute left-4 top-4 grid grid-cols-2 gap-1 w-16 h-16">
+                          <div className="bg-[#0066ff]/20 rounded"></div>
+                          <div className="bg-[#0033cc]/20 rounded"></div>
+                          <div className="bg-[#0066ff]/20 rounded"></div>
+                          <div className="bg-[#0033cc]/20 rounded"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between relative z-10">
+                    <div className="text-xl font-bold text-white">Workflow Automation</div>
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0066ff]/20 flex-shrink-0">
+                      <svg className="h-5 w-5 text-[#0066ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -394,7 +387,7 @@ export default function AIHealthcarePage() {
             {/* Left Column - Large Headline */}
             <Reveal animation="fade-up" duration={1000} delay={100}>
               <div className="lg:sticky lg:top-32">
-                <h2 className="text-[52px] md:text-[64px] lg:text-[72px] font-bold leading-[0.95] text-white tracking-tight">
+                <h2 className="text-[52px] md:text-[64px] lg:text-[72px] font-medium leading-[0.95] text-white tracking-tight">
                   The Operational Problem
                 </h2>
               </div>
@@ -468,7 +461,7 @@ export default function AIHealthcarePage() {
             {/* Left Column - Large Headline */}
             <Reveal animation="fade-up" duration={1000} delay={100}>
               <div className="lg:sticky lg:top-32">
-                <h2 className="text-[52px] md:text-[64px] lg:text-[72px] font-bold leading-[0.95] text-white tracking-tight">
+                <h2 className="text-[52px] md:text-[64px] lg:text-[72px] font-medium leading-[0.95] text-white tracking-tight">
                   Clinical workflows need intelligence, not just automation.
                 </h2>
               </div>
@@ -528,7 +521,7 @@ export default function AIHealthcarePage() {
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
           <Reveal animation="fade-up" duration={900} delay={100}>
             <div className="text-center mb-16">
-              <p className="text-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-3">
+              <p className="text-lg bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent mb-3">
                 Comprehensive Solutions
               </p>
               <h2 className="text-4xl md:text-5xl font-medium text-white">

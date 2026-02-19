@@ -84,8 +84,8 @@ export default function DifferentiatorsSection() {
               delay={220 + index * 140}
               className="h-full"
             >
-              <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-8 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-[0_40px_90px_-45px_rgba(56,189,248,0.45)]">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/0 to-purple-500/0 transition-all duration-700 group-hover:from-blue-500/10 group-hover:via-sky-500/5 group-hover:to-purple-500/10" />
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-8 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-[#0066ff]/40 hover:shadow-[0_40px_90px_-45px_rgba(0,102,255,0.45)]">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/0 to-[#0066ff]/0 transition-all duration-700 group-hover:from-[#0033cc]/10 group-hover:via-[#0066ff]/5 group-hover:to-[#0066ff]/10" />
 
                 <div className="relative z-10 flex flex-col gap-6">
                   <header className="flex flex-col gap-4">
@@ -95,7 +95,7 @@ export default function DifferentiatorsSection() {
                   <ul className="flex flex-1 flex-col gap-4 text-base text-white/80">
                     {comparison.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-3 leading-relaxed">
-                        <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white">
+                        <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-[#0033cc] to-[#0066ff] flex items-center justify-center text-white">
                           <Check className="w-4 h-4" strokeWidth={2.5} />
                         </div>
                         <span className="text-white/80">{bullet}</span>

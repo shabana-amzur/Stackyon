@@ -134,9 +134,9 @@ export default function FeaturesSection() {
               delay={240 + index * 220}
               className="h-full"
             >
-              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-8 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-[0_40px_90px_-45px_rgba(56,189,248,0.45)]">
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-8 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-[#0066ff]/40 hover:shadow-[0_40px_90px_-45px_rgba(0,102,255,0.45)]">
                 <div className="feature-card-grid" />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/0 to-purple-500/0 transition-all duration-700 group-hover:from-blue-500/10 group-hover:via-sky-500/5 group-hover:to-purple-500/10" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0033cc]/0 to-[#0066ff]/0 transition-all duration-700 group-hover:from-[#0033cc]/10 group-hover:via-[#0066ff]/5 group-hover:to-[#0066ff]/10" />
                 <span className="feature-card-line" />
                 <div className="feature-card-overlay">
                   <div className="feature-card-beam" />

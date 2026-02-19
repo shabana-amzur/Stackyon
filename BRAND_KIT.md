@@ -2,9 +2,13 @@
 
 ## Color Palette
 
+### Primary Colors
+- **Primary Blue**: `#0033cc` - Main brand color
+- **Secondary Blue**: `#0066ff` - Accent and highlights
+
 ### Primary Gradient
 ```css
-bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600
+bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff]
 ```
 - Use for: Button backgrounds, text highlights, feature elements
 - Hover state: White background with black text
@@ -12,11 +16,11 @@ bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600
 ### Background Colors
 - **Primary Background**: `bg-black`
 - **Card/Box Background**: `bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90`
-- **Overlay on Hover**: `bg-gradient-to-br from-blue-500/10 via-sky-500/5 to-purple-500/10`
+- **Overlay on Hover**: `bg-gradient-to-br from-[#0033cc]/10 via-[#0066ff]/5 to-[#0066ff]/10`
 
 ### Border Colors
 - **Default**: `border-white/10`
-- **Hover**: `border-blue-500/40`
+- **Hover**: `border-[#0066ff]/40`
 - **Transparent**: `border-transparent`
 
 ### Text Colors
@@ -28,7 +32,7 @@ bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600
 ## Typography
 
 ### Font Family
-- **Primary Font**: Inter
+- **Primary Font**: Google Sans
 - **Weights**: 300 (Light), 400 (Regular), 500 (Medium), 600 (Semi-bold)
 - **Import**: Google Fonts via `next/font/google`
 
@@ -55,8 +59,8 @@ bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600
 
 ### Standard Card Format
 ```tsx
-<article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-8 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-[0_40px_90px_-45px_rgba(56,189,248,0.45)]">
-  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/0 to-purple-500/0 transition-all duration-700 group-hover:from-blue-500/10 group-hover:via-sky-500/5 group-hover:to-purple-500/10" />
+<article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-8 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-[#0066ff]/40 hover:shadow-[0_40px_90px_-45px_rgba(0,102,255,0.45)]">
+  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/0 to-[#0066ff]/0 transition-all duration-700 group-hover:from-[#0033cc]/10 group-hover:via-[#0066ff]/5 group-hover:to-[#0066ff]/10" />
   
   <div className="relative z-10 flex flex-col gap-6">
     {/* Content here */}
@@ -70,16 +74,16 @@ bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600
 - **Border**: `border border-white/10`
 - **Hover Effects**:
   - Lift: `hover:-translate-y-2`
-  - Border: `hover:border-blue-500/40`
-  - Shadow: `hover:shadow-[0_40px_90px_-45px_rgba(56,189,248,0.45)]`
-- **Gradient Overlay**: Animates from transparent to subtle blue/purple on hover
+  - Border: `hover:border-[#0066ff]/40`
+  - Shadow: `hover:shadow-[0_40px_90px_-45px_rgba(0,102,255,0.45)]`
+- **Gradient Overlay**: Animates from transparent to subtle blue gradient on hover
 - **Transition**: `duration-500` (transform), `duration-700` (gradient)
 
 ## Button Styles
 
 ### Primary Button (Gradient)
 ```tsx
-<button className="flex items-center gap-3 px-10 py-4 rounded-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white font-semibold text-lg hover:bg-none hover:!bg-white hover:text-black transition-all">
+<button className="flex items-center gap-3 px-10 py-4 rounded-lg bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] text-white font-semibold text-lg hover:bg-none hover:!bg-white hover:text-black transition-all">
   Button Text
 </button>
 ```
@@ -103,7 +107,7 @@ bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600
 ### Button with Glow
 ```tsx
 <div className="relative group">
-  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+  <div className="absolute inset-0 bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
   <button className="relative ...">Button Text</button>
 </div>
 ```
@@ -112,13 +116,13 @@ bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600
 
 ### Checkmark Icons
 ```tsx
-<div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white">
+<div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-[#0033cc] to-[#0066ff] flex items-center justify-center text-white">
   <Check className="w-5 h-5" strokeWidth={2.5} />
 </div>
 ```
 
 ### Icon Specifications
-- **Background**: Circular gradient `from-blue-500 to-purple-500`
+- **Background**: Circular gradient `from-[#0033cc] to-[#0066ff]`
 - **Size**: `w-10 h-10` (40px) for large, `w-7 h-7` (28px) for small
 - **Icon Size**: `w-5 h-5` (20px) or `w-4 h-4` (16px)
 - **Icon Library**: Lucide React (`Check` component)
@@ -128,9 +132,9 @@ bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600
 
 ### Floating Box Format
 ```tsx
-<div className="hero-float-card absolute ... flex w-48 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-sky-500/35 via-blue-500/15 to-teal-400/10 px-6 py-5 shadow-[0_30px_80px_-40px_rgba(56,189,248,0.55)] backdrop-blur-xl">
-  <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3rem] text-sky-300/80">
-    <span className="inline-block h-2 w-2 rounded-full bg-gradient-to-r from-sky-400 to-purple-500" />
+<div className="hero-float-card absolute ... flex w-48 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0066ff]/35 via-[#0033cc]/15 to-[#0066ff]/10 px-6 py-5 shadow-[0_30px_80px_-40px_rgba(0,102,255,0.55)] backdrop-blur-xl">
+  <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3rem] text-[#0066ff]/80">
+    <span className="inline-block h-2 w-2 rounded-full bg-gradient-to-r from-[#0033cc] to-[#0066ff]" />
     LABEL
   </span>
   <p className="text-[20px] font-semibold text-white">Heading</p>
@@ -235,12 +239,12 @@ hover:-translate-y-2
 
 **Standard Card:**
 ```
-group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-8 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-[0_40px_90px_-45px_rgba(56,189,248,0.45)]
+group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-8 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-[#0066ff]/40 hover:shadow-[0_40px_90px_-45px_rgba(0,102,255,0.45)]
 ```
 
 **Primary Button:**
 ```
-flex items-center gap-3 px-10 py-4 rounded-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white font-semibold text-lg hover:bg-none hover:!bg-white hover:text-black transition-all
+flex items-center gap-3 px-10 py-4 rounded-lg bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] text-white font-semibold text-lg hover:bg-none hover:!bg-white hover:text-black transition-all
 ```
 
 **Brand Gradient:**

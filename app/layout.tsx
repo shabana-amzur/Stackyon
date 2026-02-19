@@ -1,7 +1,7 @@
 'use client';
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -10,13 +10,52 @@ import ScrollToTop from "@/components/ui/ScrollToTop";
 import "./globals.css";
 
 /**
- * Inter font configuration for the application
- * Includes core weights (300, 400, 500, 600, 700) for typographic hierarchy
+ * Google Sans font configuration using local font files
  */
-const inter = Inter({
-  weight: ['300', '400', '500', '600'],
-  subsets: ["latin"],
-  variable: "--font-inter",
+const googleSans = localFont({
+  src: [
+    {
+      path: "./fonts/GoogleSans-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GoogleSans-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/GoogleSans-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GoogleSans-MediumItalic.ttf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "./fonts/GoogleSans-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GoogleSans-SemiBoldItalic.ttf",
+      weight: "600",
+      style: "italic",
+    },
+    {
+      path: "./fonts/GoogleSans-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GoogleSans-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-google-sans",
 });
 
 /**
@@ -52,7 +91,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${googleSans.variable} font-sans antialiased`}>
         <div className="flex min-h-screen flex-col bg-black">
           <Header />
           <main className="flex-1">{children}</main>

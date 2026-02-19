@@ -22,28 +22,28 @@ const features = [
     title: "Legacy application modernization",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: Squares2X2Icon,
-    iconClasses: "bg-blue-500 bg-opacity-10 text-blue-300",
+    iconClasses: "bg-[#0033cc] bg-opacity-10 text-[#0066ff]",
   },
   {
     id: "rule-heavy-workflows",
     title: "Rule-heavy enterprise workflows",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: CommandLineIcon,
-    iconClasses: "bg-cyan-500 bg-opacity-10 text-cyan-300",
+    iconClasses: "bg-[#0066ff] bg-opacity-10 text-[#0066ff]",
   },
   {
     id: "regulated-systems",
     title: "Regulated operational systems",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: CubeIcon,
-    iconClasses: "bg-cyan-500 bg-opacity-10 text-cyan-300",
+    iconClasses: "bg-[#0066ff] bg-opacity-10 text-[#0066ff]",
   },
   {
     id: "proprietary-platforms",
     title: "Proprietary internal platforms",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     icon: PaintBrushIcon,
-    iconClasses: "bg-teal-500 bg-opacity-10 text-teal-300",
+    iconClasses: "bg-[#0066ff] bg-opacity-10 text-[#0066ff]",
   },
   {
     id: "user-journeys",
@@ -383,19 +383,19 @@ export default function DevStudioPage() {
           {/* Animated gradient overlays */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/50 to-transparent"></div>
           <div 
-            className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"
+            className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-[#0066ff]/20 blur-3xl"
             style={{
               animation: 'blob 20s ease-in-out infinite'
             }}
           ></div>
           <div 
-            className="absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-cyan-500/15 blur-3xl"
+            className="absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-[#0066ff]/15 blur-3xl"
             style={{
               animation: 'blob-reverse 18s ease-in-out infinite'
             }}
           ></div>
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-[#0033cc]/10 blur-3xl"
             style={{
               animation: 'blob 25s ease-in-out infinite reverse'
             }}
@@ -604,13 +604,13 @@ export default function DevStudioPage() {
                 {/* Card 1 - Workflows */}
                 <Reveal animation="fade-up" duration={900} delay={200}>
                   <div 
-                    className="relative rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-slate-900/50 p-8 hover:border-cyan-500/40 transition-all duration-300"
+                    className="relative rounded-2xl border border-[#0066ff]/20 bg-gradient-to-br from-[#0066ff]/10 to-slate-900/50 p-8 hover:border-[#0066ff]/40 transition-all duration-300"
                     style={{
                       animation: 'floatUp 4s ease-in-out infinite',
                     }}
                   >
-                    <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center mb-6">
-                      <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-full bg-[#0066ff]/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-[#0066ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -621,13 +621,13 @@ export default function DevStudioPage() {
                 {/* Card 2 - Rules */}
                 <Reveal animation="fade-up" duration={900} delay={250}>
                   <div 
-                    className="relative rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 to-slate-900/50 p-8 hover:border-blue-500/40 transition-all duration-300 mt-12"
+                    className="relative rounded-2xl border border-[#0066ff]/20 bg-gradient-to-br from-[#0066ff]/10 to-slate-900/50 p-8 hover:border-[#0066ff]/40 transition-all duration-300 mt-12"
                     style={{
                       animation: 'floatDown 4.5s ease-in-out infinite',
                     }}
                   >
-                    <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mb-6">
-                      <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-full bg-[#0066ff]/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-[#0066ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -638,14 +638,14 @@ export default function DevStudioPage() {
                 {/* Card 3 - Decisions */}
                 <Reveal animation="fade-up" duration={900} delay={300}>
                   <div 
-                    className="relative rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-500/10 to-slate-900/50 p-8 hover:border-purple-500/40 transition-all duration-300 -mt-6"
+                    className="relative rounded-2xl border border-[#0033cc]/20 bg-gradient-to-br from-[#0033cc]/10 to-slate-900/50 p-8 hover:border-[#0033cc]/40 transition-all duration-300 -mt-6"
                     style={{
                       animation: 'floatUp 4.2s ease-in-out infinite',
                       animationDelay: '0.5s',
                     }}
                   >
-                    <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-6">
-                      <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-full bg-[#0033cc]/20 flex items-center justify-center mb-6">
+                      <svg className="w-6 h-6 text-[#0033cc]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -714,7 +714,7 @@ export default function DevStudioPage() {
                   )}
 
                   {/* Hover gradient effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0033cc]/5 to-[#0066ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
               </Reveal>
             ))}

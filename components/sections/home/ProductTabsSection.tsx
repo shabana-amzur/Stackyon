@@ -258,7 +258,7 @@ export default function ProductTabsSection() {
                       }}
                     >
                       <span className="pointer-events-none absolute inset-[6px] rounded-[26px] border border-sky-300/35" aria-hidden="true" />
-                      <span className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-br from-sky-400/0 via-sky-400/0 to-indigo-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-10" aria-hidden="true" />
+                      <span className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-br from-[#0066ff]/0 via-[#0066ff]/0 to-[#0033cc]/0 opacity-0 transition-opacity duration-300 group-hover:opacity-10" aria-hidden="true" />
                       <Image
                         src={activeTab.screenImageSrc}
                         alt={activeTab.screenTitle}
@@ -305,7 +305,7 @@ export default function ProductTabsSection() {
                 transition={{ duration: 0.35, ease: "easeOut", delay: 0.1 }}
                 className="w-full lg:basis-[30%] lg:max-w-[30%]"
               >
-                <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950 via-slate-950/80 to-black shadow-[0_35px_120px_-60px_rgba(56,189,248,0.45)]">
+                <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950 via-slate-950/80 to-black shadow-[0_35px_120px_-60px_rgba(0,102,255,0.45)]">
                   <div className="relative z-10 flex max-h-[412px] flex-col gap-4 overflow-y-auto px-6 py-8 pr-3 [scrollbar-width:thin] [scrollbar-color:rgba(56,189,248,0.45)_transparent]">
                     {activeTab.features.map((feature) => {
                       const Icon = feature.icon;

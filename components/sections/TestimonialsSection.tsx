@@ -72,9 +72,9 @@ export default function TestimonialsSection() {
               className="h-full"
             >
               <article
-                className="group relative flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-10 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-[0_40px_90px_-45px_rgba(56,189,248,0.45)] overflow-hidden"
+                className="group relative flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-black/90 p-10 transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-[#0066ff]/40 hover:shadow-[0_40px_90px_-45px_rgba(0,102,255,0.45)] overflow-hidden"
               >
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/0 to-purple-500/0 transition-all duration-700 group-hover:from-blue-500/10 group-hover:via-sky-500/5 group-hover:to-purple-500/10" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0033cc]/0 to-[#0066ff]/0 transition-all duration-700 group-hover:from-[#0033cc]/10 group-hover:via-[#0066ff]/5 group-hover:to-[#0066ff]/10" />
                 <div className="relative z-10 flex flex-col gap-8">
                   <svg
                     className="h-9 w-9 text-white"
@@ -118,8 +118,8 @@ export default function TestimonialsSection() {
         <Reveal animation="fade-up" duration={950} delay={300}>
           <div className="mt-4 flex justify-center">
             <a href="/case-studies" className="relative group">
-              <div className="absolute inset-0 bg-[#3e7ae5] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
-              <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:bg-[#5a8df0]">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0033cc] to-[#0066ff] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
+              <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-gradient-to-r from-[#0033cc] to-[#0066ff] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:opacity-90">
                 Success Stories
                 <ArrowRightIcon className="h-5 w-5" />
               </div>

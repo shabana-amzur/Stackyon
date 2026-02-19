@@ -102,6 +102,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center pt-[60px]">
       {/* Particles - Full Width */}
+      {typeof window !== 'undefined' && (
       <div ref={particlesRef} className="stars-container absolute inset-0">
             {particles.map((particle, index) => (
               <div
@@ -119,21 +120,22 @@ export default function HeroSection() {
               />
             ))}
       </div>
+      )}
 
       {/* Floating callouts */}
       <div className="pointer-events-none absolute inset-0 z-20 hidden md:block">
-        <div className="hero-float-card hero-float-1 absolute left-[2%] top-[18%] flex w-64 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-sky-500/35 via-blue-500/15 to-teal-400/10 px-6 py-5 shadow-[0_30px_80px_-40px_rgba(56,189,248,0.55)] backdrop-blur-xl">
+        <div className="hero-float-card hero-float-1 absolute left-[2%] top-[18%] flex w-64 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0033cc]/35 via-[#0066ff]/15 to-[#0033cc]/10 px-6 py-5 shadow-[0_30px_80px_-40px_rgba(0,102,255,0.55)] backdrop-blur-xl">
           <span className="inline-flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.3rem] text-sky-300/80">
-            <span className="inline-block h-2 w-2 rounded-full bg-gradient-to-r from-sky-400 to-purple-500" />
+            <span className="inline-block h-2 w-2 rounded-full bg-gradient-to-r from-[#0033cc] to-[#0066ff]" />
             Website
           </span>
           <p className="text-[17px] font-semibold text-white">AI-crafted layouts in seconds</p>
           <p className="text-[14px] text-white/60">Generate responsive pages, preview instantly, and ship live in one click.</p>
         </div>
 
-        <div className="hero-float-card hero-float-2 absolute right-[2%] bottom-[15%] flex w-72 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-violet-500/35 via-blue-500/15 to-purple-500/25 px-6 py-6 shadow-[0_40px_90px_-45px_rgba(129,140,248,0.55)] backdrop-blur-xl">
+        <div className="hero-float-card hero-float-2 absolute right-[2%] bottom-[15%] flex w-72 flex-col gap-3 rounded-2xl border border-white/15 bg-gradient-to-br from-[#0066ff]/35 via-[#0033cc]/15 to-[#0066ff]/25 px-6 py-6 shadow-[0_40px_90px_-45px_rgba(0,102,255,0.55)] backdrop-blur-xl">
           <span className="inline-flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.3rem] text-violet-300/80">
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-sky-500 text-[0.65rem] font-bold text-black">
+            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-[#0033cc] to-[#0066ff] text-[0.65rem] font-bold text-white">
               AI
             </span>
             SaaS
@@ -149,7 +151,7 @@ export default function HeroSection() {
         <div className="relative rounded-3xl overflow-hidden">
           {/* Gradient orb effect - contained in box */}
           <div className="absolute inset-0">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-blue-500/30 via-purple-500/15 to-transparent blur-3xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-[#0066ff]/30 via-[#0033cc]/15 to-transparent blur-3xl" />
           </div>
           
           {/* Content */}
@@ -161,13 +163,13 @@ export default function HeroSection() {
               transition={{ duration: 0.6 }}
               className="mb-6 mt-2"
             >
-              <span className="inline-flex items-center px-5 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-sm font-semibold text-white backdrop-blur-sm">
+              <span className="inline-flex items-center px-5 py-2 rounded-full bg-gradient-to-r from-[#0033cc]/20 to-[#0066ff]/20 border border-[#0066ff]/30 text-sm font-semibold text-white backdrop-blur-sm">
                 No Code. No Limits.
               </span>
             </motion.div>
             
             {/* Main heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-6 max-w-6xl leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6 max-w-6xl leading-tight">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -189,7 +191,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent inline-block"
+                className="bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent inline-block"
               >
                 Enterprise-Grade
               </motion.span>{' '}
@@ -197,7 +199,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent inline-block"
+                className="bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent inline-block"
               >
                 Apps
               </motion.span>
@@ -212,7 +214,7 @@ export default function HeroSection() {
             <div className="flex flex-col items-center gap-6">
               <div className="flex flex-col sm:flex-row gap-4 items-center">
                 {/* Get Started Button */}
-                <button className="flex items-center gap-3 px-10 py-4 rounded-lg bg-[#3e7ae5] text-white font-semibold text-lg transition-all duration-300 hover:bg-[#5a8df0]">
+                <button className="flex items-center gap-3 px-10 py-4 rounded-lg bg-gradient-to-r from-[#0033cc] to-[#0066ff] text-white font-semibold text-lg transition-all duration-300 hover:opacity-90">
                   Get Started
                   <ArrowRightIcon className="w-5 h-5" />
                 </button>
@@ -223,7 +225,7 @@ export default function HeroSection() {
                 onClick={() => setShowVideo(true)}
                 className="relative group mt-8"
               >
-                <div className="relative w-[90px] h-[90px] rounded-full border-2 border-white flex items-center justify-center hover:scale-110 transition-all duration-300 bg-gradient-to-br from-blue-500 to-purple-500">
+                <div className="relative w-[90px] h-[90px] rounded-full border-2 border-white flex items-center justify-center hover:scale-110 transition-all duration-300 bg-gradient-to-br from-[#0033cc] to-[#0066ff]">
                   <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>

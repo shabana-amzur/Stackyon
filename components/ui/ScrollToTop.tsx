@@ -52,7 +52,7 @@ export default function ScrollToTop() {
           className="fixed bottom-8 right-8 z-50 group"
           aria-label="Scroll to top"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0033cc] to-[#0066ff] rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
           <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all">
             <ArrowUpIcon className="h-5 w-5" />
           </div>

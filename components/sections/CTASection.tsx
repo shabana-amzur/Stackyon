@@ -57,8 +57,8 @@ export default function CTASection() {
         <Reveal animation="fade-up" duration={1000} delay={220}>
           <div className="flex flex-col items-center gap-4 sm:flex-row">
             <Link href="/platform/dev-studio" className="relative group">
-              <div className="absolute inset-0 bg-[#3e7ae5] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
-              <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:bg-[#5a8df0]">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0033cc] to-[#0066ff] rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity" aria-hidden="true" />
+              <div className="relative flex items-center gap-2 rounded-lg border border-transparent bg-gradient-to-r from-[#0033cc] to-[#0066ff] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 hover:opacity-90">
                 Explore Dev Studio
                 <LinkIcon className="h-5 w-5" />
               </div>

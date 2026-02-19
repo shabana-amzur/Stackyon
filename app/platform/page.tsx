@@ -52,7 +52,7 @@ const capabilityCards = [
     description:
       "Agentic AI operating alongside rules and process logic for validation, recommendations, and decisions.",
     icon: CpuChipIcon,
-    iconClasses: "bg-purple-500/10 text-purple-300",
+    iconClasses: "bg-[#0033cc]/10 text-[#0033cc]",
   },
   {
     id: "process-orchestration",
@@ -60,7 +60,7 @@ const capabilityCards = [
     description:
       "Support for conditional, parallel, and long-running execution reflecting real enterprise operations.",
     icon: ArrowPathIcon,
-    iconClasses: "bg-blue-500/10 text-blue-300",
+    iconClasses: "bg-[#0033cc]/10 text-[#0066ff]",
   },
   {
     id: "integration-connectivity",
@@ -68,7 +68,7 @@ const capabilityCards = [
     description:
       "APIs and system integrations without disrupting existing enterprise environments.",
     icon: LinkIcon,
-    iconClasses: "bg-cyan-500/10 text-cyan-300",
+    iconClasses: "bg-[#0066ff]/10 text-[#0066ff]",
   },
   {
     id: "operations-governance",
@@ -204,7 +204,7 @@ export default function PlatformPage() {
                   {/* Primary Button with Gradient */}
                   <Link
                     href="/platform/dev-studio"
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#3e7ae5] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 shadow-lg hover:bg-[#5a8df0]"
+                    className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#0033cc] to-[#0066ff] px-8 py-3.5 text-base font-medium text-white transition-all duration-300 shadow-lg hover:opacity-90"
                   >
                     Explore Dev Studio
                   </Link>
@@ -267,8 +267,8 @@ export default function PlatformPage() {
 
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/60 to-black"></div>
-          <div className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"></div>
-          <div className="absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-purple-500/15 blur-[120px]"></div>
+          <div className="absolute -top-32 -right-20 h-96 w-96 rounded-full bg-[#0066ff]/20 blur-3xl"></div>
+          <div className="absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-[#0033cc]/15 blur-[120px]"></div>
         </div>
 
         <div className="mx-auto max-w-[1360px] px-6 lg:px-12 relative z-10">
@@ -303,7 +303,7 @@ export default function PlatformPage() {
             <div className="space-y-4">
               {/* Main Title */}
               <div className="mb-8">
-                <p className="text-lg bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-3">
+                <p className="text-lg bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent mb-3">
                   {platformFeatures.find(f => f.id === activeFeature)?.subtitle || ""}
                 </p>
                 <h2 className="text-[45px] font-normal text-white">
@@ -352,10 +352,10 @@ export default function PlatformPage() {
                               </p>
                               <Link 
                                 href="#" 
-                                className="inline-flex items-center gap-2 text-sm font-medium bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+                                className="inline-flex items-center gap-2 text-sm font-medium bg-gradient-to-r from-[#0033cc] via-[#0066ff] to-[#0066ff] bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                               >
                                 Learn more
-                                <ArrowRightIcon className="h-4 w-4 text-blue-500" />
+                                <ArrowRightIcon className="h-4 w-4 text-[#0066ff]" />
                               </Link>
                             </Disclosure.Panel>
                           </Transition>
@@ -441,7 +441,7 @@ export default function PlatformPage() {
           <Reveal animation="fade-up" duration={900} delay={200}>
             <div className="relative">
               {/* Connecting Line - Aligned through center of boxes */}
-              <div className="absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-400/40 via-purple-400/40 via-blue-400/40 via-purple-400/40 to-transparent hidden lg:block"></div>
+              <div className="absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#0066ff]/40 via-[#0033cc]/40 via-[#0066ff]/40 via-[#0033cc]/40 to-transparent hidden lg:block"></div>
               
               {/* Steps Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
@@ -449,9 +449,9 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-sky-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0033cc] to-[#0066ff] rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 via-blue-400 to-sky-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-[#0033cc] via-[#0066ff] to-[#0066ff] flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
                       <CircleStackIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
@@ -465,9 +465,9 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff] to-[#0033cc] rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 via-purple-400 to-pink-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-[#0066ff] via-[#0033cc] to-[#0066ff] flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
                       <CpuChipIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
@@ -481,9 +481,9 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0033cc] to-[#0066ff] rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 via-cyan-400 to-cyan-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-[#0033cc] via-[#0066ff] to-[#0066ff] flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
                       <LinkIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
@@ -497,9 +497,9 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-violet-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0066ff] to-[#0033cc] rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 via-violet-400 to-violet-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-[#0066ff] via-[#0033cc] to-[#0066ff] flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
                       <RocketLaunchIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
@@ -513,9 +513,9 @@ export default function PlatformPage() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-6 group">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0033cc] to-[#0066ff] rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                     {/* Main box */}
-                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 via-indigo-400 to-indigo-500 flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
+                    <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-[#0033cc] via-[#0066ff] to-[#0066ff] flex items-center justify-center shadow-2xl backdrop-blur-sm border border-white/10">
                       <ArrowPathIcon className="w-12 h-12 text-white" />
                     </div>
                   </div>
@@ -562,7 +562,7 @@ export default function PlatformPage() {
                     key={card.id}
                     className="relative flex flex-col gap-4 p-8"
                   >
-                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500 mb-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0066ff] mb-4">
                       <Icon className="h-7 w-7 text-white" />
                     </div>
                     <h3 className="text-xl font-normal text-white">{card.title}</h3>

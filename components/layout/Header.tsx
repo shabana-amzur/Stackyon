@@ -91,22 +91,23 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 w-full py-[20px] border-b border-white/10 ${isHomePage ? 'bg-black/50 backdrop-blur-md' : 'bg-[#061423]'}`}>
-      <div className="max-w-[80rem] mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Stackyon home">
-          <Image
-            src="/images/logos/stackyon-logo-white.png"
-            alt="Stackyon Logo"
-            width={128}
-            height={64}
-            className="h-16 w-auto"
-            priority
-          />
-        </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 w-full py-6">
+      <div className="max-w-[90rem] mx-auto px-6">
+        <div className="flex items-center justify-between bg-black rounded-full px-6 py-3 border border-white/10">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2.5" aria-label="Stackyon home">
+            <Image
+              src="/stackyon_logo.png"
+              alt="Stackyon Logo"
+              width={70}
+              height={20}
+              className="h-5 w-auto"
+              priority
+            />
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-10 ml-16">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
           {/* Platform Dropdown */}
           <div
             className="relative"
@@ -133,10 +134,10 @@ export default function Header() {
               leaveTo="transform opacity-0 -translate-y-1"
             >
               <div
-                className="fixed left-0 right-0 z-50 mt-10 border-t border-gray-200 bg-white shadow-[0_20px_70px_-15px_rgba(0,0,0,0.3)] focus:outline-none mx-[100px] rounded-2xl"
+                className="fixed left-1/2 transform -translate-x-1/2 z-50 mt-10 border-t border-gray-200 bg-white shadow-[0_20px_70px_-15px_rgba(0,0,0,0.3)] focus:outline-none rounded-2xl max-w-[90rem] w-[calc(100vw-80px)]"
               >
-                <div className="max-w-[80rem] mx-auto px-4 py-8">
-                  <div className="grid grid-cols-3 gap-12 mr-[180px]">
+                <div className="px-8 py-8">
+                  <div className="grid grid-cols-3 gap-16">
                     {/* Platform Column */}
                     <div>
                       <div className="mb-4">
@@ -144,7 +145,7 @@ export default function Header() {
                           href="/platform"
                           onClick={() => setHoveredMenu(null)}
                         >
-                          <h3 className="text-xs font-bold text-blue-500 uppercase tracking-wider hover:text-blue-600 transition-colors cursor-pointer">Platform</h3>
+                          <h3 className="text-xs font-bold text-[#0066ff] uppercase tracking-wider hover:text-[#0033cc] transition-colors cursor-pointer">Platform</h3>
                         </Link>
                       </div>
                       <div className="space-y-2">
@@ -167,7 +168,7 @@ export default function Header() {
                     {/* Solutions Column */}
                     <div>
                       <div className="mb-4">
-                        <h3 className="text-xs font-bold text-blue-500 uppercase tracking-wider">Solutions</h3>
+                        <h3 className="text-xs font-bold text-[#0066ff] uppercase tracking-wider">Solutions</h3>
                       </div>
                       <div className="space-y-2">
                         {navigation.solutions.items.map((item) => (
@@ -194,7 +195,7 @@ export default function Header() {
           {/* AI-native Healthcare Link */}
           <Link
             href="/ai-native-healthcare"
-            className="text-white/90 hover:text-white transition-colors"
+            className="text-white/80 hover:text-white transition-colors text-[15px]"
           >
             AI-native Healthcare
           </Link>
@@ -202,9 +203,9 @@ export default function Header() {
           {/* Industries Dropdown */}
           {isMounted ? (
             <Menu as="div" className="relative">
-              <Menu.Button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors">
+              <Menu.Button className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-[15px]">
                 {navigation.industries.name}
-                <ChevronDownIcon className="w-4 h-4" />
+                <ChevronDownIcon className="w-3.5 h-3.5" />
               </Menu.Button>
               <Transition
                 as={Fragment}
@@ -249,9 +250,9 @@ export default function Header() {
           {/* Resources Dropdown */}
           {isMounted ? (
             <Menu as="div" className="relative">
-              <Menu.Button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors">
+              <Menu.Button className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-[15px]">
                 {navigation.resources.name}
-                <ChevronDownIcon className="w-4 h-4" />
+                <ChevronDownIcon className="w-3.5 h-3.5" />
               </Menu.Button>
               <Transition
                 as={Fragment}
@@ -296,9 +297,9 @@ export default function Header() {
           {/* About Dropdown */}
           {isMounted ? (
             <Menu as="div" className="relative">
-              <Menu.Button className="flex items-center gap-1 text-white/90 hover:text-white transition-colors">
+              <Menu.Button className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors text-[15px]">
                 {navigation.about.name}
-                <ChevronDownIcon className="w-4 h-4" />
+                <ChevronDownIcon className="w-3.5 h-3.5" />
               </Menu.Button>
               <Transition
                 as={Fragment}
@@ -343,8 +344,8 @@ export default function Header() {
 
         {/* CTA Button */}
         <div className="flex items-center gap-4">
-          <button className="hidden lg:block px-6 py-2.5 rounded-lg bg-white text-black font-medium text-sm hover:bg-blue-500 hover:text-white transition-all duration-300">
-            Book a Demo
+          <button className="hidden lg:block px-8 py-2.5 rounded-full bg-white text-black font-medium text-[15px] hover:bg-gray-100 transition-all duration-300">
+            Get started
           </button>
 
           {/* Mobile menu button */}
@@ -359,6 +360,7 @@ export default function Header() {
               <Bars3Icon className="w-6 h-6" />
             )}
           </button>
+        </div>
         </div>
       </div>
 
@@ -461,7 +463,7 @@ export default function Header() {
             </div>
 
             {/* Mobile CTA */}
-            <button className="w-full mt-4 px-6 py-2.5 rounded-lg bg-[#3e7ae5] text-white font-medium hover:bg-[#5a8df0] transition-colors">
+            <button className="w-full mt-4 px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#0033cc] to-[#0066ff] text-white font-medium hover:opacity-90 transition-all">
               Book a Demo
             </button>
           </div>

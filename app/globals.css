@@ -3,13 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --default-font-family: var(--font-inter);
+  --default-font-family: var(--font-google-sans);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-google-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,13 +22,17 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), "Inter", Sans-serif;
+  font-family: var(--font-google-sans), "Google Sans", Sans-serif;
   font-size: 1.05rem;
   font-weight: 400;
 }
 
 html {
-  font-family: var(--font-inter), "Inter", Sans-serif;
+  font-family: var(--font-google-sans), "Google Sans", Sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
 }
 
 p {
@@ -50,6 +54,10 @@ p {
   66% {
     transform: translateY(15px) translateX(-10px);
   }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes blob {
